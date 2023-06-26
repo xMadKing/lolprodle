@@ -1,10 +1,10 @@
 <script lang="ts">
-	const regions = ["LCS", "LEC", "LCK", "LPL"];
-	let selectedRegion = "LCS";
+	const regions = ['LCS', 'LEC', 'LCK', 'LPL'];
+	let selectedRegion = 'LCS';
 
-    function selectRegion(region: string) {
-        selectedRegion = region;
-    }
+	function selectRegion(region: string) {
+		selectedRegion = region;
+	}
 </script>
 
 <div class="flex items-center justify-center py-8">
