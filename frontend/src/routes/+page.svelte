@@ -1,3 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<button class="btn btn-primary">HEY!</button>
+<script>
+	import Footer from '$lib/Footer.svelte';
+	import Navbar from '$lib/Navbar.svelte';
+</script>
+
+<Navbar />
+
+<p>some content</p>
+
+<Footer />
