@@ -5,11 +5,11 @@ export enum Region {
     Lpl = 3,
 }
 
-export const REGION_DATA = new Map<Region, { name: string }>([
-    [Region.Lcs, { name: "LCS" }],
-    [Region.Lec, { name: "LEC" }],
-    [Region.Lck, { name: "LCK" }],
-    [Region.Lpl, { name: "LPL" }],
+export const REGION_DATA = new Map<Region, { name: string, slugs: (string)[] }>([
+    [Region.Lcs, { name: "LCS", slugs: ["lcs", "/lcs"] }],
+    [Region.Lec, { name: "LEC", slugs: ["lec", "/lec"] }],
+    [Region.Lck, { name: "LCK", slugs: ["lck", "/lck"] }],
+    [Region.Lpl, { name: "LPL", slugs: ["lpl", "/lpl"] }],
 ]);
 
 export enum GuessFieldType {
