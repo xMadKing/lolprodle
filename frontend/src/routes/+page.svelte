@@ -17,8 +17,8 @@
 <Previous />
 
 <div class="flex items-center justify-center py-8">
-	<Input />
 	<HowToButton />
+	<Input />
 </div>
 
 <GuessBox region={Region.Lcs}/>
