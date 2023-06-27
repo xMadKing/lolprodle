@@ -12,8 +12,6 @@
 
 <Navbar />
 
-<p>some content</p>
-
 <RegionSelector />
 
 <Previous />
