@@ -1,31 +1,48 @@
 <script lang="ts">
-    import { regionStores } from "$lib/stores";
-    import type { PlayerGuess, Region } from "$lib/types";
+    import { regionStores, selectedRegion } from "$lib/stores";
+    import { PlayerGuess, Region } from "$lib/types";
     import { onDestroy } from "svelte";
     import GuessRow from "./GuessRow.svelte";
+    import type { Unsubscriber } from "svelte/motion";
 
-    export let region: Region;
-
-    const store = regionStores.get(region);
-    if (store === undefined) {
-        throw new Error("invalid region: " + region);
-    }
-
+    let region: Region = Region.Lcs;
+    let currentRegionStoreUnsubscribe: Unsubscriber = () => {};
     let guessStack: Array<PlayerGuess>;
-    let unsubscribe = store.subscribe((value) => {
-        guessStack = value;
+
+    let unsubscribe = selectedRegion.subscribe((value) => {
+        region = value;
+
+        currentRegionStoreUnsubscribe();
+
+        const store = regionStores.get(region);
+        if (store === undefined) {
+            throw new Error("invalid region: " + region);
+        }
+
+        currentRegionStoreUnsubscribe = store.subscribe((value) => {
+            guessStack = value;
+        });
     });
 
     onDestroy(unsubscribe);
+    // need to have another calling function since the current region store unsubscribe function
+    // can be changed throughout the duration of this component
+    onDestroy(() => {
+        currentRegionStoreUnsubscribe();
+    });
 </script>
 
 <div class="flex flex-row content-center justify-center">
-<div class="card bg-neutral text-neutral-content w-3/5">
-    <div class="card-body items-center text-center">
-        <h3 class="card-title">Your Guesses</h3>
-        {#each guessStack as guess}
-            <GuessRow {guess} />
-        {/each}
+    <div class="card bg-neutral text-neutral-content w-3/5">
+        <div class="card-body items-center text-center">
+            <h3 class="card-title">Your Guesses</h3>
+            {#if guessStack.length !== 0}
+                {#each guessStack as guess}
+                    <GuessRow {guess} />
+                {/each}
+            {:else}
+                <p>No guesses yet - make a guess!</p>
+            {/if}
+        </div>
     </div>
-</div>
 </div>

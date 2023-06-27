@@ -1,9 +1,16 @@
 export enum Region {
-    Lcs = "LCS",
-    Lec = "LEC",
-    Lck = "LCK",
-    Lpl = "LPL"
+    Lcs = 0,
+    Lec = 1,
+    Lck = 2,
+    Lpl = 3,
 }
+
+export const REGION_DATA = new Map<Region, { name: string }>([
+    [Region.Lcs, { name: "LCS" }],
+    [Region.Lec, { name: "LEC" }],
+    [Region.Lck, { name: "LCK" }],
+    [Region.Lpl, { name: "LPL" }],
+]);
 
 export enum GuessFieldType {
     // name of the player

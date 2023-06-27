@@ -3,45 +3,42 @@
     import Lec from "$lib/assets/lec_adj.svg";
     import Lck from "$lib/assets/lck_adj.svg";
     import Lpl from "$lib/assets/lpl_adj.svg";
+    import { selectedRegion } from "$lib/stores";
+    import { REGION_DATA, Region } from "./types";
 
     const regions = [
         {
-            name: "LCS",
+            id: Region.Lcs,
             svg: Lcs,
         },
         {
-            name: "LEC",
+            id: Region.Lec,
             svg: Lec,
         },
         {
-            name: "LCK",
+            id: Region.Lck,
             svg: Lck,
         },
         {
-            name: "LPL",
+            id: Region.Lpl,
             svg: Lpl,
         },
     ];
-    let selectedRegion = "LCS";
-
-    function selectRegion(region: string) {
-        selectedRegion = region;
-    }
 </script>
 
 <div class="flex items-center justify-center py-8">
     <ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
         {#each regions as region}
             <li>
-                {#if selectedRegion === region.name}
+                {#if $selectedRegion === region.id}
                     <a class="bg-primary hover:bg-primary flex flex-col">
                         <img src={region.svg} class="w-36 h-36 m-0" />
-                        {region.name}
+                        {REGION_DATA.get(region.id)?.name}
                     </a>
                 {:else}
-                    <a on:click={() => selectRegion(region.name)} class="flex flex-col">
+                    <a on:click={() => $selectedRegion = region.id} class="flex flex-col">
                         <img src={region.svg} class="w-36 h-36" />
-                        {region.name}
+                        {REGION_DATA.get(region.id)?.name}
                     </a>
                 {/if}
             </li>
