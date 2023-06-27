@@ -5,6 +5,7 @@
 	import RegionSelector from "$lib/RegionSelector.svelte";
 	import HowToButton from "$lib/HowToButton.svelte";
 	import Timer from "$lib/Timer.svelte";
+	import Previous from "$lib/Previous.svelte";
 </script>
 
 <Navbar />
@@ -12,6 +13,8 @@
 <p>some content</p>
 
 <RegionSelector />
+
+<Previous />
 
 <div class="flex items-center justify-center py-8">
 	<Input />
