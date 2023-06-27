@@ -1,12 +1,13 @@
 <script>
-	import Footer from '$lib/Footer.svelte';
-	import Navbar from '$lib/Navbar.svelte';
-	import Input from '$lib/Input.svelte';
-	import RegionSelector from '$lib/RegionSelector.svelte';
-	import HowToButton from '$lib/HowToButton.svelte';
+	import Footer from "$lib/Footer.svelte";
+	import Navbar from "$lib/Navbar.svelte";
+	import Input from "$lib/Input.svelte";
+	import RegionSelector from "$lib/RegionSelector.svelte";
+	import HowToButton from "$lib/HowToButton.svelte";
+	import Timer from "$lib/Timer.svelte";
 </script>
 
-<Navbar /> 
+<Navbar />
 
 <p>some content</p>
 
@@ -17,5 +18,6 @@
 	<HowToButton />
 </div>
 
+<Timer />
 
 <Footer />
