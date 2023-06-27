@@ -1,15 +1,21 @@
 <script>
 	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
-	import Inputdiv from '$lib/Inputdiv.svelte';
+	import Input from '$lib/Input.svelte';
 	import RegionSelector from '$lib/RegionSelector.svelte';
+	import HowToButton from '$lib/HowToButton.svelte';
 </script>
 
-<Navbar />
+<Navbar /> 
+
 <p>some content</p>
 
 <RegionSelector />
 
-<Inputdiv />
+<div class="flex items-center justify-center py-8">
+	<Input />
+	<HowToButton />
+</div>
+
 
 <Footer />
