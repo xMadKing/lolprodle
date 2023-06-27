@@ -16,8 +16,8 @@
 <Previous />
 
 <div class="flex items-center justify-center py-8">
-	<HowToButton />
-	<Input />
+    <HowToButton />
+    <Input />
 </div>
 
 <GuessBox />
