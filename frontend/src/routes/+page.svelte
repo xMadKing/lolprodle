@@ -6,6 +6,8 @@
 	import HowToButton from "$lib/HowToButton.svelte";
 	import Timer from "$lib/Timer.svelte";
 	import Previous from "$lib/Previous.svelte";
+    import GuessBox from "$lib/guess/GuessBox.svelte";
+    import { Region } from "$lib/types";
 </script>
 
 <Navbar />
@@ -20,6 +22,8 @@
 	<Input />
 	<HowToButton />
 </div>
+
+<GuessBox region={Region.Lcs}/>
 
 <Timer />
 
