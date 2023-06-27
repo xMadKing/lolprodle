@@ -35,13 +35,13 @@
             <li>
                 {#if selectedRegion === region.name}
                     <a class="bg-primary hover:bg-primary flex flex-col">
-                        <img src={region.svg} class="w-40 h-40 m-0" />
-                        <div>{region.name}</div>
+                        <img src={region.svg} class="w-36 h-36 m-0" />
+                        {region.name}
                     </a>
                 {:else}
                     <a on:click={() => selectRegion(region.name)} class="flex flex-col">
-                        <img src={region.svg} class="w-40 h-40" />
-                        <div>{region.name}</div>
+                        <img src={region.svg} class="w-36 h-36" />
+                        {region.name}
                     </a>
                 {/if}
             </li>
