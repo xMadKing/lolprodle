@@ -6,7 +6,7 @@
     const status = field.status === GuessStatus.Correct ? "success" : "error";
 </script>
 
-<div class="card w-36 shadow-xl bg-{status} border-2 border-base-100">
+<div class="card w-36 shadow-xl bg-{status} border-2 border-base-100 hover:lg:transform hover:lg:-translate-y-2">
     <div class="card-body text-{status}-content">
         <h2 class="font-bold uppercase">{field.fieldType}</h2>
         <p>{field.guess}</p>

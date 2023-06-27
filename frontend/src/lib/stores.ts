@@ -1,16 +1,21 @@
 import { writable, type Writable } from "svelte/store";
-import { Region, PlayerGuess, GuessField, GuessFieldType, GuessStatus } from "./types";
+import { Region, PlayerGuess, GuessField, GuessFieldType, GuessStatus, REGION_DATA } from "./types";
 
-export const regionStores = new Map<string, Writable<Array<PlayerGuess>>>();
+export const selectedRegion = writable(Region.Lcs);
+export const regionStores = new Map<number, Writable<Array<PlayerGuess>>>();
 
-function createStores() {
-    for (const region in Region) {
-        // store the region values as the keys in regionStores
-        regionStores.set(Object.values(Region)[Object.keys(Region).indexOf(region)], writable(new Array<PlayerGuess>()));
+function createRegionStores() {
+    for (let i = 0; i < Object.keys(Region).length; i++) {
+        const name = REGION_DATA.get(i);
+        if (name === undefined) {
+            continue;
+        }
+
+        regionStores.set(i, writable(new Array<PlayerGuess>()));
     }
     
     // dummy data
-    regionStores.get("LCS")?.update((value) => {
+    regionStores.get(Region.Lcs)?.update((value) => {
         value.push(new PlayerGuess([
             new GuessField(GuessFieldType.Name, GuessStatus.Incorrect, "aaa"),
             new GuessField(GuessFieldType.Position, GuessStatus.Incorrect, "Top"),
@@ -29,4 +34,4 @@ function createStores() {
     });
 }
 
-createStores();
+createRegionStores();
