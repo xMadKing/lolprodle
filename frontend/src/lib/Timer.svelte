@@ -11,7 +11,7 @@
     let minutes: number;
     let seconds: number;
 
-    // listen for any changes in the reset time
+    // listen for any changes for the reset time
     const unsubscribe = resetTimeMillis.subscribe((value) => {
         resetTime = value;
         updateUnixToTimeComponents(value);

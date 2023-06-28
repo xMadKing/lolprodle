@@ -4,6 +4,7 @@
     import { onDestroy } from "svelte";
     import GuessRow from "./GuessRow.svelte";
     import type { Unsubscriber } from "svelte/motion";
+    import GuessLegend from "./GuessLegend.svelte";
 
     let region: Region = Region.Lcs;
     let currentRegionStoreUnsubscribe: Unsubscriber = () => {};
@@ -35,7 +36,10 @@
 <div class="flex flex-row content-center justify-center">
     <div class="card bg-neutral text-neutral-content w-3/5">
         <div class="card-body items-center text-center">
-            <h3 class="card-title">Your Guesses</h3>
+            <h3 class="card-title">
+                Your Guesses
+                <GuessLegend />
+            </h3>
             {#if guessStack.length !== 0}
                 {#each guessStack as guess}
                     <GuessRow {guess} />
