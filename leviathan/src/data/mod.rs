@@ -10,11 +10,11 @@ pub enum Error {
     IoError { error: io::Error },
 }
 
-pub struct ContextDirFiles {
+pub struct LolprodleContextDir {
     pub files: Vec<PathBuf>,
 }
 
-impl ContextDirFiles {
+impl LolprodleContextDir {
     pub fn get_region_players_file(&self, region: lolprodle::Region) -> Option<PathBuf> {
         let target_file = format!("{}_players.json", region.name().to_lowercase());
         self.get_file(target_file.as_str())
@@ -32,7 +32,9 @@ impl ContextDirFiles {
     }
 }
 
-pub fn get_context_dir_files() -> Result<ContextDirFiles, Error> {
+/// Gets all files from the context directory specified by the context directory environment
+/// variable.
+pub fn get_context_dir_files() -> Result<LolprodleContextDir, Error> {
     let path = env::vars()
         .find(|(var, val)| var == CONTEXT_DIR_VAR)
         .ok_or(Error::NoContextEnvVar)?;
@@ -49,5 +51,47 @@ pub fn get_context_dir_files() -> Result<ContextDirFiles, Error> {
         })
         .collect();
 
-    Ok(ContextDirFiles { files })
+    Ok(LolprodleContextDir { files })
+}
+
+pub struct Player {
+    pub id: String,
+    pub name: String,
+    pub role: String,
+    pub team: String,
+    pub country: String,
+    pub fav_champs: Vec<String>,
+}
+
+pub struct RegionPlayers {
+    pub region: lolprodle::Region,
+    pub players: Vec<Player>,
+}
+
+/// Player of (the) day (Pod)
+pub struct Pod {
+    pub day_stamp_millis: u64,
+    pub player: Player,
+}
+
+/// All player of the day (so far) for the region.
+pub struct RegionPods {
+    pub region: lolprodle::Region,
+    /// It is expected pods will be a vector with unique entries, both in timestamp and players
+    /// (that is to say, for any pod in the vector there will exist one and only one instance of
+    /// that timestamp AND one and only one instance of that player [i.e., itself]). This
+    /// essentially represents the singular player of the day for each day.
+    pub pods: Vec<Pod>,
+}
+
+struct LolprodleDataLoader;
+
+impl LolprodleDataLoader {
+    //todo: cache for 5 mins
+    pub fn get_region_players(
+        ctx: &LolprodleContextDir,
+        region: lolprodle::Region,
+    ) -> Result<RegionPlayers, Error> {
+        todo!()
+    }
 }

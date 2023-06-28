@@ -25,7 +25,7 @@ pub enum GuessCategory {
     Position,
     From,
     FavoriteChamp,
-    Titles,
+    Team,
 }
 
 pub enum GuessResult {
