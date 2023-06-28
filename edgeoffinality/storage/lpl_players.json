@@ -1,4 +1,4 @@
-{
+[{
     "country": "China",
     "fav_champs": [
         "None"
@@ -7,7 +7,8 @@
     "name": "Zhou Shi-Hao",
     "role": "Mid",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -16,7 +17,8 @@
     "name": "Hu Xian-Zhao",
     "role": "Bot",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -25,7 +27,8 @@
     "name": "Lin Li-Pin",
     "role": "Mid",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -34,7 +37,8 @@
     "name": "Peng Hao",
     "role": "Jungle",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -43,7 +47,8 @@
     "name": "Zhu De-Zhang",
     "role": "Top",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -52,7 +57,8 @@
     "name": "Chen Yu-Ji",
     "role": "Bot",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -61,7 +67,8 @@
     "name": "Yang Chong-Jiang",
     "role": "Support",
     "team": "Anyone's Legend"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -70,7 +77,8 @@
     "name": "Liu Wen-Xue",
     "role": "Bot",
     "team": "Bilibili Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -79,7 +87,8 @@
     "name": "Chen Ze-Bin",
     "role": "Top",
     "team": "Bilibili Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -88,7 +97,8 @@
     "name": "Zhao Jia-Hao",
     "role": "Bot",
     "team": "Bilibili Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -97,7 +107,8 @@
     "name": "Luo Wen-Jun",
     "role": "Support",
     "team": "Bilibili Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -106,7 +117,8 @@
     "name": "Peng Li-Xun",
     "role": "Jungle",
     "team": "Bilibili Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -115,7 +127,8 @@
     "name": "Zeng Qi",
     "role": "Mid",
     "team": "Bilibili Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -124,7 +137,8 @@
     "name": "Moon Hyeong-seok",
     "role": "Bot",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -133,7 +147,8 @@
     "name": "Hu Jia-Le",
     "role": "Top",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "Taiwan",
     "fav_champs": [
         "LeBlanc",
@@ -143,7 +158,8 @@
     "name": "Chu Chun-Lan",
     "role": "Mid",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -152,7 +168,8 @@
     "name": "Zhao Li-Jie",
     "role": "Jungle",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -161,7 +178,8 @@
     "name": "Hu Hong-Chao",
     "role": "Bot",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -170,7 +188,8 @@
     "name": "Tian Ye",
     "role": "Support",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -179,7 +198,8 @@
     "name": "Wang Meng-Qi",
     "role": "Jungle",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Vayne",
@@ -191,7 +211,8 @@
     "name": "Jian Zi-Hao",
     "role": "Bot",
     "team": "EDward Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -200,7 +221,8 @@
     "name": "Lee Gwang-su",
     "role": "Jungle",
     "team": "FunPlus Phoenix"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -209,7 +231,8 @@
     "name": "Yang Jie",
     "role": "Mid",
     "team": "FunPlus Phoenix"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -218,7 +241,8 @@
     "name": "Yang Zhi-Hao",
     "role": "Jungle",
     "team": "FunPlus Phoenix"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Vayne",
@@ -229,7 +253,8 @@
     "name": "Lin Wei-Xiang",
     "role": "Bot",
     "team": "FunPlus Phoenix"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -238,7 +263,8 @@
     "name": "Zhang Ming",
     "role": "Support",
     "team": "FunPlus Phoenix"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -247,7 +273,8 @@
     "name": "Ping Xiao-Hu",
     "role": "Top",
     "team": "FunPlus Phoenix"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -256,7 +283,8 @@
     "name": "An Shan-Ye",
     "role": "Bot",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -265,7 +293,8 @@
     "name": "Yuan Cheng-Wei",
     "role": "Mid",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -274,7 +303,8 @@
     "name": "Kim Jae-yeon",
     "role": "Mid",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -283,7 +313,8 @@
     "name": "Zhao Zhi-Hao",
     "role": "Top",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Rengar"
@@ -292,7 +323,8 @@
     "name": "Guo Qi-Fan",
     "role": "Jungle",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -301,7 +333,8 @@
     "name": "Zhang Rui",
     "role": "Support",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -310,7 +343,8 @@
     "name": "Luo Shi-Hao",
     "role": "Bot",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "Hong Kong",
     "fav_champs": [
         "Fiora"
@@ -319,7 +353,8 @@
     "name": "Chau Shu Tak",
     "role": "Top",
     "team": "Invictus Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -328,7 +363,8 @@
     "name": "Bai Jia-Hao",
     "role": "Top",
     "team": "JD Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -337,7 +373,8 @@
     "name": "Seo Jin-hyeok",
     "role": "Jungle",
     "team": "JD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Qiyana",
@@ -350,7 +387,8 @@
     "name": "Zhuo Ding",
     "role": "Mid",
     "team": "JD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -359,7 +397,8 @@
     "name": "Lan Zi-Qi",
     "role": "Mid",
     "team": "JD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -368,7 +407,8 @@
     "name": "Lou Yun-Feng",
     "role": "Support",
     "team": "JD Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -377,7 +417,8 @@
     "name": "Park Jae-hyuk",
     "role": "Bot",
     "team": "JD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -386,7 +427,8 @@
     "name": "Zhang Hua-Xin",
     "role": "Top",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -395,7 +437,8 @@
     "name": "Lee Myeong-joon",
     "role": "Bot",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Fiora"
@@ -404,7 +447,8 @@
     "name": "Chen Guo-Ji",
     "role": "Top",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -413,7 +457,8 @@
     "name": "Zhang Hai-Chao",
     "role": "Mid",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -422,7 +467,8 @@
     "name": "Xie Jin-Shan",
     "role": "Support",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -431,7 +477,8 @@
     "name": "Huang Hao",
     "role": "Bot",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -440,7 +487,8 @@
     "name": "Zeng Guo-Hao",
     "role": "Jungle",
     "team": "LGD Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Kai'Sa"
@@ -449,7 +497,8 @@
     "name": "Chen Wei",
     "role": "Bot",
     "team": "LNG Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -458,7 +507,8 @@
     "name": "Fu Ming-Hang",
     "role": "Support",
     "team": "LNG Esports"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Kassadin",
@@ -470,7 +520,8 @@
     "name": "Lee Ye-chan",
     "role": "Mid",
     "team": "LNG Esports"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Lee Sin",
@@ -485,7 +536,8 @@
     "name": "Lee Seung-yong",
     "role": "Jungle",
     "team": "LNG Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -494,7 +546,8 @@
     "name": "Zhang Yue-Kai",
     "role": "Mid",
     "team": "LNG Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -503,7 +556,8 @@
     "name": "Tang Hua-Yu",
     "role": "Top",
     "team": "LNG Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Twitch",
@@ -515,7 +569,8 @@
     "name": "Dai Zhi-Chun",
     "role": "Bot",
     "team": "Oh My God"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -524,7 +579,8 @@
     "name": "Mao An",
     "role": "Jungle",
     "team": "Oh My God"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -533,7 +589,8 @@
     "name": "Lin Jian",
     "role": "Mid",
     "team": "Oh My God"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -542,7 +599,8 @@
     "name": "Zhou Ke-Xue",
     "role": "Support",
     "team": "Oh My God"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -551,7 +609,8 @@
     "name": "Guo Peng",
     "role": "Support",
     "team": "Oh My God"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -560,7 +619,8 @@
     "name": "Deng Zi-Jian",
     "role": "Top",
     "team": "Oh My God"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -569,7 +629,8 @@
     "name": "Zou Wei",
     "role": "Bot",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Rakan"
@@ -578,7 +639,8 @@
     "name": "Wang Liu-Yi",
     "role": "Support",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Rakan"
@@ -587,7 +649,8 @@
     "name": "Wang Tian-Ci-Fu",
     "role": "Support",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -596,7 +659,8 @@
     "name": "Lu Jue",
     "role": "Jungle",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -605,7 +669,8 @@
     "name": "Li Hao-Yan",
     "role": "Mid",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -614,7 +679,8 @@
     "name": "Chen Liang",
     "role": "Mid",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -623,7 +689,8 @@
     "name": "Xu Xing-Zu",
     "role": "Top",
     "team": "Rare Atom"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -632,7 +699,8 @@
     "name": "Dai Yi",
     "role": "Top",
     "team": "Team WE"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -641,7 +709,8 @@
     "name": "Wu Yue-Wei",
     "role": "Top",
     "team": "Team WE"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -650,7 +719,8 @@
     "name": "Yang Cui-Heng",
     "role": "Jungle",
     "team": "Team WE"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -659,7 +729,8 @@
     "name": "Wang Jie",
     "role": "Bot",
     "team": "Team WE"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Janna"
@@ -668,7 +739,8 @@
     "name": "Liao Ding-Yang",
     "role": "Support",
     "team": "Team WE"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -677,7 +749,8 @@
     "name": "Cui Xiao-Jun",
     "role": "Mid",
     "team": "Team WE"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Draven",
@@ -688,7 +761,8 @@
     "name": "Yu Wen-Bo",
     "role": "Bot",
     "team": "Top Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -697,7 +771,8 @@
     "name": "Ling Xu",
     "role": "Support",
     "team": "Top Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Sett"
@@ -706,7 +781,8 @@
     "name": "Yu Zi-Han",
     "role": "Top",
     "team": "Top Esports"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Syndra",
@@ -718,7 +794,8 @@
     "name": "Song Eui-jin",
     "role": "Mid",
     "team": "Top Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -727,7 +804,8 @@
     "name": "Gao Tian-Liang",
     "role": "Jungle",
     "team": "Top Esports"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -736,7 +814,8 @@
     "name": "Huang Ren-Xing",
     "role": "Top",
     "team": "Top Esports"
-}{
+},
+{
     "country": "Taiwan",
     "fav_champs": [
         "Kai'Sa"
@@ -745,7 +824,8 @@
     "name": "Chiu Tzu-Chuan",
     "role": "Bot",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -754,7 +834,8 @@
     "name": "Deng Jie",
     "role": "Mid",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -763,7 +844,8 @@
     "name": "Wang He-Yong",
     "role": "Top",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -772,7 +854,8 @@
     "name": "Cai Xiong-Zhi",
     "role": "Jungle",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Kayn",
@@ -784,7 +867,8 @@
     "name": "Gao Zhen-Ning",
     "role": "Jungle",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "Taiwan",
     "fav_champs": [
         "Cassiopeia",
@@ -794,7 +878,8 @@
     "name": "Hu Shuo-Chieh",
     "role": "Support",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -803,7 +888,8 @@
     "name": "Zhang Shuai",
     "role": "Top",
     "team": "Ultra Prime"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -812,7 +898,8 @@
     "name": "Liu Qing-Song",
     "role": "Support",
     "team": "Weibo Gaming"
-}{
+},
+{
     "country": "Taiwan",
     "fav_champs": [
         "Lee Sin",
@@ -822,7 +909,8 @@
     "name": "Hung Hao-Hsuan",
     "role": "Jungle",
     "team": "Weibo Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -831,7 +919,8 @@
     "name": "Wang Guang-Yu",
     "role": "Bot",
     "team": "Weibo Gaming"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Rumble",
@@ -843,7 +932,8 @@
     "name": "Kang Seung-lok",
     "role": "Top",
     "team": "Weibo Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -852,7 +942,8 @@
     "name": "Wei Bo-Han",
     "role": "Jungle",
     "team": "Weibo Gaming"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Ryze",
@@ -863,4 +954,4 @@
     "name": "Li Yuan-Hao",
     "role": "Mid",
     "team": "Weibo Gaming"
-}
+}]

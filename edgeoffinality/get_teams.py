@@ -1,5 +1,5 @@
-def getLecTeams():
-    LEC_teams = [
+def get_lec_teams():
+    lec_teams = [
     "G2 Esports",
     "Fnatic",
     "Team BDS",
@@ -11,10 +11,10 @@ def getLecTeams():
     "MAD Lions",
     "SK Gaming"
     ]
-    return LEC_teams
+    return lec_teams
 
-def getLcsTeams():
-    LCS_teams = [
+def get_lcs_teams():
+    lcs_teams = [
         "100 Theives",
         "Cloud9",
         "Dignitas",
@@ -26,10 +26,10 @@ def getLcsTeams():
         "Team Liquid",
         "TSM"
     ]
-    return LCS_teams
+    return lcs_teams
 
-def getLckTeams():
-    LCK_teams = [
+def get_lck_teams():
+    lck_teams = [
         "Dplus KIA",
         "DRX",
         "Gen.G",
@@ -41,10 +41,10 @@ def getLckTeams():
         "OK BRION",
         "T1"
     ]
-    return LCK_teams
+    return lck_teams
 
-def getLplTeams():
-    Lpl_teams = [
+def get_lpl_teams():
+    lpl_teams = [
         "Anyone's Legend",
         "Bilibili Gaming",
         "EDward Gaming",
@@ -63,6 +63,6 @@ def getLplTeams():
         "Ultra Prime",
         "Weibo Gaming"
     ]
-    return Lpl_teams
+    return lpl_teams
 
 

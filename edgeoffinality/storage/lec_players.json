@@ -1,4 +1,4 @@
-{
+[{
     "country": "Germany",
     "fav_champs": [
         "Riven",
@@ -9,7 +9,8 @@
     "name": "Sergen \u00c7elik",
     "role": "Top",
     "team": "G2 Esports"
-}{
+},
+{
     "country": "Denmark",
     "fav_champs": [
         "Ryze",
@@ -22,7 +23,8 @@
     "name": "Rasmus Borregaard Winther",
     "role": "Mid",
     "team": "G2 Esports"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Draven",
@@ -34,7 +36,8 @@
     "name": "Steven Liv",
     "role": "Bot",
     "team": "G2 Esports"
-}{
+},
+{
     "country": "Slovenia",
     "fav_champs": [
         "Gragas",
@@ -45,7 +48,8 @@
     "name": "Mihael Mehle",
     "role": "Support",
     "team": "G2 Esports"
-}{
+},
+{
     "country": "Sweden",
     "fav_champs": [
         "Viego"
@@ -54,7 +58,8 @@
     "name": "Martin Sundelin",
     "role": "Jungle",
     "team": "G2 Esports"
-}{
+},
+{
     "country": "Czech Republic",
     "fav_champs": [
         "Azir",
@@ -66,7 +71,8 @@
     "name": "Marek Br\u00e1zda",
     "role": "Mid",
     "team": "Fnatic"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Ezreal"
@@ -75,7 +81,8 @@
     "name": "Oh Hyeon-taek",
     "role": "Bot",
     "team": "Fnatic"
-}{
+},
+{
     "country": "Spain",
     "fav_champs": [
         "Camille"
@@ -84,7 +91,8 @@
     "name": "\u00d3scar Mu\u00f1oz Jim\u00e9nez",
     "role": "Top",
     "team": "Fnatic"
-}{
+},
+{
     "country": "Spain",
     "fav_champs": [
         "Lee Sin",
@@ -96,7 +104,8 @@
     "name": "Iv\u00e1n Mart\u00edn D\u00edaz",
     "role": "Jungle",
     "team": "Fnatic"
-}{
+},
+{
     "country": "Spain",
     "fav_champs": [
         "Rakan",
@@ -108,7 +117,8 @@
     "name": "Adrian Trybus",
     "role": "Support",
     "team": "Fnatic"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Darius",
@@ -120,7 +130,8 @@
     "name": "Adam Maanane",
     "role": "Top",
     "team": "Team BDS"
-}{
+},
+{
     "country": "Poland",
     "fav_champs": [
         "Irelia",
@@ -131,7 +142,8 @@
     "name": "Tobiasz Ciba",
     "role": "Top",
     "team": "Team BDS"
-}{
+},
+{
     "country": "Slovenia",
     "fav_champs": [
         "Ashe",
@@ -143,7 +155,8 @@
     "name": "Ju\u0161 Maru\u0161i\u010d",
     "role": "Bot",
     "team": "Team BDS"
-}{
+},
+{
     "country": "Greece",
     "fav_champs": [
         "Thresh",
@@ -155,7 +168,8 @@
     "name": "Labros Papoutsakis",
     "role": "Support",
     "team": "Team BDS"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Sylas"
@@ -164,7 +178,8 @@
     "name": "Ilias Bizriken",
     "role": "Mid",
     "team": "Team BDS"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Ekko"
@@ -173,7 +188,8 @@
     "name": "Th\u00e9o Borile",
     "role": "Jungle",
     "team": "Team BDS"
-}{
+},
+{
     "country": "Japan",
     "fav_champs": [
         "Camille",
@@ -187,7 +203,8 @@
     "name": "Shunsuke Murase",
     "role": "Top",
     "team": "Team Heretics"
-}{
+},
+{
     "country": "Spain",
     "fav_champs": [
         "Varus",
@@ -197,7 +214,8 @@
     "name": "Victor Lirola Tortosa",
     "role": "Bot",
     "team": "Team Heretics"
-}{
+},
+{
     "country": "Poland",
     "fav_champs": [
         "Lee Sin",
@@ -210,7 +228,8 @@
     "name": "Marcin Jankowski",
     "role": "Jungle",
     "team": "Team Heretics"
-}{
+},
+{
     "country": "Greece",
     "fav_champs": [
         "Thresh"
@@ -219,7 +238,8 @@
     "name": "Mertai Sari",
     "role": "Support",
     "team": "Team Heretics"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Zoe",
@@ -230,7 +250,8 @@
     "name": "Vincent Berri\u00e9",
     "role": "Mid",
     "team": "Team Heretics"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "None"
@@ -239,7 +260,8 @@
     "name": "Zhou Yang-Bo",
     "role": "Jungle",
     "team": "Team Vitality"
-}{
+},
+{
     "country": "Germany",
     "fav_champs": [
         "Rakan"
@@ -248,7 +270,8 @@
     "name": "Norman Kaiser",
     "role": "Support",
     "team": "Team Vitality"
-}{
+},
+{
     "country": "Croatia",
     "fav_champs": [
         "Lucian",
@@ -259,7 +282,8 @@
     "name": "Luka Perkovi\u0107",
     "role": "Mid",
     "team": "Team Vitality"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Akshan"
@@ -268,7 +292,8 @@
     "name": "Kyeong Gyu-tae",
     "role": "Top",
     "team": "Team Vitality"
-}{
+},
+{
     "country": "Poland",
     "fav_champs": [
         "Nidalee",
@@ -280,7 +305,8 @@
     "name": "Oskar Boderek",
     "role": "Jungle",
     "team": "Team Vitality"
-}{
+},
+{
     "country": "Germany",
     "fav_champs": [
         "Jhin",
@@ -291,7 +317,8 @@
     "name": "Elias Lipp",
     "role": "Bot",
     "team": "Team Vitality"
-}{
+},
+{
     "country": "Turkey",
     "fav_champs": [
         "Lillia",
@@ -302,7 +329,8 @@
     "name": "Do\u011fukan Balc\u0131",
     "role": "Jungle",
     "team": "Astralis"
-}{
+},
+{
     "country": "Sweden",
     "fav_champs": [
         "Irelia",
@@ -312,7 +340,8 @@
     "name": "Finn Wiest\u00e5l",
     "role": "Top",
     "team": "Astralis"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Pyke"
@@ -321,7 +350,8 @@
     "name": "Lee Jeong-hoon",
     "role": "Support",
     "team": "Astralis"
-}{
+},
+{
     "country": "Denmark",
     "fav_champs": [
         "Xayah",
@@ -331,7 +361,8 @@
     "name": "Kasper Kobberup",
     "role": "Bot",
     "team": "Astralis"
-}{
+},
+{
     "country": "Norway",
     "fav_champs": [
         "Ryze",
@@ -344,7 +375,8 @@
     "name": "Adam Ilyasov",
     "role": "Mid",
     "team": "Astralis"
-}{
+},
+{
     "country": "Bulgaria",
     "fav_champs": [
         "Kalista",
@@ -355,7 +387,8 @@
     "name": "Alexander Kostadinov",
     "role": "Support",
     "team": "Astralis"
-}{
+},
+{
     "country": "Czech Republic",
     "fav_champs": [
         "Jhin",
@@ -366,7 +399,8 @@
     "name": "Maty\u00e1\u0161 Ors\u00e1g",
     "role": "Bot",
     "team": "MAD Lions"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -375,7 +409,8 @@
     "name": "Kim Dong-hyeon",
     "role": "Top",
     "team": "MAD Lions"
-}{
+},
+{
     "country": "Spain",
     "fav_champs": [
         "Qiyana",
@@ -386,7 +421,8 @@
     "name": "Javier Prades Batalla",
     "role": "Jungle",
     "team": "MAD Lions"
-}{
+},
+{
     "country": "Bulgaria",
     "fav_champs": [
         "Thresh",
@@ -398,7 +434,8 @@
     "name": "Zdravets Iliev Galabov",
     "role": "Support",
     "team": "MAD Lions"
-}{
+},
+{
     "country": "Belgium",
     "fav_champs": [
         "Orianna",
@@ -411,7 +448,8 @@
     "name": "Yasin Din\u00e7er",
     "role": "Mid",
     "team": "MAD Lions"
-}{
+},
+{
     "country": "Denmark",
     "fav_champs": [
         "Alistar",
@@ -422,7 +460,8 @@
     "name": "Mads Schwartz",
     "role": "Support",
     "team": "SK Gaming"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Draven",
@@ -432,7 +471,8 @@
     "name": "Thomas Foucou",
     "role": "Bot",
     "team": "SK Gaming"
-}{
+},
+{
     "country": "Germany",
     "fav_champs": [
         "Elise",
@@ -444,7 +484,8 @@
     "name": "Erberk Demir",
     "role": "Jungle",
     "team": "SK Gaming"
-}{
+},
+{
     "country": "Germany",
     "fav_champs": [
         "None"
@@ -453,7 +494,8 @@
     "name": "Joel Miro Scharoll",
     "role": "Top",
     "team": "SK Gaming"
-}{
+},
+{
     "country": "Netherlands",
     "fav_champs": [
         "Nidalee",
@@ -464,7 +506,8 @@
     "name": "Mark van Woensel",
     "role": "Jungle",
     "team": "SK Gaming"
-}{
+},
+{
     "country": "Germany",
     "fav_champs": [
         "LeBlanc",
@@ -476,4 +519,4 @@
     "name": "Daniel Gamani",
     "role": "Mid",
     "team": "SK Gaming"
-}
+}]

@@ -1,4 +1,4 @@
-{
+[{
     "country": "South Korea",
     "fav_champs": [
         "Zeri"
@@ -7,7 +7,8 @@
     "name": "Kim Min-cheol",
     "role": "Bot",
     "team": "Cloud9"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Kindred",
@@ -19,7 +20,8 @@
     "name": "Robert Huang",
     "role": "Jungle",
     "team": "Cloud9"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -28,7 +30,8 @@
     "name": "Jang Min-soo",
     "role": "Mid",
     "team": "Cloud9"
-}{
+},
+{
     "country": "Australia",
     "fav_champs": [
         "Akali",
@@ -39,7 +42,8 @@
     "name": "Ibrahim Allami",
     "role": "Top",
     "team": "Cloud9"
-}{
+},
+{
     "country": "Denmark",
     "fav_champs": [
         "Kalista",
@@ -52,7 +56,8 @@
     "name": "Jesper Svenningsen",
     "role": "Support",
     "team": "Cloud9"
-}{
+},
+{
     "country": "Canada",
     "fav_champs": [
         "Ezreal",
@@ -64,7 +69,8 @@
     "name": "David B\u00e9rub\u00e9",
     "role": "Support",
     "team": "Dignitas"
-}{
+},
+{
     "country": "Denmark",
     "fav_champs": [
         "Zed",
@@ -76,7 +82,8 @@
     "name": "Nicolaj Jensen",
     "role": "Mid",
     "team": "Dignitas"
-}{
+},
+{
     "country": "Sweden",
     "fav_champs": [
         "None"
@@ -85,7 +92,8 @@
     "name": "Vilhelm Flennmark",
     "role": "Bot",
     "team": "Dignitas"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Aatrox"
@@ -94,7 +102,8 @@
     "name": "Lee Jae-won",
     "role": "Top",
     "team": "Dignitas"
-}{
+},
+{
     "country": "Denmark",
     "fav_champs": [
         "Lee Sin",
@@ -104,7 +113,8 @@
     "name": "Lucas Tao Kilmer Larsen",
     "role": "Jungle",
     "team": "Dignitas"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "None"
@@ -113,7 +123,8 @@
     "name": "Frank Lam",
     "role": "Bot",
     "team": "Dignitas"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Jayce",
@@ -125,7 +136,8 @@
     "name": "Jeong Eon-young",
     "role": "Top",
     "team": "FlyQuest"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -134,7 +146,8 @@
     "name": "Lee Chae-hwan",
     "role": "Bot",
     "team": "FlyQuest"
-}{
+},
+{
     "country": "China",
     "fav_champs": [
         "Graves",
@@ -145,7 +158,8 @@
     "name": "Mingyi Lu",
     "role": "Jungle",
     "team": "FlyQuest"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -154,7 +168,8 @@
     "name": "Lee Dae-kwang",
     "role": "Mid",
     "team": "FlyQuest"
-}{
+},
+{
     "country": "Canada",
     "fav_champs": [
         "Thresh"
@@ -163,7 +178,8 @@
     "name": "Philippe Laflamme",
     "role": "Support",
     "team": "FlyQuest"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "None"
@@ -172,7 +188,8 @@
     "name": "Jackson Moldenhauer",
     "role": "Bot",
     "team": "Golden Guardians"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -181,7 +198,8 @@
     "name": "Kim Tae-woo",
     "role": "Mid",
     "team": "Golden Guardians"
-}{
+},
+{
     "country": "France",
     "fav_champs": [
         "Yasuo",
@@ -192,7 +210,8 @@
     "name": "Choi Jae-hyun",
     "role": "Support",
     "team": "Golden Guardians"
-}{
+},
+{
     "country": "Canada",
     "fav_champs": [
         "Fiora",
@@ -202,7 +221,8 @@
     "name": "Eric Ritchie",
     "role": "Top",
     "team": "Golden Guardians"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Elise",
@@ -212,7 +232,8 @@
     "name": "Kim Dong-woo",
     "role": "Jungle",
     "team": "Golden Guardians"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Tristana",
@@ -224,7 +245,8 @@
     "name": "Trevor Hayes",
     "role": "Bot",
     "team": "Golden Guardians"
-}{
+},
+{
     "country": "Sweden",
     "fav_champs": [
         "Vel'Koz",
@@ -235,7 +257,8 @@
     "name": "Onur&amp;nbsp;Can Demirol",
     "role": "Mid",
     "team": "Immortals"
-}{
+},
+{
     "country": "Philippines",
     "fav_champs": [
         "Graves"
@@ -244,7 +267,8 @@
     "name": "Shane&amp;nbsp;Kenneth Espinoza",
     "role": "Jungle",
     "team": "Immortals"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Ryze",
@@ -255,7 +279,8 @@
     "name": "Colin Earnest",
     "role": "Top",
     "team": "Immortals"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Jhin"
@@ -264,7 +289,8 @@
     "name": "Edward Ra",
     "role": "Bot",
     "team": "Immortals"
-}{
+},
+{
     "country": "Sweden",
     "fav_champs": [
         "Lee Sin",
@@ -275,7 +301,8 @@
     "name": "Erik Wess\u00e9n",
     "role": "Support",
     "team": "Immortals"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Nidalee",
@@ -285,7 +312,8 @@
     "name": "Juan&amp;nbsp;Arturo Garcia",
     "role": "Jungle",
     "team": "NRG"
-}{
+},
+{
     "country": "India",
     "fav_champs": [
         "Yone"
@@ -294,7 +322,8 @@
     "name": "Niship Doshi",
     "role": "Top",
     "team": "NRG"
-}{
+},
+{
     "country": "Australia",
     "fav_champs": [
         "Jhin",
@@ -304,7 +333,8 @@
     "name": "Ian&amp;nbsp;Victor Huang",
     "role": "Bot",
     "team": "NRG"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Rakan",
@@ -314,7 +344,8 @@
     "name": "Lee Dong-geun",
     "role": "Support",
     "team": "NRG"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Orianna",
@@ -324,7 +355,8 @@
     "name": "Cristian Palafox",
     "role": "Mid",
     "team": "NRG"
-}{
+},
+{
     "country": "Canada",
     "fav_champs": [
         "None"
@@ -333,7 +365,8 @@
     "name": "Philippe Lavoie-Giguere",
     "role": "Support",
     "team": "NRG"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Zyra"
@@ -342,7 +375,8 @@
     "name": "Jo Yong-in",
     "role": "Support",
     "team": "Team Liquid"
-}{
+},
+{
     "country": "Australia",
     "fav_champs": [
         "None"
@@ -351,7 +385,8 @@
     "name": "Harry Kang",
     "role": "Mid",
     "team": "Team Liquid"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Kindred"
@@ -360,7 +395,8 @@
     "name": "Hong Chang-hyeon",
     "role": "Jungle",
     "team": "Team Liquid"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -369,7 +405,8 @@
     "name": "Park Woo-tae",
     "role": "Top",
     "team": "Team Liquid"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "None"
@@ -378,7 +415,8 @@
     "name": "Sean Sung",
     "role": "Bot",
     "team": "Team Liquid"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Evelynn"
@@ -387,7 +425,8 @@
     "name": "Lee Seong-yeop",
     "role": "Jungle",
     "team": "TSM"
-}{
+},
+{
     "country": "Canada",
     "fav_champs": [
         "Bard",
@@ -397,7 +436,8 @@
     "name": "Jonathan Pomponio",
     "role": "Support",
     "team": "TSM"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "Zed",
@@ -409,7 +449,8 @@
     "name": "Kevin Yarnell",
     "role": "Top",
     "team": "TSM"
-}{
+},
+{
     "country": "United States",
     "fav_champs": [
         "None"
@@ -418,7 +459,8 @@
     "name": "David Challe",
     "role": "Mid",
     "team": "TSM"
-}{
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "None"
@@ -427,7 +469,8 @@
     "name": "Lee Sol-min",
     "role": "Mid",
     "team": "TSM"
-}{
+},
+{
     "country": "Canada",
     "fav_champs": [
         "Lee Sin",
@@ -439,4 +482,4 @@
     "name": "Jason Tran",
     "role": "Bot",
     "team": "TSM"
-}
+}]

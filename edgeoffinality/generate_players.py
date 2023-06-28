@@ -1,24 +1,13 @@
 from mwrogue.esports_client import EsportsClient
-from PlayerClass import Player
-import getTeams as getTeams
+from player_class import Player
+import get_teams as get_teams
 
-def generatePlayers(region):
-    if region == 'lec':
-        teams = getTeams.getLecTeams()
-    elif region == 'lcs':
-        teams = getTeams.getLcsTeams()
-    elif region == "lck":
-        teams = getTeams.getLckTeams()
-    elif region == "lpl":
-        teams = getTeams.getLplTeams()
-    else:
-        return "Unknown Region"
+def generate_players(teams, region):
 
     site = EsportsClient("lol")
     response = []
 
     for team in teams:
-        print(team)
         results = site.cargo_client.query(
             tables="Players",
             fields="ID, Name, Team, Role, Country, FavChamps",
@@ -29,12 +18,16 @@ def generatePlayers(region):
             response.append(Player(i['ID'], i['Name'], i['Role'], i['Team'], i['Country'], str(i['FavChamps']).split(',')).toJSON())
 
     with open('storage/{}_players.json'.format(region), 'w') as output:
-        for player in response:
-            output.write(player)
+        output.write('[')
+        for i in range(len(response)):
+            output.write(response[i])
+            if i != len(response)-1:
+                output.write(',\n')
+        output.write(']')
     
     return "success"
 
-generatePlayers('lec')
-generatePlayers('lcs')
-generatePlayers('lck')
-generatePlayers('lpl')
+generate_players(get_teams.get_lec_teams(), 'lec')
+generate_players(get_teams.get_lcs_teams(), 'lcs')
+generate_players(get_teams.get_lck_teams(), 'lck')
+generate_players(get_teams.get_lpl_teams(), 'lpl')
