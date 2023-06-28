@@ -4,9 +4,9 @@ lolprodle API server - serves the backbone of lolprodle.com
 
 ## Models
 
-- Region = Lcs = 0 | Lec = 1 | Lck = 2 | Lpl = 3
-- GuessCategory = Name | Position | From | FavoriteChamp | Titles
-- GuessResult = Correct | Incorrect
+- Region = `Lcs = 0` | `Lec = 1` | `Lck = 2` | `Lpl = 3`
+- GuessCategory = `Name` | `Position` | `From` | `FavoriteChamps` | `Team`
+- GuessResult = `Correct` | `Incorrect`
 - PlayerGuessCategory(category: GuessCategory, result: GuessResult, guess: String)
 - PlayerGuess([PlayerGuessCategory])
 
@@ -26,7 +26,7 @@ JSON payload:
 #### Returns
 
 JSON payload: 
-```json
+```
 PlayerGuess
 ```
 
@@ -49,7 +49,7 @@ Get all player names for a region. The frontend uses this for name auto completi
 
 JSON payload: 
 ```json
-["name1", "name2", ...]
+["name1", "name2", "..."]
 ```
 
 ### GET: /previous_player?region=number
