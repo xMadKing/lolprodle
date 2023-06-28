@@ -1,5 +1,5 @@
 from mwrogue.esports_client import EsportsClient
-from player_class import Player
+from player import Player
 import get_teams as get_teams
 
 def generate_players(teams, region):
