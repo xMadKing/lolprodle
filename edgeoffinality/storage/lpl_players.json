@@ -1,0 +1,866 @@
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Harder",
+    "name": "Zhou Shi-Hao",
+    "role": "Mid",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "iBoy",
+    "name": "Hu Xian-Zhao",
+    "role": "Bot",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "pinz",
+    "name": "Lin Li-Pin",
+    "role": "Mid",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Xiaohao",
+    "name": "Peng Hao",
+    "role": "Jungle",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Zdz",
+    "name": "Zhu De-Zhang",
+    "role": "Top",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "zhiqiuyi",
+    "name": "Chen Yu-Ji",
+    "role": "Bot",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Zorah",
+    "name": "Yang Chong-Jiang",
+    "role": "Support",
+    "team": "Anyone's Legend"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Baiye",
+    "name": "Liu Wen-Xue",
+    "role": "Bot",
+    "team": "Bilibili Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Bin",
+    "name": "Chen Ze-Bin",
+    "role": "Top",
+    "team": "Bilibili Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Elk",
+    "name": "Zhao Jia-Hao",
+    "role": "Bot",
+    "team": "Bilibili Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "ON",
+    "name": "Luo Wen-Jun",
+    "role": "Support",
+    "team": "Bilibili Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "XUN",
+    "name": "Peng Li-Xun",
+    "role": "Jungle",
+    "team": "Bilibili Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Yagao",
+    "name": "Zeng Qi",
+    "role": "Mid",
+    "team": "Bilibili Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "About",
+    "name": "Moon Hyeong-seok",
+    "role": "Bot",
+    "team": "EDward Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Ale",
+    "name": "Hu Jia-Le",
+    "role": "Top",
+    "team": "EDward Gaming"
+}{
+    "country": "Taiwan",
+    "fav_champs": [
+        "LeBlanc",
+        "Zoe"
+    ],
+    "id": "FoFo",
+    "name": "Chu Chun-Lan",
+    "role": "Mid",
+    "team": "EDward Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Jiejie",
+    "name": "Zhao Li-Jie",
+    "role": "Jungle",
+    "team": "EDward Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Leave",
+    "name": "Hu Hong-Chao",
+    "role": "Bot",
+    "team": "EDward Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Meiko",
+    "name": "Tian Ye",
+    "role": "Support",
+    "team": "EDward Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Monki",
+    "name": "Wang Meng-Qi",
+    "role": "Jungle",
+    "team": "EDward Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Vayne",
+        "Lucian",
+        "Kai'Sa",
+        "Xayah"
+    ],
+    "id": "Uzi",
+    "name": "Jian Zi-Hao",
+    "role": "Bot",
+    "team": "EDward Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Bonnie",
+    "name": "Lee Gwang-su",
+    "role": "Jungle",
+    "team": "FunPlus Phoenix"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Care",
+    "name": "Yang Jie",
+    "role": "Mid",
+    "team": "FunPlus Phoenix"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "H4cker",
+    "name": "Yang Zhi-Hao",
+    "role": "Jungle",
+    "team": "FunPlus Phoenix"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Vayne",
+        "Kai'Sa",
+        "Miss Fortune"
+    ],
+    "id": "Lwx",
+    "name": "Lin Wei-Xiang",
+    "role": "Bot",
+    "team": "FunPlus Phoenix"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "QiuQiu",
+    "name": "Zhang Ming",
+    "role": "Support",
+    "team": "FunPlus Phoenix"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Xiaolaohu",
+    "name": "Ping Xiao-Hu",
+    "role": "Top",
+    "team": "FunPlus Phoenix"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Ahn",
+    "name": "An Shan-Ye",
+    "role": "Bot",
+    "team": "Invictus Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Cryin",
+    "name": "Yuan Cheng-Wei",
+    "role": "Mid",
+    "team": "Invictus Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Dove",
+    "name": "Kim Jae-yeon",
+    "role": "Mid",
+    "team": "Invictus Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "neny",
+    "name": "Zhao Zhi-Hao",
+    "role": "Top",
+    "team": "Invictus Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Rengar"
+    ],
+    "id": "Tianzhen",
+    "name": "Guo Qi-Fan",
+    "role": "Jungle",
+    "team": "Invictus Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Wink",
+    "name": "Zhang Rui",
+    "role": "Support",
+    "team": "Invictus Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "xiaoyueji",
+    "name": "Luo Shi-Hao",
+    "role": "Bot",
+    "team": "Invictus Gaming"
+}{
+    "country": "Hong Kong",
+    "fav_champs": [
+        "Fiora"
+    ],
+    "id": "YSKM",
+    "name": "Chau Shu Tak",
+    "role": "Top",
+    "team": "Invictus Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "369",
+    "name": "Bai Jia-Hao",
+    "role": "Top",
+    "team": "JD Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Kanavi",
+    "name": "Seo Jin-hyeok",
+    "role": "Jungle",
+    "team": "JD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Qiyana",
+        "Ekko",
+        "Ryze",
+        "Akali",
+        "Irelia"
+    ],
+    "id": "knight",
+    "name": "Zhuo Ding",
+    "role": "Mid",
+    "team": "JD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Lzq",
+    "name": "Lan Zi-Qi",
+    "role": "Mid",
+    "team": "JD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Missing",
+    "name": "Lou Yun-Feng",
+    "role": "Support",
+    "team": "JD Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Ruler",
+    "name": "Park Jae-hyuk",
+    "role": "Bot",
+    "team": "JD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Decade",
+    "name": "Zhang Hua-Xin",
+    "role": "Top",
+    "team": "LGD Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Envyy",
+    "name": "Lee Myeong-joon",
+    "role": "Bot",
+    "team": "LGD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Fiora"
+    ],
+    "id": "fearness",
+    "name": "Chen Guo-Ji",
+    "role": "Top",
+    "team": "LGD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "haichao",
+    "name": "Zhang Hai-Chao",
+    "role": "Mid",
+    "team": "LGD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Jinjiao",
+    "name": "Xie Jin-Shan",
+    "role": "Support",
+    "team": "LGD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Lpc",
+    "name": "Huang Hao",
+    "role": "Bot",
+    "team": "LGD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Meteor",
+    "name": "Zeng Guo-Hao",
+    "role": "Jungle",
+    "team": "LGD Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Kai'Sa"
+    ],
+    "id": "GALA",
+    "name": "Chen Wei",
+    "role": "Bot",
+    "team": "LNG Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Hang",
+    "name": "Fu Ming-Hang",
+    "role": "Support",
+    "team": "LNG Esports"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Kassadin",
+        "Zed",
+        "LeBlanc",
+        "Lulu"
+    ],
+    "id": "Scout",
+    "name": "Lee Ye-chan",
+    "role": "Mid",
+    "team": "LNG Esports"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Lee Sin",
+        "Camille",
+        "Graves",
+        "Taliyah",
+        "Gragas",
+        "Trundle",
+        "Nocturne"
+    ],
+    "id": "Tarzan",
+    "name": "Lee Seung-yong",
+    "role": "Jungle",
+    "team": "LNG Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Yuekai",
+    "name": "Zhang Yue-Kai",
+    "role": "Mid",
+    "team": "LNG Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Zika",
+    "name": "Tang Hua-Yu",
+    "role": "Top",
+    "team": "LNG Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Twitch",
+        "Kog'Maw",
+        "Kai'Sa",
+        "Ezreal"
+    ],
+    "id": "Able",
+    "name": "Dai Zhi-Chun",
+    "role": "Bot",
+    "team": "Oh My God"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Aki",
+    "name": "Mao An",
+    "role": "Jungle",
+    "team": "Oh My God"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Creme",
+    "name": "Lin Jian",
+    "role": "Mid",
+    "team": "Oh My God"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Jerry",
+    "name": "Zhou Ke-Xue",
+    "role": "Support",
+    "team": "Oh My God"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "ppgod",
+    "name": "Guo Peng",
+    "role": "Support",
+    "team": "Oh My God"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "shanji",
+    "name": "Deng Zi-Jian",
+    "role": "Top",
+    "team": "Oh My God"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Assum",
+    "name": "Zou Wei",
+    "role": "Bot",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Rakan"
+    ],
+    "id": "Baolan",
+    "name": "Wang Liu-Yi",
+    "role": "Support",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Rakan"
+    ],
+    "id": "Feather",
+    "name": "Wang Tian-Ci-Fu",
+    "role": "Support",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Leyan",
+    "name": "Lu Jue",
+    "role": "Jungle",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Mole",
+    "name": "Li Hao-Yan",
+    "role": "Mid",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Strive",
+    "name": "Chen Liang",
+    "role": "Mid",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Xiaoxu",
+    "name": "Xu Xing-Zu",
+    "role": "Top",
+    "team": "Rare Atom"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Cube",
+    "name": "Dai Yi",
+    "role": "Top",
+    "team": "Team WE"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Demon",
+    "name": "Wu Yue-Wei",
+    "role": "Top",
+    "team": "Team WE"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Heng",
+    "name": "Yang Cui-Heng",
+    "role": "Jungle",
+    "team": "Team WE"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Hope",
+    "name": "Wang Jie",
+    "role": "Bot",
+    "team": "Team WE"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Janna"
+    ],
+    "id": "Iwandy",
+    "name": "Liao Ding-Yang",
+    "role": "Support",
+    "team": "Team WE"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Shanks",
+    "name": "Cui Xiao-Jun",
+    "role": "Mid",
+    "team": "Team WE"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Draven",
+        "Kai'Sa",
+        "Xayah"
+    ],
+    "id": "JackeyLove",
+    "name": "Yu Wen-Bo",
+    "role": "Bot",
+    "team": "Top Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Mark",
+    "name": "Ling Xu",
+    "role": "Support",
+    "team": "Top Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Sett"
+    ],
+    "id": "Qingtian",
+    "name": "Yu Zi-Han",
+    "role": "Top",
+    "team": "Top Esports"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Syndra",
+        "Orianna",
+        "Ryze",
+        "LeBlanc"
+    ],
+    "id": "Rookie",
+    "name": "Song Eui-jin",
+    "role": "Mid",
+    "team": "Top Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Tian",
+    "name": "Gao Tian-Liang",
+    "role": "Jungle",
+    "team": "Top Esports"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Wayward",
+    "name": "Huang Ren-Xing",
+    "role": "Top",
+    "team": "Top Esports"
+}{
+    "country": "Taiwan",
+    "fav_champs": [
+        "Kai'Sa"
+    ],
+    "id": "Doggo",
+    "name": "Chiu Tzu-Chuan",
+    "role": "Bot",
+    "team": "Ultra Prime"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Forge",
+    "name": "Deng Jie",
+    "role": "Mid",
+    "team": "Ultra Prime"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Hery",
+    "name": "Wang He-Yong",
+    "role": "Top",
+    "team": "Ultra Prime"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Hook",
+    "name": "Cai Xiong-Zhi",
+    "role": "Jungle",
+    "team": "Ultra Prime"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Kayn",
+        "Camille",
+        "Zac",
+        "Lee Sin"
+    ],
+    "id": "Ning",
+    "name": "Gao Zhen-Ning",
+    "role": "Jungle",
+    "team": "Ultra Prime"
+}{
+    "country": "Taiwan",
+    "fav_champs": [
+        "Cassiopeia",
+        "Kassadin"
+    ],
+    "id": "SwordArt",
+    "name": "Hu Shuo-Chieh",
+    "role": "Support",
+    "team": "Ultra Prime"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "zs",
+    "name": "Zhang Shuai",
+    "role": "Top",
+    "team": "Ultra Prime"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Crisp",
+    "name": "Liu Qing-Song",
+    "role": "Support",
+    "team": "Weibo Gaming"
+}{
+    "country": "Taiwan",
+    "fav_champs": [
+        "Lee Sin",
+        "Kindred"
+    ],
+    "id": "Karsa",
+    "name": "Hung Hao-Hsuan",
+    "role": "Jungle",
+    "team": "Weibo Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Light",
+    "name": "Wang Guang-Yu",
+    "role": "Bot",
+    "team": "Weibo Gaming"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Rumble",
+        "Renekton",
+        "Riven",
+        "Jayce"
+    ],
+    "id": "TheShy",
+    "name": "Kang Seung-lok",
+    "role": "Top",
+    "team": "Weibo Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Weiwei",
+    "name": "Wei Bo-Han",
+    "role": "Jungle",
+    "team": "Weibo Gaming"
+}{
+    "country": "China",
+    "fav_champs": [
+        "Ryze",
+        "Corki",
+        "LeBlanc"
+    ],
+    "id": "Xiaohu",
+    "name": "Li Yuan-Hao",
+    "role": "Mid",
+    "team": "Weibo Gaming"
+}
