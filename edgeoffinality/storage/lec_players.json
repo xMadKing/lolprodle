@@ -1,0 +1,479 @@
+{
+    "country": "Germany",
+    "fav_champs": [
+        "Riven",
+        "Irelia",
+        "Camille"
+    ],
+    "id": "BrokenBlade",
+    "name": "Sergen \u00c7elik",
+    "role": "Top",
+    "team": "G2 Esports"
+}{
+    "country": "Denmark",
+    "fav_champs": [
+        "Ryze",
+        "Yasuo",
+        "Zoe",
+        "Aurelion Sol",
+        "LeBlanc"
+    ],
+    "id": "Caps",
+    "name": "Rasmus Borregaard Winther",
+    "role": "Mid",
+    "team": "G2 Esports"
+}{
+    "country": "France",
+    "fav_champs": [
+        "Draven",
+        "Xayah",
+        "Kalista",
+        "Lucian"
+    ],
+    "id": "Hans Sama",
+    "name": "Steven Liv",
+    "role": "Bot",
+    "team": "G2 Esports"
+}{
+    "country": "Slovenia",
+    "fav_champs": [
+        "Gragas",
+        "Rakan",
+        "Bard"
+    ],
+    "id": "Mikyx",
+    "name": "Mihael Mehle",
+    "role": "Support",
+    "team": "G2 Esports"
+}{
+    "country": "Sweden",
+    "fav_champs": [
+        "Viego"
+    ],
+    "id": "Yike",
+    "name": "Martin Sundelin",
+    "role": "Jungle",
+    "team": "G2 Esports"
+}{
+    "country": "Czech Republic",
+    "fav_champs": [
+        "Azir",
+        "Taliyah",
+        "Syndra",
+        "LeBlanc"
+    ],
+    "id": "Humanoid",
+    "name": "Marek Br\u00e1zda",
+    "role": "Mid",
+    "team": "Fnatic"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Ezreal"
+    ],
+    "id": "Noah",
+    "name": "Oh Hyeon-taek",
+    "role": "Bot",
+    "team": "Fnatic"
+}{
+    "country": "Spain",
+    "fav_champs": [
+        "Camille"
+    ],
+    "id": "Oscarinin",
+    "name": "\u00d3scar Mu\u00f1oz Jim\u00e9nez",
+    "role": "Top",
+    "team": "Fnatic"
+}{
+    "country": "Spain",
+    "fav_champs": [
+        "Lee Sin",
+        "Kayn",
+        "Gragas",
+        "Ekko"
+    ],
+    "id": "Razork",
+    "name": "Iv\u00e1n Mart\u00edn D\u00edaz",
+    "role": "Jungle",
+    "team": "Fnatic"
+}{
+    "country": "Spain",
+    "fav_champs": [
+        "Rakan",
+        "Thresh",
+        "Morgana",
+        "Pyke"
+    ],
+    "id": "Trymbi",
+    "name": "Adrian Trybus",
+    "role": "Support",
+    "team": "Fnatic"
+}{
+    "country": "France",
+    "fav_champs": [
+        "Darius",
+        "Jax",
+        "Camille",
+        "Olaf"
+    ],
+    "id": "Adam",
+    "name": "Adam Maanane",
+    "role": "Top",
+    "team": "Team BDS"
+}{
+    "country": "Poland",
+    "fav_champs": [
+        "Irelia",
+        "Jayce",
+        "Kennen"
+    ],
+    "id": "Agresivoo",
+    "name": "Tobiasz Ciba",
+    "role": "Top",
+    "team": "Team BDS"
+}{
+    "country": "Slovenia",
+    "fav_champs": [
+        "Ashe",
+        "Kog'Maw",
+        "Ezreal",
+        "Caitlyn"
+    ],
+    "id": "Crownie",
+    "name": "Ju\u0161 Maru\u0161i\u010d",
+    "role": "Bot",
+    "team": "Team BDS"
+}{
+    "country": "Greece",
+    "fav_champs": [
+        "Thresh",
+        "Bard",
+        "Alistar",
+        "Pyke"
+    ],
+    "id": "Labrov",
+    "name": "Labros Papoutsakis",
+    "role": "Support",
+    "team": "Team BDS"
+}{
+    "country": "France",
+    "fav_champs": [
+        "Sylas"
+    ],
+    "id": "nuc",
+    "name": "Ilias Bizriken",
+    "role": "Mid",
+    "team": "Team BDS"
+}{
+    "country": "France",
+    "fav_champs": [
+        "Ekko"
+    ],
+    "id": "Sheo",
+    "name": "Th\u00e9o Borile",
+    "role": "Jungle",
+    "team": "Team BDS"
+}{
+    "country": "Japan",
+    "fav_champs": [
+        "Camille",
+        "Tahm Kench",
+        "Pantheon",
+        "Shyvana",
+        "Wukong",
+        "K'Sante"
+    ],
+    "id": "Evi",
+    "name": "Shunsuke Murase",
+    "role": "Top",
+    "team": "Team Heretics"
+}{
+    "country": "Spain",
+    "fav_champs": [
+        "Varus",
+        "Kai'Sa"
+    ],
+    "id": "Flakked",
+    "name": "Victor Lirola Tortosa",
+    "role": "Bot",
+    "team": "Team Heretics"
+}{
+    "country": "Poland",
+    "fav_champs": [
+        "Lee Sin",
+        "Elise",
+        "Camille",
+        "Gragas",
+        "Olaf"
+    ],
+    "id": "Jankos",
+    "name": "Marcin Jankowski",
+    "role": "Jungle",
+    "team": "Team Heretics"
+}{
+    "country": "Greece",
+    "fav_champs": [
+        "Thresh"
+    ],
+    "id": "Mersa",
+    "name": "Mertai Sari",
+    "role": "Support",
+    "team": "Team Heretics"
+}{
+    "country": "France",
+    "fav_champs": [
+        "Zoe",
+        "Akali",
+        "Sylas"
+    ],
+    "id": "Vetheo",
+    "name": "Vincent Berri\u00e9",
+    "role": "Mid",
+    "team": "Team Heretics"
+}{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Bo",
+    "name": "Zhou Yang-Bo",
+    "role": "Jungle",
+    "team": "Team Vitality"
+}{
+    "country": "Germany",
+    "fav_champs": [
+        "Rakan"
+    ],
+    "id": "Kaiser",
+    "name": "Norman Kaiser",
+    "role": "Support",
+    "team": "Team Vitality"
+}{
+    "country": "Croatia",
+    "fav_champs": [
+        "Lucian",
+        "Yasuo",
+        "LeBlanc"
+    ],
+    "id": "Perkz",
+    "name": "Luka Perkovi\u0107",
+    "role": "Mid",
+    "team": "Team Vitality"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Akshan"
+    ],
+    "id": "Photon",
+    "name": "Kyeong Gyu-tae",
+    "role": "Top",
+    "team": "Team Vitality"
+}{
+    "country": "Poland",
+    "fav_champs": [
+        "Nidalee",
+        "Kha'Zix",
+        "Elise",
+        "Evelynn"
+    ],
+    "id": "Selfmade",
+    "name": "Oskar Boderek",
+    "role": "Jungle",
+    "team": "Team Vitality"
+}{
+    "country": "Germany",
+    "fav_champs": [
+        "Jhin",
+        "Ezreal",
+        "Kai'Sa"
+    ],
+    "id": "Upset",
+    "name": "Elias Lipp",
+    "role": "Bot",
+    "team": "Team Vitality"
+}{
+    "country": "Turkey",
+    "fav_champs": [
+        "Lillia",
+        "Lee Sin",
+        "Graves"
+    ],
+    "id": "113",
+    "name": "Do\u011fukan Balc\u0131",
+    "role": "Jungle",
+    "team": "Astralis"
+}{
+    "country": "Sweden",
+    "fav_champs": [
+        "Irelia",
+        "Kled"
+    ],
+    "id": "Finn",
+    "name": "Finn Wiest\u00e5l",
+    "role": "Top",
+    "team": "Astralis"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Pyke"
+    ],
+    "id": "JeongHoon",
+    "name": "Lee Jeong-hoon",
+    "role": "Support",
+    "team": "Astralis"
+}{
+    "country": "Denmark",
+    "fav_champs": [
+        "Xayah",
+        "Jhin"
+    ],
+    "id": "Kobbe",
+    "name": "Kasper Kobberup",
+    "role": "Bot",
+    "team": "Astralis"
+}{
+    "country": "Norway",
+    "fav_champs": [
+        "Ryze",
+        "Yasuo",
+        "Zed",
+        "Irelia",
+        "Akali"
+    ],
+    "id": "LIDER",
+    "name": "Adam Ilyasov",
+    "role": "Mid",
+    "team": "Astralis"
+}{
+    "country": "Bulgaria",
+    "fav_champs": [
+        "Kalista",
+        "Tristana",
+        "Caitlyn"
+    ],
+    "id": "Venzer",
+    "name": "Alexander Kostadinov",
+    "role": "Support",
+    "team": "Astralis"
+}{
+    "country": "Czech Republic",
+    "fav_champs": [
+        "Jhin",
+        "Zoe",
+        "Yasuo"
+    ],
+    "id": "Carzzy",
+    "name": "Maty\u00e1\u0161 Ors\u00e1g",
+    "role": "Bot",
+    "team": "MAD Lions"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Chasy",
+    "name": "Kim Dong-hyeon",
+    "role": "Top",
+    "team": "MAD Lions"
+}{
+    "country": "Spain",
+    "fav_champs": [
+        "Qiyana",
+        "Kha'Zix",
+        "Lee Sin"
+    ],
+    "id": "Elyoya",
+    "name": "Javier Prades Batalla",
+    "role": "Jungle",
+    "team": "MAD Lions"
+}{
+    "country": "Bulgaria",
+    "fav_champs": [
+        "Thresh",
+        "Leona",
+        "Pyke",
+        "Rakan"
+    ],
+    "id": "Hylissang",
+    "name": "Zdravets Iliev Galabov",
+    "role": "Support",
+    "team": "MAD Lions"
+}{
+    "country": "Belgium",
+    "fav_champs": [
+        "Orianna",
+        "Syndra",
+        "Ryze",
+        "Cassiopeia",
+        "Zoe"
+    ],
+    "id": "Nisqy",
+    "name": "Yasin Din\u00e7er",
+    "role": "Mid",
+    "team": "MAD Lions"
+}{
+    "country": "Denmark",
+    "fav_champs": [
+        "Alistar",
+        "Braum",
+        "Janna"
+    ],
+    "id": "Doss",
+    "name": "Mads Schwartz",
+    "role": "Support",
+    "team": "SK Gaming"
+}{
+    "country": "France",
+    "fav_champs": [
+        "Draven",
+        "Aphelios"
+    ],
+    "id": "Exakick",
+    "name": "Thomas Foucou",
+    "role": "Bot",
+    "team": "SK Gaming"
+}{
+    "country": "Germany",
+    "fav_champs": [
+        "Elise",
+        "Lee Sin",
+        "Nidalee",
+        "Gragas"
+    ],
+    "id": "Gilius",
+    "name": "Erberk Demir",
+    "role": "Jungle",
+    "team": "SK Gaming"
+}{
+    "country": "Germany",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Irrelevant",
+    "name": "Joel Miro Scharoll",
+    "role": "Top",
+    "team": "SK Gaming"
+}{
+    "country": "Netherlands",
+    "fav_champs": [
+        "Nidalee",
+        "Lee Sin",
+        "Graves"
+    ],
+    "id": "Markoon",
+    "name": "Mark van Woensel",
+    "role": "Jungle",
+    "team": "SK Gaming"
+}{
+    "country": "Germany",
+    "fav_champs": [
+        "LeBlanc",
+        "Zed",
+        "Zoe",
+        "Syndra"
+    ],
+    "id": "Sertuss",
+    "name": "Daniel Gamani",
+    "role": "Mid",
+    "team": "SK Gaming"
+}

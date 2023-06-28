@@ -1,0 +1,404 @@
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Jayce",
+        "Kennen"
+    ],
+    "id": "Canna",
+    "name": "Kim Chang-dong",
+    "role": "Top",
+    "team": "Dplus KIA"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Canyon",
+    "name": "Kim Geon-bu",
+    "role": "Jungle",
+    "team": "Dplus KIA"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Jinx",
+        "Ezreal",
+        "Lucian"
+    ],
+    "id": "Deft",
+    "name": "Kim Hyuk-kyu",
+    "role": "Bot",
+    "team": "Dplus KIA"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Rumble"
+    ],
+    "id": "Kellin",
+    "name": "Kim Hyeong-gyu",
+    "role": "Support",
+    "team": "Dplus KIA"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Katarina",
+        "Kassadin",
+        "Syndra",
+        "LeBlanc"
+    ],
+    "id": "ShowMaker",
+    "name": "Heo Su",
+    "role": "Mid",
+    "team": "Dplus KIA"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "BeryL",
+    "name": "Cho Geon-hee",
+    "role": "Support",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Croco",
+    "name": "Kim Dong-beom",
+    "role": "Jungle",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Aphelios",
+        "Ezreal"
+    ],
+    "id": "deokdam",
+    "name": "Seo Dae-gil",
+    "role": "Bot",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "FATE",
+    "name": "Yoo Su-hyeok",
+    "role": "Mid",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Juhan",
+    "name": "Lee Ju-han",
+    "role": "Jungle",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "kyeahoo",
+    "name": "Kang Ye-hoo",
+    "role": "Mid",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Paduck",
+    "name": "Park Seok-hyeon",
+    "role": "Bot",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Rascal",
+    "name": "Kim Kwang-hee",
+    "role": "Top",
+    "team": "DRX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Cassiopeia",
+        "Zoe",
+        "Galio"
+    ],
+    "id": "Chovy",
+    "name": "Jeong Ji-hoon",
+    "role": "Mid",
+    "team": "Gen.G"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Delight",
+    "name": "Yoo Hwan-joong",
+    "role": "Support",
+    "team": "Gen.G"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Kled"
+    ],
+    "id": "Doran",
+    "name": "Choi Hyeon-joon",
+    "role": "Top",
+    "team": "Gen.G"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Museong",
+    "name": "Kim Moo-seong",
+    "role": "Top",
+    "team": "Gen.G"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Elise",
+        "Lee Sin",
+        "Nidalee"
+    ],
+    "id": "Peanut",
+    "name": "Han Wang-ho",
+    "role": "Jungle",
+    "team": "Gen.G"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Peyz",
+    "name": "Kim Su-hwan",
+    "role": "Bot",
+    "team": "Gen.G"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Ezreal"
+    ],
+    "id": "Aiming",
+    "name": "Kim Ha-ram",
+    "role": "Bot",
+    "team": "KT Rolster"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Zed",
+        "Syndra",
+        "Azir"
+    ],
+    "id": "Bdd",
+    "name": "Gwak Bo-seong",
+    "role": "Mid",
+    "team": "KT Rolster"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Rek'Sai",
+        "Nidalee",
+        "Gragas"
+    ],
+    "id": "Cuzz",
+    "name": "Moon Woo-chan",
+    "role": "Jungle",
+    "team": "KT Rolster"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Ryze",
+        "Viktor",
+        "Lucian"
+    ],
+    "id": "Kiin",
+    "name": "Kim Gi-in",
+    "role": "Top",
+    "team": "KT Rolster"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Singed",
+        "Elise",
+        "Shen"
+    ],
+    "id": "Lehends",
+    "name": "Son Si-woo",
+    "role": "Support",
+    "team": "KT Rolster"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "BuLLDoG",
+    "name": "Lee Tae-young",
+    "role": "Mid",
+    "team": "Kwangdong Freecs"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "DuDu",
+    "name": "Lee Dong-ju",
+    "role": "Top",
+    "team": "Kwangdong Freecs"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Jun",
+    "name": "Yoon Se-jun",
+    "role": "Support",
+    "team": "Kwangdong Freecs"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Moham",
+    "name": "Jeong Jae-hun",
+    "role": "Support",
+    "team": "Kwangdong Freecs"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Taeyoon",
+    "name": "Kim Tae-yoon",
+    "role": "Bot",
+    "team": "Kwangdong Freecs"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "YoungJae",
+    "name": "Ko Yeong-jae",
+    "role": "Jungle",
+    "team": "Kwangdong Freecs"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Camille"
+    ],
+    "id": "Burdol",
+    "name": "Noh Tae-yoon",
+    "role": "Top",
+    "team": "Liiv SANDBOX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Akali",
+        "Irelia"
+    ],
+    "id": "Clozer",
+    "name": "Lee Ju-hyeon",
+    "role": "Mid",
+    "team": "Liiv SANDBOX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Kael",
+    "name": "Kim Jin-hong",
+    "role": "Support",
+    "team": "Liiv SANDBOX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Kalista",
+        "Xayah",
+        "Ezreal"
+    ],
+    "id": "Teddy",
+    "name": "Park Jin-seong",
+    "role": "Bot",
+    "team": "Liiv SANDBOX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Willer",
+    "name": "Kim Jeong-hyeon",
+    "role": "Jungle",
+    "team": "Liiv SANDBOX"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Zed",
+        "LeBlanc",
+        "Ahri",
+        "Azir",
+        "Ryze",
+        "Twisted Fate",
+        "Yasuo"
+    ],
+    "id": "Faker",
+    "name": "Lee Sang-hyeok",
+    "role": "Mid",
+    "team": "T1"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Aphelios",
+        "Caitlyn",
+        "Ezreal"
+    ],
+    "id": "Gumayusi",
+    "name": "Lee Min-hyeong",
+    "role": "Bot",
+    "team": "T1"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Pyke",
+        "Thresh"
+    ],
+    "id": "Keria",
+    "name": "Ryu Min-seok",
+    "role": "Support",
+    "team": "T1"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Nidalee",
+        "Ekko"
+    ],
+    "id": "Oner",
+    "name": "Mun Hyeon-jun",
+    "role": "Jungle",
+    "team": "T1"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Diana",
+        "Viktor",
+        "Taliyah"
+    ],
+    "id": "Sky",
+    "name": "Kim Ha-neul",
+    "role": "Mid",
+    "team": "T1"
+}{
+    "country": "South Korea",
+    "fav_champs": [
+        "Jayce"
+    ],
+    "id": "Zeus",
+    "name": "Choi Woo-je",
+    "role": "Top",
+    "team": "T1"
+}
