@@ -1,5 +1,7 @@
 use std::{env, fs, io, path::PathBuf};
 
+use crate::lolprodle;
+
 const CONTEXT_DIR_VAR: &str = "LOLPRODLE_CTX_DIR";
 
 pub enum Error {
@@ -8,7 +10,29 @@ pub enum Error {
     IoError { error: io::Error },
 }
 
-pub fn get_context_dir_files() -> Result<Vec<PathBuf>, Error> {
+pub struct ContextDirFiles {
+    pub files: Vec<PathBuf>,
+}
+
+impl ContextDirFiles {
+    pub fn get_region_players_file(&self, region: lolprodle::Region) -> Option<PathBuf> {
+        let target_file = format!("{}_players.json", region.name().to_lowercase());
+        self.get_file(target_file.as_str())
+    }
+
+    pub fn get_region_pod_file(&self, region: lolprodle::Region) -> Option<PathBuf> {
+        let target_file = format!("{}_pod.json", region.name().to_lowercase());
+        self.get_file(target_file.as_str())
+    }
+
+    pub fn get_file(&self, file_path: &str) -> Option<PathBuf> {
+        self.files
+            .iter()
+            .find(|file| file.is_file() && file.file_name() == file_path)
+    }
+}
+
+pub fn get_context_dir_files() -> Result<ContextDirFiles, Error> {
     let path = env::vars()
         .find(|(var, val)| var == CONTEXT_DIR_VAR)
         .ok_or(Error::NoContextEnvVar)?;
@@ -18,10 +42,12 @@ pub fn get_context_dir_files() -> Result<Vec<PathBuf>, Error> {
         _ => Error::IoError { error: e },
     })?;
 
-    entries
+    let files = entries
         .filter_map(|val| {
             let entry = val.map_err(|e| Error::IoError { error: e })?;
             Some(entry.path())
         })
-        .collect()
+        .collect();
+
+    Ok(ContextDirFiles { files })
 }
