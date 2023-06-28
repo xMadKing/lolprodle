@@ -12,7 +12,7 @@ export const REGION_DATA = new Map<Region, { name: string, slugs: (string)[] }>(
     [Region.Lpl, { name: "LPL", slugs: ["lpl", "/lpl"] }],
 ]);
 
-export enum GuessFieldType {
+export enum GuessCategory {
     // name of the player
     Name = "Player Name",
     // the position they play
@@ -25,27 +25,27 @@ export enum GuessFieldType {
     Titles = "Titles"
 }
 
-export enum GuessStatus {
+export enum GuessResult {
     Correct,
     Incorrect
 }
 
-export class GuessField {
-    readonly fieldType: GuessFieldType;
-    readonly status: GuessStatus;
+export class PlayerGuessCategory {
+    readonly category: GuessCategory;
+    readonly result: GuessResult;
     readonly guess: string;
 
-    constructor(fieldType: GuessFieldType, status: GuessStatus, guess: string) {
-        this.fieldType = fieldType;
-        this.status = status;
+    constructor(category: GuessCategory, result: GuessResult, guess: string) {
+        this.category = category;
+        this.result = result;
         this.guess = guess;
     }
 }
 
 export class PlayerGuess {
-    readonly guessFields: Array<GuessField>;
+    readonly categories: Array<PlayerGuessCategory>;
 
-    constructor(guessFields: Array<GuessField>) {
-        this.guessFields = guessFields;
+    constructor(categories: Array<PlayerGuessCategory>) {
+        this.categories = categories;
     }
 }

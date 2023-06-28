@@ -1,5 +1,5 @@
 import { writable, type Writable } from "svelte/store";
-import { Region, PlayerGuess, GuessField, GuessFieldType, GuessStatus, REGION_DATA } from "./types";
+import { Region, PlayerGuess, PlayerGuessCategory, GuessCategory, GuessResult, REGION_DATA } from "./types";
 
 // Contains the currently selected region
 export const selectedRegion = writable(Region.Lcs);
@@ -22,18 +22,18 @@ function createRegionStores() {
     // dummy data
     regionStores.get(Region.Lcs)?.update((value) => {
         value.push(new PlayerGuess([
-            new GuessField(GuessFieldType.Name, GuessStatus.Incorrect, "aaa"),
-            new GuessField(GuessFieldType.Position, GuessStatus.Incorrect, "Top"),
-            new GuessField(GuessFieldType.From, GuessStatus.Correct, "N/A"),
-            new GuessField(GuessFieldType.FavoriteChamp, GuessStatus.Incorrect, "s"),
-            new GuessField(GuessFieldType.Titles, GuessStatus.Correct, "Titles"),
+            new PlayerGuessCategory(GuessCategory.Name, GuessResult.Incorrect, "aaa"),
+            new PlayerGuessCategory(GuessCategory.Position, GuessResult.Incorrect, "Top"),
+            new PlayerGuessCategory(GuessCategory.From, GuessResult.Correct, "N/A"),
+            new PlayerGuessCategory(GuessCategory.FavoriteChamp, GuessResult.Incorrect, "s"),
+            new PlayerGuessCategory(GuessCategory.Titles, GuessResult.Correct, "Titles"),
         ]));
         value.push(new PlayerGuess([
-            new GuessField(GuessFieldType.Name, GuessStatus.Correct, "aaa"),
-            new GuessField(GuessFieldType.Position, GuessStatus.Incorrect, "Top"),
-            new GuessField(GuessFieldType.From, GuessStatus.Correct, "NA"),
-            new GuessField(GuessFieldType.FavoriteChamp, GuessStatus.Incorrect, "s"),
-            new GuessField(GuessFieldType.Titles, GuessStatus.Correct, "Titles"),
+            new PlayerGuessCategory(GuessCategory.Name, GuessResult.Correct, "aaa"),
+            new PlayerGuessCategory(GuessCategory.Position, GuessResult.Incorrect, "Top"),
+            new PlayerGuessCategory(GuessCategory.From, GuessResult.Correct, "NA"),
+            new PlayerGuessCategory(GuessCategory.FavoriteChamp, GuessResult.Incorrect, "s"),
+            new PlayerGuessCategory(GuessCategory.Titles, GuessResult.Correct, "Titles"),
         ]));
         return value;
     });
