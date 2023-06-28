@@ -16,29 +16,50 @@ lolprodle API server - serves the backbone of lolprodle.com
 
 Check the correctness of a guess
 
-**BODY**: 
-JSON payload: {region: number, player_name: String}
+#### Body 
 
-**RETURNS**: 
-JSON payload: PlayerGuess
+JSON payload: 
+```json
+{"region": 0, "player_name": "name"}
+```
+
+#### Returns
+
+JSON payload: 
+```json
+PlayerGuess
+```
 
 ### GET: /reset_time
 
 Get the time for when new players are chosen for the next day. This value applies to all regions.
 
-**RETURNS**: 
-JSON payload: {"reset_time_unix_millis": 10000000}
+#### Returns
+
+JSON payload: 
+```json
+{"reset_time_unix_millis": 10000000}
+```
 
 ### GET: /players?region=number
 
 Get all player names for a region. The frontend uses this for name auto completion.
 
-**RETURNS**:
-JSON payload: ["name1", "name2", ...]
+#### Returns
+
+JSON payload: 
+```json
+["name1", "name2", ...]
+```
 
 ### GET: /previous_player?region=number
 
 Get the previous day's player.
 
-**RETURNS**:
-JSON payload: {"player_name": "name"}
+#### Returns
+
+JSON payload: 
+```json
+{"player_name": "name"}
+```
+
