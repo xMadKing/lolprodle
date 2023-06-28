@@ -29,14 +29,14 @@ Get the time for when new players are chosen for the next day. This value applie
 **RETURNS**: 
 JSON payload: {"reset_time_unix_millis": 10000000}
 
-### GET: /players?region=<number>
+### GET: /players?region=number
 
 Get all player names for a region. The frontend uses this for name auto completion.
 
 **RETURNS**:
 JSON payload: ["name1", "name2", ...]
 
-### GET: /previous_player?region=<number>
+### GET: /previous_player?region=number
 
 Get the previous day's player.
 
