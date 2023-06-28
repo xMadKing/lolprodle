@@ -26,7 +26,7 @@
     );
 </script>
 
-<div class="flex w-full flex-col w-80">
+<div class="flex w-80 flex-col">
     <label class="label pr-48">
         <span class="label-text">Enter player name</span>
     </label>
@@ -42,7 +42,6 @@
                     value={$combobox.selected.name}
                 />
             </div>
-
             <Transition
                 show={$combobox.expanded}
                 leave="transition ease-in duration-100"
@@ -52,14 +51,14 @@
             >
                 <ul
                     use:combobox.items
-                    class="mt-1 max-h-60 w-full overflow-auto rounded-md bg-primary py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                    class="absolute z-10 mt-1 max-h-60 w-80 overflow-auto rounded-md bg-base-200 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
                 >
                     {#each filtered as value}
                         {@const active = $combobox.active === value}
                         {@const selected = $combobox.selected === value}
                         <li
-                            class="relative cursor-default select-none py-2 pl-10 pr-4 {active
-                                ? 'bg-teal-600 text-white'
+                            class="cursor-default select-none py-2 pl-10 pr-4 {active
+                                ? 'bg-primary text-white'
                                 : 'text-white'}"
                             use:combobox.item={{ value }}
                         >
@@ -68,9 +67,7 @@
                             >
                         </li>
                     {:else}
-                        <li
-                            class="cursor-default select-none py-2 pl-10 pr-4 text-white"
-                        >
+                        <li class="cursor-default select-none py-2 pl-10 pr-4 text-white">
                             <span class="block truncate font-normal">Nothing found</span>
                         </li>
                     {/each}
