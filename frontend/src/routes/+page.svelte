@@ -10,6 +10,7 @@
     import { onMount } from "svelte";
     import { REGION_DATA } from "$lib/types";
     import { selectedRegion } from "$lib/stores";
+    import background from "$lib/assets/background.webp";
 
     // auto select region based on url
     onMount(() => {
@@ -27,19 +28,18 @@
     });
 </script>
 
-<Navbar />
-
-<RegionSelector />
-
-<Previous />
-
-<div class="flex items-center justify-center pl-6 py-8">
-    <Input />
-    <HowToButton />
+<div class="bg-no-repeat bg-cover" style="background-image: url({background});">
+    <Navbar />
+    <!-- opacity layer -->
+    <div class="bg-gray-50 bg-opacity-20">
+        <RegionSelector />
+        <Previous />
+        <div class="flex items-center justify-center pl-6 py-8">
+            <Input />
+            <HowToButton />
+        </div>
+        <GuessBox />
+        <Timer />
+    </div>
 </div>
-
-<GuessBox />
-
-<Timer />
-
 <Footer />

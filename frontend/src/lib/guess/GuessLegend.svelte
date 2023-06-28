@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <div class="dropdown dropdown-end">
     <label tabindex="0" class="btn btn-circle btn-ghost btn-xs text-info">
         <svg
