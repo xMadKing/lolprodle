@@ -34,7 +34,7 @@
 </script>
 
 <div class="flex flex-row content-center justify-center">
-    <div class="card bg-neutral text-neutral-content w-3/5">
+    <div class="card bg-base-200 text-neutral-content w-3/5">
         <div class="card-body items-center text-center">
             <h3 class="card-title">
                 Your Guesses
