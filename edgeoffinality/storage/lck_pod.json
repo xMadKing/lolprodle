@@ -1,0 +1,57 @@
+[{
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Zed",
+            "LeBlanc",
+            "Ahri",
+            "Azir",
+            "Ryze",
+            "Twisted Fate",
+            "Yasuo"
+        ],
+        "id": "Faker",
+        "name": "Lee Sang-hyeok",
+        "role": "Mid",
+        "team": "T1"
+    },
+    "time_stamp_millis": 1687996800000
+},{
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "Moham",
+        "name": "Jeong Jae-hun",
+        "role": "Support",
+        "team": "Kwangdong Freecs"
+    },
+    "time_stamp_millis": 1687996800000
+},{
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "Paduck",
+        "name": "Park Seok-hyeon",
+        "role": "Bot",
+        "team": "DRX"
+    },
+    "time_stamp_millis": 1687996800000
+},{
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Ryze",
+            "Viktor",
+            "Lucian"
+        ],
+        "id": "Kiin",
+        "name": "Kim Gi-in",
+        "role": "Top",
+        "team": "KT Rolster"
+    },
+    "time_stamp_millis": 1687996800000
+}]

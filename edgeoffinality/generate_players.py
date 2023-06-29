@@ -10,8 +10,8 @@ def generate_players(teams, region):
     for team in teams:
         results = site.cargo_client.query(
             tables="Players",
-            fields="ID, Name, Team, Role, Country, FavChamps",
-            where='Team="{}"'.format(team),
+            fields="ID, Name, Team, Role, Country, FavChamps, IsSubstitute",
+            where='Team="{}"'.format(team) + " AND IsSubstitute = 0",
             having="Role='Top' OR Role='Jungle' OR Role='Mid' OR Role='Bot' OR Role='Support'"
         )
         for i in results:
