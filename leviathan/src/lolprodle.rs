@@ -1,4 +1,8 @@
+use serde::{Serialize, Deserialize};
+
+#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize)]
 pub enum Region {
+    #[default]
     Lcs = 0,
     Lec = 1,
     Lck = 2,
@@ -7,7 +11,7 @@ pub enum Region {
 
 impl Region {
     pub fn id(&self) -> u32 {
-        *self as i32
+        *self as u32
     }
 
     pub fn name(&self) -> &'static str {
@@ -20,6 +24,7 @@ impl Region {
     }
 }
 
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub enum GuessCategory {
     Name,
     Position,
@@ -28,17 +33,20 @@ pub enum GuessCategory {
     Team,
 }
 
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub enum GuessResult {
     Correct,
     Incorrect,
 }
 
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PlayerGuessCategory {
     pub category: GuessCategory,
     pub result: GuessResult,
     pub guess: String,
 }
 
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct PlayerGuess {
     categories: Vec<PlayerGuessCategory>,
 }
