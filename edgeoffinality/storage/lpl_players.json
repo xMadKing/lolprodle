@@ -509,6 +509,16 @@
     "team": "LNG Esports"
 },
 {
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Mysun",
+    "name": "Li Hao",
+    "role": "Support",
+    "team": "LNG Esports"
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Kassadin",
@@ -556,6 +566,78 @@
     "name": "Tang Hua-Yu",
     "role": "Top",
     "team": "LNG Esports"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Angel",
+    "name": "Xiang Tao",
+    "role": "Mid",
+    "team": "Ninjas in Pyjamas.CN"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Invincible",
+    "name": "Li Xiao-Bing",
+    "role": "Top",
+    "team": "Ninjas in Pyjamas.CN"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Photic",
+    "name": "Ying Qi-Shen",
+    "role": "Bot",
+    "team": "Ninjas in Pyjamas.CN"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Pout",
+    "name": "Han In-woong",
+    "role": "Mid",
+    "team": "Ninjas in Pyjamas.CN"
+},
+{
+    "country": "Italy",
+    "fav_champs": [
+        "Lee Sin",
+        "Gragas",
+        "Kha'Zix"
+    ],
+    "id": "shad0w",
+    "name": "Zhao Zhi-Qiang",
+    "role": "Jungle",
+    "team": "Ninjas in Pyjamas.CN"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "XLB",
+    "name": "Li Xiao-Long",
+    "role": "Jungle",
+    "team": "Ninjas in Pyjamas.CN"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Zhuo",
+    "name": "Wang Xu-Zhuo",
+    "role": "Support",
+    "team": "Ninjas in Pyjamas.CN"
 },
 {
     "country": "China",
@@ -695,6 +777,67 @@
     "fav_champs": [
         "None"
     ],
+    "id": "Breathe",
+    "name": "Chen Chen",
+    "role": "Top",
+    "team": "Royal Never Give Up"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Lele",
+    "name": "Dang Bo-Lin",
+    "role": "Support",
+    "team": "Royal Never Give Up"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "LP",
+    "name": "Li Fei",
+    "role": "Bot",
+    "team": "Royal Never Give Up"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "Bard",
+        "Fiddlesticks"
+    ],
+    "id": "LvMao",
+    "name": "Zuo Ming-Hao",
+    "role": "Support",
+    "team": "Royal Never Give Up"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Tangyuan",
+    "name": "Lin Yu-Hong",
+    "role": "Mid",
+    "team": "Royal Never Give Up"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Wei",
+    "name": "Yan Yang-Wei",
+    "role": "Jungle",
+    "team": "Royal Never Give Up"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
     "id": "Cube",
     "name": "Dai Yi",
     "role": "Top",
@@ -814,6 +957,87 @@
     "name": "Huang Ren-Xing",
     "role": "Top",
     "team": "Top Esports"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "1xn",
+    "name": "Li Xiu-Nan",
+    "role": "Bot",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "Ekko"
+    ],
+    "id": "Beichuan",
+    "name": "Yang Ling",
+    "role": "Jungle",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "HOYA",
+    "name": "Yoon Yong-ho",
+    "role": "Top",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "huanfeng",
+    "name": "Tang Huan-Feng",
+    "role": "Bot",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Taliyah"
+    ],
+    "id": "ucal",
+    "name": "Son Woo-hyeon",
+    "role": "Mid",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "Elise",
+        "Kindred"
+    ],
+    "id": "xiaopeng",
+    "name": "Wang Peng",
+    "role": "Jungle",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "yaoyao",
+    "name": "Bi Hao-Tian",
+    "role": "Support",
+    "team": "ThunderTalk Gaming"
+},
+{
+    "country": "China",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "yuyanjia",
+    "name": "Liang Jia-Yuan",
+    "role": "Support",
+    "team": "ThunderTalk Gaming"
 },
 {
     "country": "Taiwan",
