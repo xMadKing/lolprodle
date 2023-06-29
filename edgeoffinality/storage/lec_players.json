@@ -389,6 +389,65 @@
     "team": "Astralis"
 },
 {
+    "country": "Netherlands",
+    "fav_champs": [
+        "Thresh",
+        "Leona",
+        "Shen"
+    ],
+    "id": "Advienne",
+    "name": "Henk Reijenga",
+    "role": "Support",
+    "team": "KOI (Spanish Team)"
+},
+{
+    "country": "Greece",
+    "fav_champs": [
+        "Draven",
+        "Tristana",
+        "Lucian",
+        "Sivir"
+    ],
+    "id": "Comp",
+    "name": "Markos Stamkopoulos",
+    "role": "Bot",
+    "team": "KOI (Spanish Team)"
+},
+{
+    "country": "Sweden",
+    "fav_champs": [
+        "Corki",
+        "Zed",
+        "Azir",
+        "Ryze"
+    ],
+    "id": "Larssen",
+    "name": "Emil Larsson",
+    "role": "Mid",
+    "team": "KOI (Spanish Team)"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Jarvan IV",
+        "Lee Sin"
+    ],
+    "id": "Malrang",
+    "name": "Kim Geun-seong",
+    "role": "Jungle",
+    "team": "KOI (Spanish Team)"
+},
+{
+    "country": "Denmark",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Szygenda",
+    "name": "Mathias Jensen",
+    "role": "Top",
+    "team": "KOI (Spanish Team)"
+},
+{
     "country": "Czech Republic",
     "fav_champs": [
         "Jhin",

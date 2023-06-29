@@ -7,7 +7,7 @@ def get_lec_teams():
     "Team Vitality",
     "Astralis",
     "Excel",
-    "KOI",
+    "KOI (Spanish Team)",
     "MAD Lions",
     "SK Gaming"
     ]
@@ -15,10 +15,10 @@ def get_lec_teams():
 
 def get_lcs_teams():
     lcs_teams = [
-        "100 Theives",
+        "100 Thieves",
         "Cloud9",
         "Dignitas",
-        "Evil Geniuses",
+        "Evil Geniuses.NA",
         "FlyQuest",
         "Golden Guardians",
         "Immortals",
@@ -33,12 +33,12 @@ def get_lck_teams():
         "Dplus KIA",
         "DRX",
         "Gen.G",
-        "Hanwha Life",
+        "Hanwha Life Esports",
         "KT Rolster",
         "Kwangdong Freecs",
         "Liiv SANDBOX",
-        "NS RedForce",
-        "OK BRION",
+        "Nongshim RedForce",
+        "OKSavingsBank BRION",
         "T1"
     ]
     return lck_teams
@@ -53,13 +53,13 @@ def get_lpl_teams():
         "JD Gaming",
         "LGD Gaming",
         "LNG Esports",
-        "Ninjas In Pyjamas",
+        "Ninjas in Pyjamas.CN",
         "Oh My God",
         "Rare Atom",
-        "RNG",
+        "Royal Never Give Up",
         "Team WE",
         "Top Esports",
-        "TT Gaming",
+        "ThunderTalk Gaming",
         "Ultra Prime",
         "Weibo Gaming"
     ]

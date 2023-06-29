@@ -202,6 +202,58 @@
 {
     "country": "South Korea",
     "fav_champs": [
+        "Kindred",
+        "Lee Sin"
+    ],
+    "id": "Clid",
+    "name": "Kim Tae-min",
+    "role": "Jungle",
+    "team": "Hanwha Life Esports"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Kingen",
+    "name": "Hwang Seong-hoon",
+    "role": "Top",
+    "team": "Hanwha Life Esports"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Life",
+    "name": "Kim Jeong-min",
+    "role": "Support",
+    "team": "Hanwha Life Esports"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Viper",
+    "name": "Park Do-hyeon",
+    "role": "Bot",
+    "team": "Hanwha Life Esports"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Akali",
+        "Sylas"
+    ],
+    "id": "Zeka",
+    "name": "Kim Geon-woo",
+    "role": "Mid",
+    "team": "Hanwha Life Esports"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
         "Ezreal"
     ],
     "id": "Aiming",
@@ -359,6 +411,128 @@
     "name": "Kim Jeong-hyeon",
     "role": "Jungle",
     "team": "Liiv SANDBOX"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "DnDn",
+    "name": "Park Geun-woo",
+    "role": "Top",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "FIESTA",
+    "name": "An Hyeon-seo",
+    "role": "Mid",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Jiwoo",
+    "name": "Jung Ji-woo",
+    "role": "Bot",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Peter",
+    "name": "Jeong Yoon-su",
+    "role": "Support",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Cassiopeia"
+    ],
+    "id": "Quad",
+    "name": "Song Su-hyeong",
+    "role": "Mid",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Sylvie",
+    "name": "Lee Seung-bok",
+    "role": "Jungle",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "vital",
+    "name": "Ha In-seong",
+    "role": "Bot",
+    "team": "Nongshim RedForce"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Rakan"
+    ],
+    "id": "Effort",
+    "name": "Lee Sang-ho",
+    "role": "Support",
+    "team": "OKSavingsBank BRION"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Hena",
+    "name": "Park Jeung-hwan",
+    "role": "Bot",
+    "team": "OKSavingsBank BRION"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Karis",
+    "name": "Kim Hong-jo",
+    "role": "Mid",
+    "team": "OKSavingsBank BRION"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Renekton"
+    ],
+    "id": "Morgan",
+    "name": "Park Ru-han",
+    "role": "Top",
+    "team": "OKSavingsBank BRION"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Lee Sin",
+        "Rengar",
+        "Kha'Zix"
+    ],
+    "id": "UmTi",
+    "name": "Eom Seong-hyeon",
+    "role": "Jungle",
+    "team": "OKSavingsBank BRION"
 },
 {
     "country": "South Korea",

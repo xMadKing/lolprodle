@@ -1,4 +1,73 @@
 [{
+    "country": "United States",
+    "fav_champs": [
+        "Pyke"
+    ],
+    "id": "Busio",
+    "name": "Alan Cwalina",
+    "role": "Support",
+    "team": "100 Thieves"
+},
+{
+    "country": "Turkey",
+    "fav_champs": [
+        "Graves",
+        "Lee Sin",
+        "Jarvan IV",
+        "Nidalee",
+        "Qiyana"
+    ],
+    "id": "Closer",
+    "name": "Can \u00c7elik",
+    "role": "Jungle",
+    "team": "100 Thieves"
+},
+{
+    "country": "United States",
+    "fav_champs": [
+        "Vayne",
+        "Ezreal",
+        "Caitlyn",
+        "Graves"
+    ],
+    "id": "Doublelift",
+    "name": "Yiliang&amp;nbsp;&quot;Peter&quot; Peng",
+    "role": "Bot",
+    "team": "100 Thieves"
+},
+{
+    "country": "United States",
+    "fav_champs": [
+        "Kennen"
+    ],
+    "id": "Jenkins",
+    "name": "Thomas Tran",
+    "role": "Top",
+    "team": "100 Thieves"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Quid",
+    "name": "Lim Hyeon-seung",
+    "role": "Mid",
+    "team": "100 Thieves"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "Shen",
+        "Renekton",
+        "Elise"
+    ],
+    "id": "Ssumday",
+    "name": "Kim Chan-ho",
+    "role": "Top",
+    "team": "100 Thieves"
+},
+{
     "country": "South Korea",
     "fav_champs": [
         "Zeri"
@@ -123,6 +192,70 @@
     "name": "Frank Lam",
     "role": "Bot",
     "team": "Dignitas"
+},
+{
+    "country": "United States",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Armao",
+    "name": "Jonathan Armao",
+    "role": "Jungle",
+    "team": "Evil Geniuses.NA"
+},
+{
+    "country": "Australia",
+    "fav_champs": [
+        "Senna"
+    ],
+    "id": "Eyla",
+    "name": "Bill Nguyen",
+    "role": "Support",
+    "team": "Evil Geniuses.NA"
+},
+{
+    "country": "Canada",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "jojopyun",
+    "name": "Joseph&amp;nbsp;Joon Pyun",
+    "role": "Mid",
+    "team": "Evil Geniuses.NA"
+},
+{
+    "country": "United States",
+    "fav_champs": [
+        "Riven",
+        "Irelia"
+    ],
+    "id": "Revenge",
+    "name": "Mohamed Kaddoura",
+    "role": "Top",
+    "team": "Evil Geniuses.NA"
+},
+{
+    "country": "Philippines",
+    "fav_champs": [
+        "Graves"
+    ],
+    "id": "Sheiden",
+    "name": "Jade Libut",
+    "role": "Jungle",
+    "team": "Evil Geniuses.NA"
+},
+{
+    "country": "Sweden",
+    "fav_champs": [
+        "Draven",
+        "Yasuo",
+        "Evelynn",
+        "Karthus"
+    ],
+    "id": "UNF0RGIVEN",
+    "name": "William Nieminen",
+    "role": "Bot",
+    "team": "Evil Geniuses.NA"
 },
 {
     "country": "South Korea",
