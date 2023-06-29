@@ -1,6 +1,7 @@
 use serde::{Serialize, Deserialize};
+use strum::EnumIter;
 
-#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, EnumIter)]
 pub enum Region {
     #[default]
     Lcs = 0,
