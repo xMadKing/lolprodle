@@ -4,10 +4,14 @@ use serde::{Deserialize, Serialize};
 
 use crate::lolprodle;
 
+pub mod service;
+
 const CONTEXT_DIR_VAR: &str = "LOLPRODLE_CTX_DIR";
 
+#[derive(Debug)]
 pub enum Error {
     NoContextEnvVar,
+    NoContextDir,
     NoFile { message: String },
     InvalidDir { error: io::Error },
     IoError { error: io::Error },
@@ -38,9 +42,9 @@ impl LolprodleContextDir {
 
 /// Gets all files from the context directory specified by the context directory environment
 /// variable.
-pub fn get_context_dir_files() -> Result<LolprodleContextDir, Error> {
+pub fn get_context_dir() -> Result<LolprodleContextDir, Error> {
     let path = env::vars()
-        .find(|(var, val)| var == CONTEXT_DIR_VAR)
+        .find(|(var, _val)| var == CONTEXT_DIR_VAR)
         .ok_or(Error::NoContextEnvVar)?;
 
     let entries = fs::read_dir(path.1).map_err(|e| match e.kind() {
@@ -95,10 +99,9 @@ pub struct RegionPods {
     pub pods: Vec<Pod>,
 }
 
-struct LolprodleDataLoader;
+pub struct LolprodleDataLoader;
 
 impl LolprodleDataLoader {
-    //todo: cache for 5 mins
     pub fn get_region_players(
         ctx: &LolprodleContextDir,
         region: &lolprodle::Region,
