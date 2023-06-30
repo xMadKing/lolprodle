@@ -80,10 +80,10 @@ impl LolprodleDataService {
     }
 
     fn load_ctx_dir() -> LolprodleContextDir {
-        // panic and abort program immediately if there exists no context directory (can't
-        // function without this)
         match get_context_dir() {
             Ok(ctx_dir) => ctx_dir,
+            // panic and abort program immediately if there exists no context directory (can't
+            // function without this)
             Err(err) => match err {
                 super::Error::NoContextEnvVar => panic!(
                     "{} environment variable not set! This variable needs to be set to retrieve files required by the server.",
