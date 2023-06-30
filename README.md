@@ -1,6 +1,6 @@
 # lolprodle
 
-Wordle inspired (browser) game... except will be guessing the League of Legends Pro of the day!
+Wordle inspired (browser) game... except you will be guessing the League of Legends Pro of the day!
 
 Check out the live version: https://lolprodle.com
 
