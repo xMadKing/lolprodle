@@ -1,5 +1,3 @@
-use std::time::SystemTime;
-
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
 use strum::{EnumIter, IntoEnumIterator};
@@ -14,8 +12,8 @@ pub enum Region {
 }
 
 impl Region {
-    pub fn id(&self) -> u32 {
-        *self as u32
+    pub fn id(&self) -> i32 {
+        *self as i32
     }
 
     pub fn name(&self) -> &'static str {
@@ -28,39 +26,40 @@ impl Region {
     }
 }
 
-impl From<u32> for Region {
-    fn from(value: u32) -> Self {
+impl From<i32> for Region {
+    fn from(value: i32) -> Self {
         Region::iter()
             .find(|region| region.id() == value)
             .unwrap_or(Self::default())
     }
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum GuessCategory {
-    Name,
-    Position,
-    From,
-    FavoriteChamp,
-    Team,
+    Id = 0,
+    Role = 1,
+    Country = 2,
+    FavoriteChamps = 3,
+    Team = 4,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub enum GuessResult {
-    Correct,
-    Incorrect,
+impl GuessCategory {
+    pub fn id(&self) -> i32 {
+        *self as i32
+    }
 }
+
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PlayerGuessCategory {
-    pub category: GuessCategory,
-    pub result: GuessResult,
+    pub category_id: i32,
+    pub correct: bool,
     pub guess: String,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct PlayerGuess {
-    categories: Vec<PlayerGuessCategory>,
+    pub categories: Vec<PlayerGuessCategory>,
 }
 
 impl PlayerGuess {
@@ -68,7 +67,7 @@ impl PlayerGuess {
     pub fn is_correct(&self) -> bool {
         self.categories
             .iter()
-            .all(|category| category.result == GuessResult::Correct)
+            .all(|category| category.correct)
     }
 }
 

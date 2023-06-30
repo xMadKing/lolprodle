@@ -7,17 +7,28 @@ use lazy_static::lazy_static;
 extern crate rocket;
 
 pub mod data;
+pub mod guess;
 pub mod lolprodle;
 pub mod root_router;
-pub mod guess;
 
 lazy_static! {
     static ref DATA_SERVICE: Arc<LolprodleDataService> = Arc::new(LolprodleDataService::new());
 }
 
+fn init_logger() {
+    env_logger::builder()
+        .target(env_logger::Target::Stdout)
+        .filter_level(log::LevelFilter::Debug)
+        .init();
+}
+
 #[rocket::main]
 async fn main() {
+    init_logger();
+
+    info!("Starting lolprodle services...");
     service::start(DATA_SERVICE.clone());
+    info!("Started loprodle services");
 
     let _ = rocket::build()
         .mount(

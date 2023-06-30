@@ -1,18 +1,19 @@
 use chrono::Utc;
-use rocket::{http::Status, serde::json::Json};
+use log::warn;
+use rocket::{http::Status, serde::json::Json, form::{FromForm, FromFormField}};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 use crate::{
     data::Player,
     lolprodle::{self, PlayerGuess, Region},
-    DATA_SERVICE,
+    DATA_SERVICE, guess,
 };
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct CheckGuessRequest {
-    pub region: Region,
-    pub player_name: String,
+    pub region_id: i32,
+    pub player_id: String,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
@@ -44,7 +45,13 @@ pub async fn index() -> Value {
 
 #[post("/check_guess", data = "<request>")]
 pub async fn check_guess(request: Json<CheckGuessRequest>) -> (Status, Json<PlayerGuess>) {
-    todo!();
+    match guess::check_guess(Region::from(request.region_id), &request.player_id).await {
+        Ok(player_guess) => (Status::Ok, Json(player_guess)),
+        Err(status) => {
+            warn!("Error status for /check_guess: {}", status);
+            (Status::InternalServerError, Json(PlayerGuess::default()))
+        }
+    }
 }
 
 #[get("/reset_time")]
@@ -61,9 +68,9 @@ pub async fn reset_time() -> (Status, Json<ResetTimeResponse>) {
     )
 }
 
-#[get("/players?<region>")]
-pub async fn players(region: u32) -> (Status, Json<PlayersResponse>) {
-    let rg = Region::from(region);
+#[get("/players?<region_id>")]
+pub async fn players(region_id: i32) -> (Status, Json<PlayersResponse>) {
+    let rg = Region::from(region_id);
 
     if let Some(arc) = DATA_SERVICE.get_region_players(&rg).await {
         let region_players = arc.read().await;
@@ -82,16 +89,16 @@ pub async fn players(region: u32) -> (Status, Json<PlayersResponse>) {
     (Status::NotFound, Json(PlayersResponse::default()))
 }
 
-#[get("/previous_player?<region>")]
-pub async fn previous_player(region: u32) -> (Status, Json<PreviousPlayerResponse>) {
-    let rg = Region::from(region);
+#[get("/previous_player?<region_id>")]
+pub async fn previous_player(region_id: i32) -> (Status, Json<PreviousPlayerResponse>) {
+    let rg = Region::from(region_id);
     let previous_daystamp = lolprodle::get_current_daystamp_millis() - lolprodle::DAY_MILLIS;
 
     if let Some(arc) = DATA_SERVICE.get_region_pods(&rg).await {
         let region_pods = arc.read().await;
         let prev_player = region_pods
             .get_pod_for_daystamp(previous_daystamp)
-            .map(|pod| pod.player)
+            .map(|pod| pod.player.clone())
             .unwrap_or(Player::default());
 
         return (

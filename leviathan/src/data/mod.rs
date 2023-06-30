@@ -100,11 +100,14 @@ pub struct RegionPods {
 }
 
 impl RegionPods {
-    pub fn get_pod_for_daystamp(&self, daystamp_millis: i64) -> Option<Pod> {
+    pub fn get_pod_for_daystamp(&self, daystamp_millis: i64) -> Option<&Pod> {
         self.pods
             .iter()
             .find(|pod| pod.daystamp_millis == daystamp_millis)
-            .cloned()
+    }
+
+    pub fn get_pod_for_daystamp_cloned(&self, daystamp_millis: i64) -> Option<Pod> {
+        self.get_pod_for_daystamp(daystamp_millis).cloned()
     }
 }
 

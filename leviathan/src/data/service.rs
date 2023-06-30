@@ -10,9 +10,9 @@ use super::{get_context_dir, LolprodleContextDir, LolprodleDataLoader, RegionPla
 pub struct LolprodleDataService {
     ctx_dir: Arc<RwLock<LolprodleContextDir>>,
     // region id => RegionPlayers
-    region_players: RwLock<HashMap<u32, Arc<RwLock<RegionPlayers>>>>,
+    region_players: RwLock<HashMap<i32, Arc<RwLock<RegionPlayers>>>>,
     // region id => RegionPods
-    region_pods: RwLock<HashMap<u32, Arc<RwLock<RegionPods>>>>,
+    region_pods: RwLock<HashMap<i32, Arc<RwLock<RegionPods>>>>,
 }
 
 impl LolprodleDataService {
@@ -86,7 +86,7 @@ impl LolprodleDataService {
     }
 
     /// Creates a map and adds all initial entries for every region.
-    fn create_init_map<T: Default>() -> RwLock<HashMap<u32, Arc<RwLock<T>>>> {
+    fn create_init_map<T: Default>() -> RwLock<HashMap<i32, Arc<RwLock<T>>>> {
         let mut map = HashMap::new();
         lolprodle::Region::iter().for_each(|region| {
             map.insert(region.id(), Arc::new(RwLock::new(T::default())));
