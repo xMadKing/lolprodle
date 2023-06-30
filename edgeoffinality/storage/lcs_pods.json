@@ -1,0 +1,25 @@
+[{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "United States",
+        "fav_champs": [
+            "Pyke"
+        ],
+        "id": "Busio",
+        "name": "Alan Cwalina",
+        "role": "Support",
+        "team": "100 Thieves"
+    }
+},{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "United States",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "Array",
+        "name": "Jackson Moldenhauer",
+        "role": "Bot",
+        "team": "Golden Guardians"
+    }
+}]

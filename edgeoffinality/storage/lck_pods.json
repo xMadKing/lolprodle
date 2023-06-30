@@ -1,0 +1,26 @@
+[{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Akali",
+            "Irelia"
+        ],
+        "id": "Clozer",
+        "name": "Lee Ju-hyeon",
+        "role": "Mid",
+        "team": "Liiv SANDBOX"
+    }
+},{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "FIESTA",
+        "name": "An Hyeon-seo",
+        "role": "Mid",
+        "team": "Nongshim RedForce"
+    }
+}]

@@ -1,0 +1,25 @@
+[{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "China",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "Meiko",
+        "name": "Tian Ye",
+        "role": "Support",
+        "team": "EDward Gaming"
+    }
+},{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "China",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "QiuQiu",
+        "name": "Zhang Ming",
+        "role": "Support",
+        "team": "FunPlus Phoenix"
+    }
+}]

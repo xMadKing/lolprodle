@@ -132,18 +132,6 @@
     "team": "Team BDS"
 },
 {
-    "country": "Poland",
-    "fav_champs": [
-        "Irelia",
-        "Jayce",
-        "Kennen"
-    ],
-    "id": "Agresivoo",
-    "name": "Tobiasz Ciba",
-    "role": "Top",
-    "team": "Team BDS"
-},
-{
     "country": "Slovenia",
     "fav_champs": [
         "Ashe",
@@ -258,6 +246,19 @@
     ],
     "id": "Bo",
     "name": "Zhou Yang-Bo",
+    "role": "Jungle",
+    "team": "Team Vitality"
+},
+{
+    "country": "Poland",
+    "fav_champs": [
+        "Viego",
+        "Yone",
+        "Kayn",
+        "Talon"
+    ],
+    "id": "Daglas",
+    "name": "Kacper Dagiel",
     "role": "Jungle",
     "team": "Team Vitality"
 },

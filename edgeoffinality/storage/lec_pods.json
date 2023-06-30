@@ -1,0 +1,28 @@
+[{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Pyke"
+        ],
+        "id": "JeongHoon",
+        "name": "Lee Jeong-hoon",
+        "role": "Support",
+        "team": "Astralis"
+    }
+},{
+    "daystamp_millis": 1688083200000,
+    "player": {
+        "country": "Czech Republic",
+        "fav_champs": [
+            "Azir",
+            "Taliyah",
+            "Syndra",
+            "LeBlanc"
+        ],
+        "id": "Humanoid",
+        "name": "Marek Br\u00e1zda",
+        "role": "Mid",
+        "team": "Fnatic"
+    }
+}]

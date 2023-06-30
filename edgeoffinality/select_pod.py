@@ -1,7 +1,6 @@
 import random
 import json
-from datetime import  datetime
-from datetime import date
+import time
 import os
 
 #check if file exists
@@ -10,11 +9,11 @@ def check_file(path):
 
 #calc UTC time like mr oopma loompa wants
 def calc_time():
-    today = date.today()
-    dt = datetime(today.year, today.month, today.day, 0, 0)
-    epoch_time = datetime(1970, 1, 1)
-
-    return int((dt - epoch_time).total_seconds()*1000)
+    day_time_millis = 86400000
+    t_utc = int(time.time() * 1000)
+    current_daystamp = t_utc - (t_utc % day_time_millis)
+    
+    return current_daystamp
 
 #get number of players in each region
 def get_len_players(region):
@@ -27,8 +26,8 @@ def get_len_players(region):
 
 #check if its time to reset the _pod file
 def check_data(region):
-    if check_file("storage/{}_pod.json".format(region)):
-        with open("storage/{}_pod.json".format(region), "r") as input:
+    if check_file("storage/{}_pods.json".format(region)):
+        with open("storage/{}_pods.json".format(region), "r") as input:
             data = json.load(input)
             if len(data) >= get_len_players(region):
                 return False
@@ -40,7 +39,7 @@ def check_data(region):
 #player of the day class
 class Pod:
     def __init__(self, player):
-        self.time_stamp_millis = calc_time()
+        self.daystamp_millis = calc_time()
         self.player = player
 
     def toJSON(self):
@@ -58,21 +57,18 @@ def select_pod(region):
 
     data = []
     if check_data(region):
-        with open("storage/{}_pod.json".format(region), "r") as output:
+        with open("storage/{}_pods.json".format(region), "r") as output:
             data = output.read()
             data = data[:len(data)-1]
         data = data + "," + str(pod.toJSON()) + "]"
-        with open("storage/{}_pod.json".format(region), "w") as output:
+        with open("storage/{}_pods.json".format(region), "w") as output:
             output.write(data)
     else:
-        with open("storage/{}_pod.json".format(region), "w") as output:
+        with open("storage/{}_pods.json".format(region), "w") as output:
             output.write("[")
             output.write(pod.toJSON())
             output.write("]")
     
     return "success"
 
-select_pod('lck')
-select_pod('lpl')
-select_pod('lec')
-select_pod('lcs')
+calc_time()
