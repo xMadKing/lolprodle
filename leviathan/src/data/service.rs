@@ -82,7 +82,16 @@ impl LolprodleDataService {
     fn load_ctx_dir() -> LolprodleContextDir {
         // panic and abort program immediately if there exists no context directory (can't
         // function without this)
-        get_context_dir().unwrap()
+        match get_context_dir() {
+            Ok(ctx_dir) => ctx_dir,
+            Err(err) => match err {
+                super::Error::NoContextEnvVar => panic!(
+                    "{} environment variable not set! This variable needs to be set to retrieve files required by the server.",
+                    super::CONTEXT_DIR_ENV_VAR,
+                ),
+                err => panic!("Error while loading context dir: {}", err)
+            }
+        }
     }
 
     /// Creates a map and adds all initial entries for every region.

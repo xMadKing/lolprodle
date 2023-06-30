@@ -1,14 +1,15 @@
 use std::{env, fs, io, path::PathBuf};
 
 use serde::{Deserialize, Serialize};
+use strum::Display;
 
 use crate::lolprodle;
 
 pub mod service;
 
-const CONTEXT_DIR_VAR: &str = "LOLPRODLE_CTX_DIR";
+pub const CONTEXT_DIR_ENV_VAR: &str = "LOLPRODLE_CTX_DIR";
 
-#[derive(Debug)]
+#[derive(Debug, Display)]
 pub enum Error {
     NoContextEnvVar,
     NoContextDir,
@@ -44,7 +45,7 @@ impl LolprodleContextDir {
 /// variable.
 pub fn get_context_dir() -> Result<LolprodleContextDir, Error> {
     let path = env::vars()
-        .find(|(var, _val)| var == CONTEXT_DIR_VAR)
+        .find(|(var, _val)| var == CONTEXT_DIR_ENV_VAR)
         .ok_or(Error::NoContextEnvVar)?;
 
     let entries = fs::read_dir(path.1).map_err(|e| match e.kind() {
