@@ -49,7 +49,6 @@ impl GuessCategory {
     }
 }
 
-
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PlayerGuessCategory {
     pub category_id: i32,
@@ -65,9 +64,7 @@ pub struct PlayerGuess {
 impl PlayerGuess {
     /// A guess is correct if all categories are correct.
     pub fn is_correct(&self) -> bool {
-        self.categories
-            .iter()
-            .all(|category| category.correct)
+        self.categories.iter().all(|category| category.correct)
     }
 }
 

@@ -5,9 +5,9 @@ lolprodle API server - serves the backbone of lolprodle.com
 ## Models
 
 - Region = `Lcs = 0` | `Lec = 1` | `Lck = 2` | `Lpl = 3`
-- GuessCategory = `Name` | `Position` | `From` | `FavoriteChamps` | `Team`
-- GuessResult = `Correct` | `Incorrect`
-- PlayerGuessCategory(category: GuessCategory, result: GuessResult, guess: String)
+- GuessCategory = `Id = 0` | `Role = 1` | `Country = 2` | `FavoriteChamps = 3` | `Team = 4`
+- PlayerGuessCategory(category_id: i32, correct: bool, guess: String)
+-- category_id derived from GuessCategory 
 - PlayerGuess([PlayerGuessCategory])
 
 ## API Requests
@@ -20,7 +20,7 @@ Check the correctness of a guess
 
 JSON payload: 
 ```json
-{"region": 0, "player_name": "name"}
+{"region_id": 0, "player_id": "id"}
 ```
 
 #### Returns
@@ -45,7 +45,7 @@ JSON payload:
 }
 ```
 
-### GET: /players?region=number
+### GET: /players?region_id=number
 
 Get all player names for a region. The frontend uses this for name auto completion.
 
@@ -56,7 +56,7 @@ JSON payload:
 ["name1", "name2", "..."]
 ```
 
-### GET: /previous_player?region=number
+### GET: /previous_player?region_id=number
 
 Get the previous day's player.
 

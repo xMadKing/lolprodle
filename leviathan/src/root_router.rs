@@ -1,13 +1,14 @@
 use chrono::Utc;
 use log::warn;
-use rocket::{http::Status, serde::json::Json, form::{FromForm, FromFormField}};
+use rocket::{http::Status, serde::json::Json};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 use crate::{
     data::Player,
+    guess,
     lolprodle::{self, PlayerGuess, Region},
-    DATA_SERVICE, guess,
+    DATA_SERVICE,
 };
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
@@ -44,12 +45,20 @@ pub async fn index() -> Value {
 }
 
 #[post("/check_guess", data = "<request>")]
-pub async fn check_guess(request: Json<CheckGuessRequest>) -> (Status, Json<PlayerGuess>) {
+pub async fn check_guess(request: Json<CheckGuessRequest>) -> (Status, Json<CheckGuessResponse>) {
     match guess::check_guess(Region::from(request.region_id), &request.player_id).await {
-        Ok(player_guess) => (Status::Ok, Json(player_guess)),
+        Ok(player_guess) => (
+            Status::Ok,
+            Json(CheckGuessResponse {
+                guess: player_guess,
+            }),
+        ),
         Err(status) => {
             warn!("Error status for /check_guess: {}", status);
-            (Status::InternalServerError, Json(PlayerGuess::default()))
+            (
+                Status::InternalServerError,
+                Json(CheckGuessResponse::default()),
+            )
         }
     }
 }
