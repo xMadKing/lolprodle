@@ -1,5 +1,15 @@
 <script>
+    import Footer from "$lib/Footer.svelte";
+    import Navbar from "$lib/Navbar.svelte";
     import "../app.css";
+    import background from "$lib/assets/background.webp";
 </script>
 
-<slot />
+<div class="bg-no-repeat bg-cover" style="background-image: url({background});">
+    <Navbar />
+    <!-- opacity layer -->
+    <div class="bg-gray-50 bg-opacity-20">
+        <slot />
+    </div>
+</div>
+<Footer />

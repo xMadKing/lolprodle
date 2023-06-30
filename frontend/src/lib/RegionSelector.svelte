@@ -6,6 +6,9 @@
     import { selectedRegion } from "$lib/stores";
     import { REGION_DATA, Region } from "./types";
 
+    // Force no region to be selected (useful for the home page)
+    export let forceNoSelection = false;
+
     const regions = [
         {
             id: Region.Lcs,
@@ -30,13 +33,13 @@
     <ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
         {#each regions as region}
             <li>
-                {#if $selectedRegion === region.id}
+                {#if !forceNoSelection && $selectedRegion === region.id}
                     <a class="bg-primary hover:bg-primary flex flex-col">
                         <img src={region.svg} class="w-36 h-36 m-0" />
                         {REGION_DATA.get(region.id)?.name}
                     </a>
                 {:else}
-                    <a on:click={() => $selectedRegion = region.id} class="flex flex-col">
+                    <a class="flex flex-col" href="/{REGION_DATA.get(region.id)?.slugs[0]}">
                         <img src={region.svg} class="w-36 h-36" />
                         {REGION_DATA.get(region.id)?.name}
                     </a>

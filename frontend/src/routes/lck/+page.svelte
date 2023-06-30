@@ -3,4 +3,4 @@
     import { Region } from "$lib/types";
 </script>
 
-<GuessPage region={Region.Lcs} />
+<GuessPage region={Region.Lck} />
