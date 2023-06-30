@@ -48,6 +48,10 @@ impl LolprodleDataService {
         all_pods.get(&region.id()).and_then(|val| Some(val.clone()))
     }
 
+    pub fn get_reset_time() -> u64 {
+        1
+    }
+
     async fn load_region_players(&self) {
         let ctx_dir_lock = self.get_context_dir();
         let ctx_dir = ctx_dir_lock.read().await;
@@ -97,7 +101,7 @@ impl LolprodleDataService {
 }
 
 /// Start the update task for updating region players and pods.
-pub async fn start(service: Arc<LolprodleDataService>) {
+pub fn start(service: Arc<LolprodleDataService>) {
     tokio::task::spawn(async move {
         let mut interval = time::interval(Duration::from_secs(5 * 60)); // 5 mins
         loop {

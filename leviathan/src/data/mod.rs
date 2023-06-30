@@ -84,7 +84,7 @@ pub struct RegionPlayers {
 /// Player of (the) day (Pod)
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct Pod {
-    pub day_stamp_millis: u64,
+    pub daystamp_millis: i64,
     pub player: Player,
 }
 

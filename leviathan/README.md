@@ -32,13 +32,17 @@ PlayerGuess
 
 ### GET: /reset_time
 
-Get the time for when new players are chosen for the next day. This value applies to all regions.
+Get the time for when new players are chosen for the next day, including how
+much longer there is until the reset. This value applies to all regions.
 
 #### Returns
 
 JSON payload: 
 ```json
-{"reset_time_unix_millis": 10000000}
+{
+    "reset_time_unix_millis": 10000000,
+    "remaining_time_millis": 100000
+}
 ```
 
 ### GET: /players?region=number

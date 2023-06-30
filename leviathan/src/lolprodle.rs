@@ -1,5 +1,8 @@
-use serde::{Serialize, Deserialize};
-use strum::EnumIter;
+use std::time::SystemTime;
+
+use chrono::Utc;
+use serde::{Deserialize, Serialize};
+use strum::{EnumIter, IntoEnumIterator};
 
 #[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, EnumIter)]
 pub enum Region {
@@ -22,6 +25,14 @@ impl Region {
             Self::Lck => "LCK",
             Self::Lpl => "LPL",
         }
+    }
+}
+
+impl From<u32> for Region {
+    fn from(value: u32) -> Self {
+        Region::iter()
+            .find(|region| region.id() == value)
+            .unwrap_or(Self::default())
     }
 }
 
@@ -50,4 +61,11 @@ pub struct PlayerGuessCategory {
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct PlayerGuess {
     categories: Vec<PlayerGuessCategory>,
+}
+
+pub const DAY_MILLIS: i64 = 86400000;
+
+pub fn get_current_daystamp_millis() -> i64 {
+    let time = Utc::now().timestamp_millis();
+    time - (time % DAY_MILLIS)
 }
