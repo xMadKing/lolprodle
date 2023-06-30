@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 use crate::{
+    data::Player,
     lolprodle::{self, PlayerGuess, Region},
     DATA_SERVICE,
 };
@@ -12,6 +13,11 @@ use crate::{
 pub struct CheckGuessRequest {
     pub region: Region,
     pub player_name: String,
+}
+
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+pub struct CheckGuessResponse {
+    pub guess: PlayerGuess,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
@@ -26,7 +32,7 @@ pub struct PlayersResponse(Vec<String>);
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct PreviousPlayerResponse {
-    pub player_name: String,
+    pub player: Player,
 }
 
 #[get("/")]
@@ -73,12 +79,28 @@ pub async fn players(region: u32) -> (Status, Json<PlayersResponse>) {
         );
     }
 
-    (Status::NotFound, Json(PlayersResponse(Vec::new())))
+    (Status::NotFound, Json(PlayersResponse::default()))
 }
 
 #[get("/previous_player?<region>")]
-pub async fn previous_player(region: u32) -> Json<PreviousPlayerResponse> {
-    Json(PreviousPlayerResponse {
-        player_name: "dummy".to_string(),
-    })
+pub async fn previous_player(region: u32) -> (Status, Json<PreviousPlayerResponse>) {
+    let rg = Region::from(region);
+    let previous_daystamp = lolprodle::get_current_daystamp_millis() - lolprodle::DAY_MILLIS;
+
+    if let Some(arc) = DATA_SERVICE.get_region_pods(&rg).await {
+        let region_pods = arc.read().await;
+        let prev_player = region_pods
+            .get_pod_for_daystamp(previous_daystamp)
+            .map(|pod| pod.player)
+            .unwrap_or(Player::default());
+
+        return (
+            Status::Ok,
+            Json(PreviousPlayerResponse {
+                player: prev_player,
+            }),
+        );
+    }
+
+    (Status::NotFound, Json(PreviousPlayerResponse::default()))
 }

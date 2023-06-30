@@ -45,7 +45,7 @@ pub enum GuessCategory {
     Team,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub enum GuessResult {
     Correct,
     Incorrect,
@@ -61,6 +61,15 @@ pub struct PlayerGuessCategory {
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct PlayerGuess {
     categories: Vec<PlayerGuessCategory>,
+}
+
+impl PlayerGuess {
+    /// A guess is correct if all categories are correct.
+    pub fn is_correct(&self) -> bool {
+        self.categories
+            .iter()
+            .all(|category| category.result == GuessResult::Correct)
+    }
 }
 
 pub const DAY_MILLIS: i64 = 86400000;

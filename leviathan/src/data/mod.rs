@@ -99,6 +99,15 @@ pub struct RegionPods {
     pub pods: Vec<Pod>,
 }
 
+impl RegionPods {
+    pub fn get_pod_for_daystamp(&self, daystamp_millis: i64) -> Option<Pod> {
+        self.pods
+            .iter()
+            .find(|pod| pod.daystamp_millis == daystamp_millis)
+            .cloned()
+    }
+}
+
 pub struct LolprodleDataLoader;
 
 impl LolprodleDataLoader {

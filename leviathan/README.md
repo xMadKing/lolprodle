@@ -26,8 +26,8 @@ JSON payload:
 #### Returns
 
 JSON payload: 
-```
-PlayerGuess
+```json
+{"guess": "PlayerGuess obj -- see models"}
 ```
 
 ### GET: /reset_time
@@ -64,6 +64,6 @@ Get the previous day's player.
 
 JSON payload: 
 ```json
-{"player_name": "name"}
+{"player": "Player obj -- see models"}
 ```
 

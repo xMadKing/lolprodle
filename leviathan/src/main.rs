@@ -9,6 +9,7 @@ extern crate rocket;
 pub mod data;
 pub mod lolprodle;
 pub mod root_router;
+pub mod guess;
 
 lazy_static! {
     static ref DATA_SERVICE: Arc<LolprodleDataService> = Arc::new(LolprodleDataService::new());

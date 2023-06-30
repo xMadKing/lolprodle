@@ -48,10 +48,6 @@ impl LolprodleDataService {
         all_pods.get(&region.id()).and_then(|val| Some(val.clone()))
     }
 
-    pub fn get_reset_time() -> u64 {
-        1
-    }
-
     async fn load_region_players(&self) {
         let ctx_dir_lock = self.get_context_dir();
         let ctx_dir = ctx_dir_lock.read().await;
