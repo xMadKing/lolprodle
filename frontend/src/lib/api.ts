@@ -30,15 +30,26 @@ export interface PreviousPlayerResponse {
     player: Player;
 }
 
-function fetch_data(){
-    let response = fetch('http://127.0.0.1:8000/v1/reset_time').then((x) => x.json());
-    console.log(response)
-    return 
+export function setup_reset_time_fetching() {
+    setInterval(() => {
+        fetch(
+            "http://127.0.0.1:8000/v1/reset_time",
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                mode: "no-cors",
+            }
+        ).then(x => console.log(x));
+        // .then(x => x.json())
+        // .then(data => console.log(data));
+    }, 5000);
 }
 
 
-export function setup(){
+export function setup() {
     setInterval(() => {
-        fetch_data();
+        // fetch_data();
     }, 5000);
 }

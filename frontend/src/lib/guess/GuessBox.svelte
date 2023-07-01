@@ -1,6 +1,6 @@
 <script lang="ts">
     import { regionStores, selectedRegion } from "$lib/stores";
-    import { PlayerGuess, Region } from "$lib/types";
+    import { type PlayerGuess, Region } from "$lib/types";
     import { onDestroy } from "svelte";
     import GuessRow from "./GuessRow.svelte";
     import type { Unsubscriber } from "svelte/motion";

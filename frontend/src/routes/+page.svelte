@@ -2,9 +2,7 @@
     import RegionSelector from "$lib/RegionSelector.svelte";
     import ResetTimer from "$lib/ResetTimer.svelte";
     import lolprodle_logo from "$lib/assets/lolprodle_logo.svg";
-    import { setup } from "$lib/api";
-
-    setup();
+    import { setup_reset_time_fetching } from "$lib/api";
 </script>
 
 <div class="flex items-center justify-center flex-col pt-10">
