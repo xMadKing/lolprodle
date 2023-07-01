@@ -9,11 +9,13 @@
     import { selectedRegion } from "./stores";
 
     export let region: Region;
-    
+
     selectedRegion.set(region);
 </script>
 
-<RegionSelector />
+<div class="py-8">
+    <RegionSelector />
+</div>
 <Previous />
 <div class="flex items-center justify-center pl-6 py-8">
     <Input />

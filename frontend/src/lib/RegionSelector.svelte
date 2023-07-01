@@ -29,7 +29,7 @@
     ];
 </script>
 
-<div class="flex items-center justify-center py-8">
+<div class="flex items-center justify-center">
     <ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
         {#each regions as region}
             <li>
