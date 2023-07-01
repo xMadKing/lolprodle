@@ -27,8 +27,10 @@
 </script>
 
 <div class="flex w-80 flex-col">
-    <label class="label pr-40">
-        <span class="label-text uppercase font-bold">Enter player name</span>
+    <label class="label">
+        <span class="label-text uppercase font-bold bg-base-100 p-2 rounded-lg">
+            Enter player name
+        </span>
     </label>
     <div class="form-control w-full max-w-xs">
         <div>

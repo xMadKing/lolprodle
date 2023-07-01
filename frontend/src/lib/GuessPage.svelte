@@ -4,7 +4,7 @@
     import RegionSelector from "./RegionSelector.svelte";
     import HowToButton from "./HowToButton.svelte";
     import GuessBox from "./guess/GuessBox.svelte";
-    import Timer from "./Timer.svelte";
+    import ResetTimer from "./ResetTimer.svelte";
     import type { Region } from "./types";
     import { selectedRegion } from "./stores";
 
@@ -22,4 +22,7 @@
     <HowToButton />
 </div>
 <GuessBox />
-<Timer />
+
+<div class="py-8">
+    <ResetTimer />
+</div>

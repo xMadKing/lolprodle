@@ -7,7 +7,7 @@ export const selectedRegion = writable(Region.Lcs);
 export const regionStores = new Map<number, Writable<Array<PlayerGuess>>>();
 
 // unix time denoting next reset
-export const resetTimeMillis = writable(1688114466000);
+export const resetTimeMillis = writable(1688184000000 + 86400000);
 
 function createRegionStores() {
     for (let i = 0; i < Object.keys(Region).length; i++) {

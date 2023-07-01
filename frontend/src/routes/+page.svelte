@@ -1,6 +1,6 @@
 <script>
     import RegionSelector from "$lib/RegionSelector.svelte";
-    import Timer from "$lib/Timer.svelte";
+    import ResetTimer from "$lib/ResetTimer.svelte";
     import lolprodle_logo from "$lib/assets/lolprodle_logo.svg";
 </script>
 
@@ -15,5 +15,5 @@
 </div>
 
 <div class="py-8">
-    <Timer />
+    <ResetTimer />
 </div>
