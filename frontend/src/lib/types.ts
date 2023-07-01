@@ -16,38 +16,23 @@ export enum GuessCategory {
     // name of the player
     Name = "Player Name",
     // the position they play
-    Position = "Position",
+    Role = "Role",
     // where they are from
-    From = "From",
+    Country = "Country",
     // their favourite champ
-    FavoriteChamp = "Favorite Champ",
+    FavoriteChamps = "Favorite Champs",
     // the titles won
     Titles = "Titles"
 }
 
-export enum GuessResult {
-    Correct,
-    Incorrect
+export interface PlayerGuessCategory {
+    category: GuessCategory;
+    correct: boolean;
+    guess: string;
 }
 
-export class PlayerGuessCategory {
-    readonly category: GuessCategory;
-    readonly result: GuessResult;
-    readonly guess: string;
-
-    constructor(category: GuessCategory, result: GuessResult, guess: string) {
-        this.category = category;
-        this.result = result;
-        this.guess = guess;
-    }
-}
-
-export class PlayerGuess {
-    readonly categories: Array<PlayerGuessCategory>;
-
-    constructor(categories: Array<PlayerGuessCategory>) {
-        this.categories = categories;
-    }
+export interface PlayerGuess {
+    categories: Array<PlayerGuessCategory>;
 }
 
 export enum ToastStatus {
