@@ -6,6 +6,7 @@ use lazy_static::lazy_static;
 #[macro_use]
 extern crate rocket;
 
+pub mod cors;
 pub mod data;
 pub mod guess;
 pub mod lolprodle;
@@ -31,6 +32,7 @@ async fn main() {
     info!("Started loprodle services");
 
     let _ = rocket::build()
+        .mount("/", routes![cors::all_options])
         .mount(
             "/v1/",
             routes![
@@ -41,6 +43,7 @@ async fn main() {
                 root_router::previous_player
             ],
         )
+        .attach(cors::Cors)
         .launch()
         .await;
 }
