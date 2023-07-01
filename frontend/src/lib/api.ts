@@ -1,5 +1,5 @@
-import { resetTimeMillis } from "./stores";
-import type { PlayerGuess } from "./types";
+import { resetTimeMillis, toasts } from "./stores";
+import { Toast, type PlayerGuess, ToastStatus } from "./types";
 
 export interface Player {
     id: string;
@@ -31,19 +31,29 @@ export interface PreviousPlayerResponse {
 }
 
 export function setup_reset_time_fetching() {
-    setInterval(() => {
-        fetch(
+    setInterval(async () => {
+        await fetch(
             "http://127.0.0.1:8000/v1/reset_time",
             {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                mode: "no-cors",
+                mode: "cors",
             }
-        ).then(x => console.log(x));
-        // .then(x => x.json())
-        // .then(data => console.log(data));
+        )
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(_err => {
+                toasts.update(t => {
+                    t.push(new Toast(
+                        ToastStatus.Error,
+                        "Something happened while getting the reset time",
+                        Date.now() + 2000
+                    ));
+                    return t;
+                });
+            });
     }, 5000);
 }
 

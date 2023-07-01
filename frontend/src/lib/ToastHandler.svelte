@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { toasts } from "./stores";
-    import { Toast, ToastStatus } from "./types";
+    import { ToastStatus } from "./types";
 
     onMount(async () => {
         setInterval(() => {
@@ -13,7 +13,7 @@
     });
 </script>
 
-<div class="toast toast-end">
+<div class="toast toast-end z-10">
     {#each $toasts as toast}
         <div
             class="alert"
