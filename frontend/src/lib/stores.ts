@@ -1,5 +1,5 @@
 import { writable, type Writable } from "svelte/store";
-import { Region, PlayerGuess, GuessCategory, REGION_DATA, Toast } from "./types";
+import { Region, type PlayerGuess, GuessCategory, REGION_DATA, Toast } from "./types";
 
 // Contains the currently selected region
 export const selectedRegion = writable(Region.Lcs);
