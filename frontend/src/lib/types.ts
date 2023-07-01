@@ -49,3 +49,21 @@ export class PlayerGuess {
         this.categories = categories;
     }
 }
+
+export enum ToastStatus {
+    Info,
+    Success,
+    Error
+}
+
+export class Toast {
+    readonly status: ToastStatus;
+    readonly message: string;
+    readonly lifeEndTimeMillis: number; // unix time for when to hide
+
+    constructor(status: ToastStatus, message: string, lifeEndTimeMillis: number) {
+        this.status = status;
+        this.message = message;
+        this.lifeEndTimeMillis = lifeEndTimeMillis;
+    }
+}

@@ -1,5 +1,5 @@
 import { writable, type Writable } from "svelte/store";
-import { Region, PlayerGuess, PlayerGuessCategory, GuessCategory, GuessResult, REGION_DATA } from "./types";
+import { Region, PlayerGuess, PlayerGuessCategory, GuessCategory, GuessResult, REGION_DATA, Toast } from "./types";
 
 // Contains the currently selected region
 export const selectedRegion = writable(Region.Lcs);
@@ -11,6 +11,8 @@ export const showSettings = writable(false);
 
 // unix time denoting next reset
 export const resetTimeMillis = writable(1688184000000 + 86400000);
+
+export const toasts = writable(new Array<Toast>());
 
 function createRegionStores() {
     for (let i = 0; i < Object.keys(Region).length; i++) {
