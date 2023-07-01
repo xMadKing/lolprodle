@@ -30,7 +30,7 @@ impl LolprodleContextDir {
     }
 
     pub fn get_region_pods_file(&self, region: &lolprodle::Region) -> Option<&PathBuf> {
-        let target_file = format!("{}_pod.json", region.name().to_lowercase());
+        let target_file = format!("{}_pods.json", region.name().to_lowercase());
         self.get_file(target_file.as_str())
     }
 
