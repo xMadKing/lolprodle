@@ -49,7 +49,7 @@ pub fn compare_players(guess: &Player, real: &Player) -> PlayerGuess {
         PlayerGuessCategory {
             category_id: GuessCategory::Id.id(),
             correct: guess.id == real.id,
-            guess: guess.name.to_owned(),
+            guess: guess.id.to_owned(),
         },
         PlayerGuessCategory {
             category_id: GuessCategory::Role.id(),
