@@ -1,18 +1,13 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte";
     import { getResetTime, type ResetTimeResponse, type ResultResponse } from "./api";
+    import { DataFetchState } from "./types";
 
     const SECOND_MILLIS = 1000;
     const MINUTE_MILLIS = SECOND_MILLIS * 60;
     const HOUR_MILLIS = MINUTE_MILLIS * 60;
 
-    enum State {
-        Loading,
-        Fetched,
-        Error,
-    }
-
-    let state = State.Loading;
+    let dataState = DataFetchState.Loading;
     let resetTime = 0;
     let hours: number = -1;
     let minutes: number = -1;
@@ -37,14 +32,14 @@
     onDestroy(() => clearInterval(ticker));
 
     function updateResetTime() {
-        state = State.Loading;
+        dataState = DataFetchState.Loading;
         getResetTime().then((res) => {
             if (!res.success || res.data === null) {
-                state = State.Error;
+                dataState = DataFetchState.Error;
                 return;
             }
 
-            state = State.Fetched;
+            dataState = DataFetchState.Fetched;
             resetTime = res.data.reset_time_unix_millis;
             // immediate update to prevent empty values in timer
             updateUnixToTimeComponents(resetTime);
@@ -70,9 +65,9 @@
         <span class="label-text font-bold">RESETS IN...</span>
     </label>
     <div class="flex flex-row bg-base-200 justify-center rounded-b-box gap-5 py-8 w-96">
-        {#if state === State.Loading}
+        {#if dataState === DataFetchState.Loading}
             <span class="loading loading-spinner loading-lg" />
-        {:else if state === State.Fetched}
+        {:else if dataState === DataFetchState.Fetched}
             <div>
                 <span class="countdown font-mono text-4xl">
                     <span style="--value:{hours};" />

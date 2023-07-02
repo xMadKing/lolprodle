@@ -56,7 +56,7 @@ export function getCurrentDaystampMillis(): number {
     return now;
 }
 
-export async function postCheckGuess(region_id: number, player_id: string): Promise<CheckGuessResponse> {
+export async function postCheckGuess(region_id: number, player_id: string): Promise<ResultResponse<CheckGuessResponse>> {
     let req: CheckGuessRequest = { region_id, player_id };
     return fetch(
         "http://127.0.0.1:8000/v1/check_guess",
@@ -70,7 +70,7 @@ export async function postCheckGuess(region_id: number, player_id: string): Prom
         }
     )
         .then(res => res.json())
-        .then(json => json as CheckGuessResponse);
+        .then(json => json as ResultResponse<CheckGuessResponse>);
 }
 
 // This request should never error
@@ -89,7 +89,7 @@ export async function getResetTime(): Promise<ResultResponse<ResetTimeResponse>>
         .then(json => json as ResultResponse<ResetTimeResponse>)
 }
 
-export async function fetchPlayerNames(region: number): Promise<PlayersResponse> {
+export async function getPlayerNames(region: number): Promise<ResultResponse<PlayersResponse>> {
     return fetch(
         `http://127.0.0.1:8000/v1/players?region_id=${region}`,
         {
@@ -101,10 +101,10 @@ export async function fetchPlayerNames(region: number): Promise<PlayersResponse>
         }
     )
         .then(res => res.json())
-        .then(json => json as PlayersResponse)
+        .then(json => json as ResultResponse<PlayersResponse>)
 }
 
-export async function getPreviousPlayer(region: number): Promise<PreviousPlayerResponse> {
+export async function getPreviousPlayer(region: number): Promise<ResultResponse<PreviousPlayerResponse>> {
     return fetch(
         `http://127.0.0.1:8000/v1/previous_player?region_id=${region}`,
         {
@@ -116,5 +116,5 @@ export async function getPreviousPlayer(region: number): Promise<PreviousPlayerR
         }
     )
         .then(res => res.json())
-        .then(json => json as PreviousPlayerResponse)
+        .then(json => json as ResultResponse<PreviousPlayerResponse>)
 }

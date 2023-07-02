@@ -70,3 +70,9 @@ export class Duration {
         return mins * this.secs(60);
     }
 }
+
+export enum DataFetchState {
+    Loading,
+    Fetched,
+    Error
+}
