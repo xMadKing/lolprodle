@@ -90,16 +90,6 @@
     "fav_champs": [
         "None"
     ],
-    "id": "FATE",
-    "name": "Yoo Su-hyeok",
-    "role": "Mid",
-    "team": "DRX"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
     "id": "Juhan",
     "name": "Lee Ju-han",
     "role": "Jungle",
@@ -155,16 +145,6 @@
     "id": "Delight",
     "name": "Yoo Hwan-joong",
     "role": "Support",
-    "team": "Gen.G"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "Kled"
-    ],
-    "id": "Doran",
-    "name": "Choi Hyeon-joon",
-    "role": "Top",
     "team": "Gen.G"
 },
 {
@@ -233,27 +213,6 @@
 {
     "country": "South Korea",
     "fav_champs": [
-        "None"
-    ],
-    "id": "Viper",
-    "name": "Park Do-hyeon",
-    "role": "Bot",
-    "team": "Hanwha Life Esports"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "Akali",
-        "Sylas"
-    ],
-    "id": "Zeka",
-    "name": "Kim Geon-woo",
-    "role": "Mid",
-    "team": "Hanwha Life Esports"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
         "Ezreal"
     ],
     "id": "Aiming",
@@ -314,36 +273,6 @@
     "fav_champs": [
         "None"
     ],
-    "id": "BuLLDoG",
-    "name": "Lee Tae-young",
-    "role": "Mid",
-    "team": "Kwangdong Freecs"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "DuDu",
-    "name": "Lee Dong-ju",
-    "role": "Top",
-    "team": "Kwangdong Freecs"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Jun",
-    "name": "Yoon Se-jun",
-    "role": "Support",
-    "team": "Kwangdong Freecs"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
     "id": "Moham",
     "name": "Jeong Jae-hun",
     "role": "Support",
@@ -372,22 +301,22 @@
 {
     "country": "South Korea",
     "fav_champs": [
+        "Camille"
+    ],
+    "id": "Burdol",
+    "name": "Noh Tae-yoon",
+    "role": "Top",
+    "team": "Liiv SANDBOX"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
         "Akali",
         "Irelia"
     ],
     "id": "Clozer",
     "name": "Lee Ju-hyeon",
     "role": "Mid",
-    "team": "Liiv SANDBOX"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Kael",
-    "name": "Kim Jin-hong",
-    "role": "Support",
     "team": "Liiv SANDBOX"
 },
 {
@@ -427,29 +356,9 @@
     "fav_champs": [
         "None"
     ],
-    "id": "FIESTA",
-    "name": "An Hyeon-seo",
-    "role": "Mid",
-    "team": "Nongshim RedForce"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
     "id": "Jiwoo",
     "name": "Jung Ji-woo",
     "role": "Bot",
-    "team": "Nongshim RedForce"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Peter",
-    "name": "Jeong Yoon-su",
-    "role": "Support",
     "team": "Nongshim RedForce"
 },
 {
@@ -582,18 +491,6 @@
     "id": "Oner",
     "name": "Mun Hyeon-jun",
     "role": "Jungle",
-    "team": "T1"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "Diana",
-        "Viktor",
-        "Taliyah"
-    ],
-    "id": "Sky",
-    "name": "Kim Ha-neul",
-    "role": "Mid",
     "team": "T1"
 },
 {

@@ -73,16 +73,6 @@
     "team": "Fnatic"
 },
 {
-    "country": "South Korea",
-    "fav_champs": [
-        "Ezreal"
-    ],
-    "id": "Noah",
-    "name": "Oh Hyeon-taek",
-    "role": "Bot",
-    "team": "Fnatic"
-},
-{
     "country": "Spain",
     "fav_champs": [
         "Camille"
@@ -117,19 +107,6 @@
     "name": "Adrian Trybus",
     "role": "Support",
     "team": "Fnatic"
-},
-{
-    "country": "France",
-    "fav_champs": [
-        "Darius",
-        "Jax",
-        "Camille",
-        "Olaf"
-    ],
-    "id": "Adam",
-    "name": "Adam Maanane",
-    "role": "Top",
-    "team": "Team BDS"
 },
 {
     "country": "Slovenia",
@@ -210,7 +187,8 @@
         "Elise",
         "Camille",
         "Gragas",
-        "Olaf"
+        "Olaf",
+        "Sejuani"
     ],
     "id": "Jankos",
     "name": "Marcin Jankowski",
@@ -375,18 +353,6 @@
     "id": "LIDER",
     "name": "Adam Ilyasov",
     "role": "Mid",
-    "team": "Astralis"
-},
-{
-    "country": "Bulgaria",
-    "fav_champs": [
-        "Kalista",
-        "Tristana",
-        "Caitlyn"
-    ],
-    "id": "Venzer",
-    "name": "Alexander Kostadinov",
-    "role": "Support",
     "team": "Astralis"
 },
 {

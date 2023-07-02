@@ -9,20 +9,6 @@
     "team": "100 Thieves"
 },
 {
-    "country": "Turkey",
-    "fav_champs": [
-        "Graves",
-        "Lee Sin",
-        "Jarvan IV",
-        "Nidalee",
-        "Qiyana"
-    ],
-    "id": "Closer",
-    "name": "Can \u00c7elik",
-    "role": "Jungle",
-    "team": "100 Thieves"
-},
-{
     "country": "United States",
     "fav_champs": [
         "Vayne",
@@ -31,18 +17,8 @@
         "Graves"
     ],
     "id": "Doublelift",
-    "name": "Yiliang&amp;nbsp;&quot;Peter&quot; Peng",
+    "name": "Yiliang\u00a0\"Peter\" Peng",
     "role": "Bot",
-    "team": "100 Thieves"
-},
-{
-    "country": "United States",
-    "fav_champs": [
-        "Kennen"
-    ],
-    "id": "Jenkins",
-    "name": "Thomas Tran",
-    "role": "Top",
     "team": "100 Thieves"
 },
 {
@@ -66,16 +42,6 @@
     "name": "Kim Chan-ho",
     "role": "Top",
     "team": "100 Thieves"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "Zeri"
-    ],
-    "id": "Berserker",
-    "name": "Kim Min-cheol",
-    "role": "Bot",
-    "team": "Cloud9"
 },
 {
     "country": "United States",
@@ -127,19 +93,6 @@
     "team": "Cloud9"
 },
 {
-    "country": "Canada",
-    "fav_champs": [
-        "Ezreal",
-        "Pyke",
-        "Thresh",
-        "Rakan"
-    ],
-    "id": "Diamond",
-    "name": "David B\u00e9rub\u00e9",
-    "role": "Support",
-    "team": "Dignitas"
-},
-{
     "country": "Denmark",
     "fav_champs": [
         "Zed",
@@ -150,26 +103,6 @@
     "id": "Jensen",
     "name": "Nicolaj Jensen",
     "role": "Mid",
-    "team": "Dignitas"
-},
-{
-    "country": "Sweden",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "POILK",
-    "name": "Vilhelm Flennmark",
-    "role": "Bot",
-    "team": "Dignitas"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "Aatrox"
-    ],
-    "id": "Rich",
-    "name": "Lee Jae-won",
-    "role": "Top",
     "team": "Dignitas"
 },
 {
@@ -219,29 +152,8 @@
         "None"
     ],
     "id": "jojopyun",
-    "name": "Joseph&amp;nbsp;Joon Pyun",
+    "name": "Joseph\u00a0Joon Pyun",
     "role": "Mid",
-    "team": "Evil Geniuses.NA"
-},
-{
-    "country": "United States",
-    "fav_champs": [
-        "Riven",
-        "Irelia"
-    ],
-    "id": "Revenge",
-    "name": "Mohamed Kaddoura",
-    "role": "Top",
-    "team": "Evil Geniuses.NA"
-},
-{
-    "country": "Philippines",
-    "fav_champs": [
-        "Graves"
-    ],
-    "id": "Sheiden",
-    "name": "Jade Libut",
-    "role": "Jungle",
     "team": "Evil Geniuses.NA"
 },
 {
@@ -271,16 +183,6 @@
     "team": "FlyQuest"
 },
 {
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Prince",
-    "name": "Lee Chae-hwan",
-    "role": "Bot",
-    "team": "FlyQuest"
-},
-{
     "country": "China",
     "fav_champs": [
         "Graves",
@@ -301,26 +203,6 @@
     "name": "Lee Dae-kwang",
     "role": "Mid",
     "team": "FlyQuest"
-},
-{
-    "country": "Canada",
-    "fav_champs": [
-        "Thresh"
-    ],
-    "id": "Vulcan",
-    "name": "Philippe Laflamme",
-    "role": "Support",
-    "team": "FlyQuest"
-},
-{
-    "country": "United States",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Array",
-    "name": "Jackson Moldenhauer",
-    "role": "Bot",
-    "team": "Golden Guardians"
 },
 {
     "country": "South Korea",
@@ -356,17 +238,6 @@
     "team": "Golden Guardians"
 },
 {
-    "country": "South Korea",
-    "fav_champs": [
-        "Elise",
-        "Graves"
-    ],
-    "id": "River",
-    "name": "Kim Dong-woo",
-    "role": "Jungle",
-    "team": "Golden Guardians"
-},
-{
     "country": "United States",
     "fav_champs": [
         "Tristana",
@@ -387,7 +258,7 @@
         "Azir"
     ],
     "id": "Bolulu",
-    "name": "Onur&amp;nbsp;Can Demirol",
+    "name": "Onur\u00a0Can Demirol",
     "role": "Mid",
     "team": "Immortals"
 },
@@ -397,20 +268,8 @@
         "Graves"
     ],
     "id": "Kenvi",
-    "name": "Shane&amp;nbsp;Kenneth Espinoza",
+    "name": "Shane\u00a0Kenneth Espinoza",
     "role": "Jungle",
-    "team": "Immortals"
-},
-{
-    "country": "United States",
-    "fav_champs": [
-        "Ryze",
-        "Shyvana",
-        "Rumble"
-    ],
-    "id": "Solo",
-    "name": "Colin Earnest",
-    "role": "Top",
     "team": "Immortals"
 },
 {
@@ -442,7 +301,7 @@
         "Rek'Sai"
     ],
     "id": "Contractz",
-    "name": "Juan&amp;nbsp;Arturo Garcia",
+    "name": "Juan\u00a0Arturo Garcia",
     "role": "Jungle",
     "team": "NRG"
 },
@@ -463,7 +322,7 @@
         "Varus"
     ],
     "id": "FBI",
-    "name": "Ian&amp;nbsp;Victor Huang",
+    "name": "Ian\u00a0Victor Huang",
     "role": "Bot",
     "team": "NRG"
 },
@@ -487,16 +346,6 @@
     "id": "Palafox",
     "name": "Cristian Palafox",
     "role": "Mid",
-    "team": "NRG"
-},
-{
-    "country": "Canada",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Poome",
-    "name": "Philippe Lavoie-Giguere",
-    "role": "Support",
     "team": "NRG"
 },
 {
@@ -540,16 +389,6 @@
     "team": "Team Liquid"
 },
 {
-    "country": "United States",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Yeon",
-    "name": "Sean Sung",
-    "role": "Bot",
-    "team": "Team Liquid"
-},
-{
     "country": "South Korea",
     "fav_champs": [
         "Evelynn"
@@ -590,16 +429,6 @@
     ],
     "id": "Insanity",
     "name": "David Challe",
-    "role": "Mid",
-    "team": "TSM"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
-        "None"
-    ],
-    "id": "Ruby",
-    "name": "Lee Sol-min",
     "role": "Mid",
     "team": "TSM"
 },
