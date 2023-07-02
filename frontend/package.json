@@ -37,6 +37,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/js-cookie": "^3.0.3",
+		"js-cookie": "^3.0.5",
 		"svelte-transition": "^0.0.10"
 	}
 }

@@ -4,6 +4,7 @@
     import Transition from "svelte-transition";
     import { fetchPlayerNames } from "./api";
     import { selectedRegion } from "./stores";
+    import { makeGuess } from "./guess/guess";
 
     // dummy data, change to players later
     let playerNames: Array<string> = ['Player Name'];
@@ -28,7 +29,13 @@
     const combobox = createCombobox({ label: "Actions", selected: playerNames[0] });
 
     function onSelect(e: Event) {
-        console.log("select", (e as CustomEvent).detail);
+        let detail = (e as CustomEvent).detail;
+        console.log("select", detail);
+        if (detail !== undefined && detail.selected !== undefined) {
+            let selected = detail.selected; // player id
+            // temp
+            makeGuess($selectedRegion, selected);
+        }
     }
 
     $: filtered = playerNames.filter((person) =>

@@ -1,36 +1,7 @@
 <script lang="ts">
-    import { regionStores, selectedRegion } from "$lib/stores";
-    import { type PlayerGuess, Region } from "$lib/types";
-    import { onDestroy } from "svelte";
     import GuessRow from "./GuessRow.svelte";
-    import type { Unsubscriber } from "svelte/motion";
     import GuessLegend from "./GuessLegend.svelte";
-
-    let region: Region = Region.Lcs;
-    let currentRegionStoreUnsubscribe: Unsubscriber = () => {};
-    let guessStack: Array<PlayerGuess>;
-
-    let unsubscribe = selectedRegion.subscribe((value) => {
-        region = value;
-
-        currentRegionStoreUnsubscribe();
-
-        const store = regionStores.get(region);
-        if (store === undefined) {
-            throw new Error("invalid region: " + region);
-        }
-
-        currentRegionStoreUnsubscribe = store.subscribe((value) => {
-            guessStack = value;
-        });
-    });
-
-    onDestroy(unsubscribe);
-    // need to have another calling function since the current region store unsubscribe function
-    // can be changed throughout the duration of this component
-    onDestroy(() => {
-        currentRegionStoreUnsubscribe();
-    });
+    import { currentGuesses } from "$lib/stores";
 </script>
 
 <div class="flex flex-row content-center justify-center">
@@ -40,8 +11,8 @@
                 Your Guesses
                 <GuessLegend />
             </h3>
-            {#if guessStack.length !== 0}
-                {#each guessStack as guess}
+            {#if $currentGuesses.length !== 0}
+                {#each [...$currentGuesses].reverse() as guess}
                     <GuessRow {guess} />
                 {/each}
             {:else}

@@ -1,8 +1,11 @@
 import { writable, type Writable } from "svelte/store";
-import { Region, type PlayerGuess, GuessCategory, REGION_DATA, Toast } from "./types";
+import { Region, type PlayerGuess, REGION_DATA, Toast } from "./types";
 
 // Contains the currently selected region
 export const selectedRegion = writable(Region.Lcs);
+// Contains the guesses for the current region
+export const currentGuesses: Writable<Array<PlayerGuess>> = writable([]);
+
 // Guesses for each region
 export const regionStores = new Map<number, Writable<Array<PlayerGuess>>>();
 
@@ -20,29 +23,6 @@ function createRegionStores() {
 
         regionStores.set(i, writable(new Array<PlayerGuess>()));
     }
-
-    // dummy data
-    regionStores.get(Region.Lcs)?.update((value) => {
-        value.push({
-            categories: [
-                { category: GuessCategory.Name, correct: false, guess: "aaa" },
-                { category: GuessCategory.Role, correct: true, guess: "aaa" },
-                { category: GuessCategory.Country, correct: true, guess: "aaa" },
-                { category: GuessCategory.FavoriteChamps, correct: false, guess: "aaa" },
-                { category: GuessCategory.Titles, correct: false, guess: "aaa" },
-            ]
-        });
-        value.push({
-            categories: [
-                { category: GuessCategory.Name, correct: false, guess: "aaa" },
-                { category: GuessCategory.Role, correct: true, guess: "aaa" },
-                { category: GuessCategory.Country, correct: true, guess: "aaa" },
-                { category: GuessCategory.FavoriteChamps, correct: false, guess: "aaa" },
-                { category: GuessCategory.Titles, correct: false, guess: "aaa" },
-            ]
-        });
-        return value;
-    });
 }
 
 createRegionStores();

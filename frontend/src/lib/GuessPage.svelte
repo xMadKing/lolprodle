@@ -6,11 +6,22 @@
     import GuessBox from "./guess/GuessBox.svelte";
     import ResetTimer from "./ResetTimer.svelte";
     import type { Region } from "./types";
-    import { selectedRegion } from "./stores";
+    import { currentGuesses, selectedRegion } from "./stores";
+    import { onMount } from "svelte";
+    import { loadGuessesCookie } from "./cookies";
+    import { getCurrentDaystampMillis } from "./api";
 
     export let region: Region;
 
     selectedRegion.set(region);
+
+    onMount(() => {
+        console.log("a");
+        // load guesses
+        let current_daystamp = getCurrentDaystampMillis();
+        let cookie = loadGuessesCookie(region, current_daystamp);
+        currentGuesses.set(cookie !== undefined ? cookie.guesses : []);
+    });
 </script>
 
 <div class="py-8">
