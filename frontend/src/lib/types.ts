@@ -13,20 +13,28 @@ export const REGION_DATA = new Map<Region, { name: string, slugs: (string)[] }>(
 ]);
 
 export enum GuessCategory {
-    // name of the player
-    Name = "Player Name",
+    // id of the player
+    Id = 0,
     // the position they play
-    Role = "Role",
+    Role = 1,
     // where they are from
-    Country = "Country",
+    Country = 2,
     // their favourite champ
-    FavoriteChamps = "Favorite Champs",
+    FavoriteChamps = 3,
     // the titles won
-    Titles = "Titles"
+    Titles = 4
 }
 
+export const GUESS_CATEGORY_DATA = new Map<GuessCategory, { displayName: string }>([
+    [GuessCategory.Id, { displayName: "Player Name" }],
+    [GuessCategory.Role, { displayName: "Role" }],
+    [GuessCategory.Country, { displayName: "Country" }],
+    [GuessCategory.FavoriteChamps, { displayName: "Favorite Champs" }],
+    [GuessCategory.Titles, { displayName: "Titles" }],
+]);
+
 export interface PlayerGuessCategory {
-    category: GuessCategory;
+    category_id: GuessCategory;
     correct: boolean;
     guess: string;
 }

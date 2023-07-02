@@ -25,7 +25,7 @@
                     }
                 }
 
-                // replace toast with new one
+                // replace/set new toast
                 if (tup === undefined) {
                     let toast = $toasts.shift(); // always display oldest toast first
                     if (toast !== undefined) {

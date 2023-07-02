@@ -29,6 +29,30 @@ export interface PreviousPlayerResponse {
     player: Player;
 }
 
+//note: maybe in the future get it from the api server (just in case)
+export function getCurrentDaystampMillis(): number {
+    let now = Date.now();
+    now -= (now % 86400000); // daystamp
+    return now;
+}
+
+export async function postCheckGuess(region_id: number, player_id: string): Promise<CheckGuessResponse> {
+    let req: CheckGuessRequest = { region_id, player_id };
+    return fetch(
+        "http://127.0.0.1:8000/v1/check_guess",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            mode: "cors",
+            body: JSON.stringify(req)
+        }
+    )
+        .then(res => res.json())
+        .then(json => json as CheckGuessResponse);
+}
+
 export async function getResetTime(): Promise<ResetTimeResponse> {
     return fetch(
         "http://127.0.0.1:8000/v1/reset_time",
@@ -44,9 +68,9 @@ export async function getResetTime(): Promise<ResetTimeResponse> {
         .then(json => json as ResetTimeResponse)
 }
 
-export async function fetchPlayerNames(region:number): Promise<PlayersResponse> {
+export async function fetchPlayerNames(region: number): Promise<PlayersResponse> {
     return fetch(
-        `http://127.0.0.1:8000/v1/players?region_id=${region}`, 
+        `http://127.0.0.1:8000/v1/players?region_id=${region}`,
         {
             method: "GET",
             headers: {
@@ -55,13 +79,13 @@ export async function fetchPlayerNames(region:number): Promise<PlayersResponse> 
             mode: "cors",
         }
     )
-    .then(res => res.json())
-    .then(json => json as PlayersResponse)
+        .then(res => res.json())
+        .then(json => json as PlayersResponse)
 }
 
-export async function fetchYstrPlayer(region:number): Promise<PreviousPlayerResponse> {
+export async function fetchYstrPlayer(region: number): Promise<PreviousPlayerResponse> {
     return fetch(
-        `http://127.0.0.1:8000/v1/previous_player?region_id=${region}`, 
+        `http://127.0.0.1:8000/v1/previous_player?region_id=${region}`,
         {
             method: "GET",
             headers: {
@@ -70,6 +94,6 @@ export async function fetchYstrPlayer(region:number): Promise<PreviousPlayerResp
             mode: "cors",
         }
     )
-    .then(res => res.json())
-    .then(json => json as PreviousPlayerResponse)
+        .then(res => res.json())
+        .then(json => json as PreviousPlayerResponse)
 }
