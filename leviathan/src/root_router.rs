@@ -107,15 +107,12 @@ pub async fn previous_player(region_id: i32) -> (Status, Json<PreviousPlayerResp
         let region_pods = arc.read().await;
         let prev_player = region_pods
             .get_pod_for_daystamp(previous_daystamp)
-            .map(|pod| pod.player.clone())
-            .unwrap_or(Player::default());
+            .map(|pod| pod.player.clone());
 
-        return (
-            Status::Ok,
-            Json(PreviousPlayerResponse {
-                player: prev_player,
-            }),
-        );
+        return match prev_player {
+            Some(player) => (Status::Ok, Json(PreviousPlayerResponse { player })),
+            None => (Status::NotFound, Json(PreviousPlayerResponse::default())),
+        };
     }
 
     (Status::NotFound, Json(PreviousPlayerResponse::default()))
