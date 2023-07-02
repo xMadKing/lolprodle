@@ -25,4 +25,19 @@
         "role": "Mid",
         "team": "Fnatic"
     }
+},{
+    "daystamp_millis": 1688169600000,
+    "player": {
+        "country": "Spain",
+        "fav_champs": [
+            "Lee Sin",
+            "Kayn",
+            "Gragas",
+            "Ekko"
+        ],
+        "id": "Razork",
+        "name": "Iv\u00e1n Mart\u00edn D\u00edaz",
+        "role": "Jungle",
+        "team": "Fnatic"
+    }
 }]

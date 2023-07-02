@@ -23,4 +23,19 @@
         "role": "Mid",
         "team": "Nongshim RedForce"
     }
+},{
+    "daystamp_millis": 1688169600000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Katarina",
+            "Kassadin",
+            "Syndra",
+            "LeBlanc"
+        ],
+        "id": "ShowMaker",
+        "name": "Heo Su",
+        "role": "Mid",
+        "team": "Dplus KIA"
+    }
 }]

@@ -22,4 +22,19 @@
         "role": "Bot",
         "team": "Golden Guardians"
     }
+},{
+    "daystamp_millis": 1688169600000,
+    "player": {
+        "country": "Canada",
+        "fav_champs": [
+            "Lee Sin",
+            "Vayne",
+            "Twisted Fate",
+            "Ezreal"
+        ],
+        "id": "WildTurtle",
+        "name": "Jason Tran",
+        "role": "Bot",
+        "team": "TSM"
+    }
 }]
