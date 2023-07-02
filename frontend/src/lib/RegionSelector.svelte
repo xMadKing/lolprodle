@@ -35,12 +35,12 @@
             <li>
                 {#if !forceNoSelection && $selectedRegion === region.id}
                     <a class="bg-primary hover:bg-primary flex flex-col">
-                        <img src={region.svg} class="w-36 h-36 m-0" />
+                        <img src={region.svg} class="w-16 h-16 lg:w-36 lg:h-36 m-0" />
                         {REGION_DATA.get(region.id)?.name}
                     </a>
                 {:else}
                     <a class="flex flex-col" href="/{REGION_DATA.get(region.id)?.slugs[0]}">
-                        <img src={region.svg} class="w-36 h-36" />
+                        <img src={region.svg} class="w-16 h-16 lg:w-36 lg:h-36" />
                         {REGION_DATA.get(region.id)?.name}
                     </a>
                 {/if}

@@ -22,7 +22,7 @@ export enum GuessCategory {
     // their favourite champ
     FavoriteChamps = 3,
     // the titles won
-    Titles = 4
+    Team = 4
 }
 
 export const GUESS_CATEGORY_DATA = new Map<GuessCategory, { displayName: string }>([
@@ -30,7 +30,7 @@ export const GUESS_CATEGORY_DATA = new Map<GuessCategory, { displayName: string 
     [GuessCategory.Role, { displayName: "Role" }],
     [GuessCategory.Country, { displayName: "Country" }],
     [GuessCategory.FavoriteChamps, { displayName: "Favorite Champs" }],
-    [GuessCategory.Titles, { displayName: "Titles" }],
+    [GuessCategory.Team, { displayName: "Team" }],
 ]);
 
 export interface PlayerGuessCategory {

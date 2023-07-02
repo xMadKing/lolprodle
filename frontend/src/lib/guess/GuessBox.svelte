@@ -6,14 +6,16 @@
 
 <div class="flex flex-row content-center justify-center">
     <div class="card bg-base-200 text-neutral-content w-3/5">
-        <div class="card-body items-center text-center">
+        <div class="card-body items-center text-center ">
             <h3 class="card-title">
                 Your Guesses
                 <GuessLegend />
             </h3>
             {#if $currentGuesses.length !== 0}
                 {#each [...$currentGuesses].reverse() as guess}
+                    <div class="flex justify-center w-4/5">
                     <GuessRow {guess} />
+                    </div>
                 {/each}
             {:else}
                 <p>No guesses yet - make a guess!</p>
