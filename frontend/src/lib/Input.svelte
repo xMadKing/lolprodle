@@ -15,7 +15,6 @@
         updatePlayerNames(); // initial value
         requester = setInterval(updatePlayerNames, 1000);
     });
-
     onDestroy(() => clearInterval(requester));
 
     function updatePlayerNames() {

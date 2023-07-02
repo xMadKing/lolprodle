@@ -40,7 +40,7 @@
                     new Toast(
                         ToastStatus.Error,
                         "Something went wrong updating the reset time :(",
-                        Duration.secs(5)
+                        Duration.secs(2)
                     )
                 );
             });
