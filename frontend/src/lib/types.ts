@@ -13,8 +13,8 @@ export const REGION_DATA = new Map<Region, { name: string, slugs: (string)[] }>(
 ]);
 
 export enum GuessCategory {
-    // name of the player
-    Name = 0,
+    // id of the player
+    Id = 0,
     // the position they play
     Role = 1,
     // where they are from
@@ -26,7 +26,7 @@ export enum GuessCategory {
 }
 
 export const GUESS_CATEGORY_DATA = new Map<GuessCategory, { displayName: string }>([
-    [GuessCategory.Name, { displayName: "Player Name" }],
+    [GuessCategory.Id, { displayName: "Player Name" }],
     [GuessCategory.Role, { displayName: "Role" }],
     [GuessCategory.Country, { displayName: "Country" }],
     [GuessCategory.FavoriteChamps, { displayName: "Favorite Champs" }],
