@@ -1,14 +1,19 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte";
-    import { toasts } from "./stores";
-    import { getResetTime } from "./api";
-    import { Duration, Toast, ToastStatus } from "./types";
+    import { getResetTime, type ResetTimeResponse, type ResultResponse } from "./api";
 
     const SECOND_MILLIS = 1000;
     const MINUTE_MILLIS = SECOND_MILLIS * 60;
     const HOUR_MILLIS = MINUTE_MILLIS * 60;
 
-    let resetTime: number;
+    enum State {
+        Loading,
+        Fetched,
+        Error,
+    }
+
+    let state = State.Loading;
+    let resetTime = 0;
     let hours: number = -1;
     let minutes: number = -1;
     let seconds: number = -1;
@@ -27,23 +32,23 @@
             updateUnixToTimeComponents(resetTime);
         }, 1000);
     });
-    
+
     onDestroy(() => clearInterval(requester));
     onDestroy(() => clearInterval(ticker));
 
     function updateResetTime() {
-        getResetTime()
-            .then((res) => (resetTime = res.reset_time_unix_millis))
-            .catch((err) => {
-                console.log(err);
-                $toasts.push(
-                    new Toast(
-                        ToastStatus.Error,
-                        "Something went wrong updating the reset time :(",
-                        Duration.secs(2)
-                    )
-                );
-            });
+        state = State.Loading;
+        getResetTime().then((res) => {
+            if (!res.success || res.data === null) {
+                state = State.Error;
+                return;
+            }
+
+            state = State.Fetched;
+            resetTime = res.data.reset_time_unix_millis;
+            // immediate update to prevent empty values in timer
+            updateUnixToTimeComponents(resetTime);
+        });
     }
 
     // unixMillis assumed to be in the future
@@ -65,23 +70,29 @@
         <span class="label-text font-bold">RESETS IN...</span>
     </label>
     <div class="flex flex-row bg-base-200 justify-center rounded-b-box gap-5 py-8 w-96">
-        <div>
-            <span class="countdown font-mono text-4xl">
-                <span style="--value:{hours};" />
-            </span>
-            hour{hours === 1 ? "" : "s"}
-        </div>
-        <div>
-            <span class="countdown font-mono text-4xl">
-                <span style="--value:{minutes};" />
-            </span>
-            min
-        </div>
-        <div>
-            <span class="countdown font-mono text-4xl">
-                <span style="--value:{seconds};" />
-            </span>
-            sec
-        </div>
+        {#if state === State.Loading}
+            <span class="loading loading-spinner loading-lg" />
+        {:else if state === State.Fetched}
+            <div>
+                <span class="countdown font-mono text-4xl">
+                    <span style="--value:{hours};" />
+                </span>
+                hour{hours === 1 ? "" : "s"}
+            </div>
+            <div>
+                <span class="countdown font-mono text-4xl">
+                    <span style="--value:{minutes};" />
+                </span>
+                min
+            </div>
+            <div>
+                <span class="countdown font-mono text-4xl">
+                    <span style="--value:{seconds};" />
+                </span>
+                sec
+            </div>
+        {:else}
+            <p class="text-error">Error while fetching the reset time :(</p>
+        {/if}
     </div>
 </div>

@@ -1,27 +1,21 @@
 <script lang="ts">
     import background from "$lib/assets/pbackground.jpg";
     import { onMount, onDestroy } from "svelte";
-    import { fetchYstrPlayer } from "./api";
-    import { selectedRegion } from "./stores";
+    import {  getPreviousPlayer, type PreviousPlayerResponse } from "./api";
+    import { currentDaystamp, selectedRegion } from "./stores";
+    import type { Unsubscriber } from "svelte/motion";
 
-    let requester: NodeJS.Timer;
-    let name = "";
+    let unsubscribe: Unsubscriber;
+    let previousPlayer: Promise<PreviousPlayerResponse> = getPreviousPlayer($selectedRegion);
 
     onMount(() => {
-        // request time from api (every 5 mins)
-        updateYstrPlayer(); // initial value
-        requester = setInterval(updateYstrPlayer, 1000);
+        unsubscribe = currentDaystamp.subscribe((_daystamp) => {
+            // new day; update previous player
+            previousPlayer = getPreviousPlayer($selectedRegion);
+        });
     });
 
-    onDestroy(() => clearInterval(requester));
-
-    function updateYstrPlayer() {
-        fetchYstrPlayer($selectedRegion)
-            .then((res) => {
-                name = res.player.id;
-            })
-            .catch((err) => console.log(err));
-    }
+    onDestroy(() => unsubscribe());
 </script>
 
 <div class="flex justify-center">
@@ -29,11 +23,13 @@
         <figure><img src={background} alt="LeagueImg" sizes="100" /></figure>
         <div class="card-body items-center">
             <h2 class="card-title">Yesterday's player was:</h2>
-            {#if name == ''}
-                <span class="loading loading-infinity loading-lg" />
-			{:else}
-				<b><p>{name}</p></b>
-			{/if}
+            {#await previousPlayer}
+                <span class="loading loading-spinner loading-md" />
+            {:then res}
+                <p class="font-bold">{res.player.id}</p>
+            {:catch err}
+                <p class="text-error">{err.message}</p>
+            {/await}
         </div>
     </div>
 </div>

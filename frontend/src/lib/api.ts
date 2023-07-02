@@ -9,6 +9,26 @@ export interface Player {
     fav_champs: Array<String>;
 }
 
+export enum ErrorType {
+    Internal,
+    NoRegionPlayersAvailable,
+    NoRegionPodsAvailable,
+    InvalidPlayerId,
+    NoPod,
+}
+
+export interface ResultResponse<T> {
+    success: boolean;
+    error_type: ErrorType | null;
+    error_message: string | null;
+    data: T | null;
+}
+
+export interface ApiError {
+    errorType: ErrorType | null;
+    errorMessage: string | null;
+}
+
 export interface CheckGuessRequest {
     region_id: number;
     player_id: string;
@@ -53,7 +73,8 @@ export async function postCheckGuess(region_id: number, player_id: string): Prom
         .then(json => json as CheckGuessResponse);
 }
 
-export async function getResetTime(): Promise<ResetTimeResponse> {
+// This request should never error
+export async function getResetTime(): Promise<ResultResponse<ResetTimeResponse>> {
     return fetch(
         "http://127.0.0.1:8000/v1/reset_time",
         {
@@ -65,7 +86,7 @@ export async function getResetTime(): Promise<ResetTimeResponse> {
         }
     )
         .then(res => res.json())
-        .then(json => json as ResetTimeResponse)
+        .then(json => json as ResultResponse<ResetTimeResponse>)
 }
 
 export async function fetchPlayerNames(region: number): Promise<PlayersResponse> {
@@ -83,7 +104,7 @@ export async function fetchPlayerNames(region: number): Promise<PlayersResponse>
         .then(json => json as PlayersResponse)
 }
 
-export async function fetchYstrPlayer(region: number): Promise<PreviousPlayerResponse> {
+export async function getPreviousPlayer(region: number): Promise<PreviousPlayerResponse> {
     return fetch(
         `http://127.0.0.1:8000/v1/previous_player?region_id=${region}`,
         {

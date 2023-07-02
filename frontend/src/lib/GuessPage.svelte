@@ -16,7 +16,6 @@
     selectedRegion.set(region);
 
     onMount(() => {
-        console.log("a");
         // load guesses
         let current_daystamp = getCurrentDaystampMillis();
         let cookie = loadGuessesCookie(region, current_daystamp);
