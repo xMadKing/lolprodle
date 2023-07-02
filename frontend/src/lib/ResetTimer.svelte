@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
-    import { resetTimeMillis } from "./stores";
+    import { get_reset_time } from "./api";
 
     const SECOND_MILLIS = 1000;
     const MINUTE_MILLIS = SECOND_MILLIS * 60;
@@ -11,18 +11,22 @@
     let minutes: number;
     let seconds: number;
 
-    // listen for any changes for the reset time
-    const unsubscribe = resetTimeMillis.subscribe((value) => {
-        resetTime = value;
-        updateUnixToTimeComponents(value);
-    });
-    onDestroy(unsubscribe);
+    // request time from api (every 5 mins)
+    updateResetTime(); // initial value
+    let requester = setInterval(updateResetTime, 1000 * 60 * 5);
+    onDestroy(() => clearInterval(requester));
 
     // makes the timer count down
     let ticker = setInterval(() => {
         updateUnixToTimeComponents(resetTime);
     }, 1000);
     onDestroy(() => clearInterval(ticker));
+
+    function updateResetTime() {
+        get_reset_time()
+            .then((res) => (resetTime = res.reset_time_unix_millis))
+            .catch((err) => console.log(err));
+    }
 
     // unixMillis assumed to be in the future
     function updateUnixToTimeComponents(unixMillis: number) {

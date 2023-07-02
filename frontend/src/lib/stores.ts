@@ -9,9 +9,6 @@ export const regionStores = new Map<number, Writable<Array<PlayerGuess>>>();
 // Whether to show the settings modal
 export const showSettings = writable(false);
 
-// unix time denoting next reset
-export const resetTimeMillis = writable(1688184000000 + 86400000);
-
 export const toasts = writable(new Array<Toast>());
 
 function createRegionStores() {

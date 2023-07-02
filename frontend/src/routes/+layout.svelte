@@ -5,12 +5,6 @@
     import background from "$lib/assets/background.webp";
     import Settings from "$lib/Settings.svelte";
     import ToastHandler from "$lib/ToastHandler.svelte";
-    import { onMount } from "svelte";
-    import { setup_reset_time_fetching } from "$lib/api";
-
-    onMount(() => {
-        setup_reset_time_fetching();
-    });
 </script>
 
 <div class="bg-no-repeat bg-cover" style="background-image: url({background});">
