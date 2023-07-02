@@ -1,27 +1,50 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { toasts } from "./stores";
-    import { ToastStatus } from "./types";
+    import { Toast, ToastStatus } from "./types";
+
+    const UPDATE_INTERVAL_MILLIS = 100;
+    const TOAST_DISPLAY_LIMIT = 5;
+
+    // array of tuple (toast, timeLeft)
+    // note this array has an implicit max size of TOAST_DISPLAY_LIMIT
+    // note that any value in this array might be undefined
+    let displayToasts = new Array<[Toast, number]>(TOAST_DISPLAY_LIMIT);
 
     onMount(async () => {
         setInterval(() => {
-            // only keep toasts still alive
-            $toasts = $toasts.filter((toast) => {
-                return Date.now() < toast.lifeEndTimeMillis;
-            });
-        }, 1000);
+            // updates to the displayToasts array are done in place (no element shifting)
+            // NOTE: in the future, we might want to shift elements to the left 
+            // before inserting (to mimic new toasts coming from the bottom)
+            for (let i = 0; i < TOAST_DISPLAY_LIMIT; i++) {
+                let tup = displayToasts[i];
+                if (tup !== undefined) {
+                    tup[1] -= UPDATE_INTERVAL_MILLIS;
+                }
+
+                // replace toast with new one
+                if (tup === undefined || tup[1] <= 0) {
+                    let toast = $toasts.shift(); // always display oldest toast first
+                    if (toast !== undefined) {
+                        displayToasts[i] = [toast, toast.durationMillis];
+                    }
+                }
+            }
+        }, UPDATE_INTERVAL_MILLIS);
     });
 </script>
 
 <div class="toast toast-end z-10">
-    {#each $toasts as toast}
-        <div
-            class="alert"
-            class:alert-info={toast.status == ToastStatus.Info}
-            class:alert-error={toast.status == ToastStatus.Error}
-            class:alert-success={toast.status == ToastStatus.Success}
-        >
-            <span>{toast.message}</span>
-        </div>
+    {#each displayToasts as toast}
+        {#if toast !== undefined}
+            <div
+                class="alert"
+                class:alert-info={toast[0].status == ToastStatus.Info}
+                class:alert-error={toast[0].status == ToastStatus.Error}
+                class:alert-success={toast[0].status == ToastStatus.Success}
+            >
+                <span>{toast[0].message}</span>
+            </div>
+        {/if}
     {/each}
 </div>

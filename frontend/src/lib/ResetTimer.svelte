@@ -1,31 +1,49 @@
 <script lang="ts">
-    import { onDestroy } from "svelte";
-    import { getResetTime } from "./api";
+    import { onDestroy, onMount } from "svelte";
+    import { get_reset_time } from "./api";
+    import { toasts } from "./stores";
+    import { Duration, Toast, ToastStatus } from "./types";
 
     const SECOND_MILLIS = 1000;
     const MINUTE_MILLIS = SECOND_MILLIS * 60;
     const HOUR_MILLIS = MINUTE_MILLIS * 60;
 
     let resetTime: number;
-    let hours: number;
-    let minutes: number;
-    let seconds: number;
+    let hours: number = -1;
+    let minutes: number = -1;
+    let seconds: number = -1;
 
-    // request time from api (every 5 mins)
-    updateResetTime(); // initial value
-    let requester = setInterval(updateResetTime, 1000 * 60 * 5);
+    // interval related variables
+    let requester: NodeJS.Timer;
+    let ticker: NodeJS.Timer;
+
+    onMount(() => {
+        // request time from api (every 5 mins)
+        updateResetTime(); // initial value
+        requester = setInterval(updateResetTime, 1000 * 60 * 5);
+
+        // makes the timer count down
+        ticker = setInterval(() => {
+            updateUnixToTimeComponents(resetTime);
+        }, 1000);
+    });
+    
     onDestroy(() => clearInterval(requester));
-
-    // makes the timer count down
-    let ticker = setInterval(() => {
-        updateUnixToTimeComponents(resetTime);
-    }, 1000);
     onDestroy(() => clearInterval(ticker));
 
     function updateResetTime() {
         getResetTime()
             .then((res) => (resetTime = res.reset_time_unix_millis))
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                $toasts.push(
+                    new Toast(
+                        ToastStatus.Error,
+                        "Something went wrong updating the reset time :(",
+                        Duration.secs(2)
+                    )
+                );
+            });
     }
 
     // unixMillis assumed to be in the future
