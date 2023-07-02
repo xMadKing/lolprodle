@@ -1,37 +1,39 @@
 <script lang="ts">
+    import { onMount, onDestroy } from "svelte";
     import { createCombobox } from "svelte-headlessui";
     import Transition from "svelte-transition";
     import { fetchPlayerNames } from "./api";
-    
+    import { selectedRegion } from "./stores";
+
     // dummy data, change to players later
-    let people = [ { name: "Faker" } ];
-    let playerNames: Array<string> = ['value']; 
+    let playerNames: Array<string> = ['Player Name'];
+    let requester: NodeJS.Timer;
 
-    setInterval(() => {
-        
-    })
 
-    updatePlayerNames();
+    onMount(() => {
+        // request time from api (every 5 mins)
+        updatePlayerNames(); // initial value
+        requester = setInterval(updatePlayerNames, 1000);
+    });
 
-    function updatePlayerNames(){
-        fetchPlayerNames()
-            .then((res) => playerNames = res)
-            .catch((err) => console.log(err))
+    onDestroy(() => clearInterval(requester));
+
+    function updatePlayerNames() {
+        fetchPlayerNames($selectedRegion)
+            .then((res) => {
+                playerNames = res;
+            })
+            .catch((err) => console.log(err));
     }
 
-    for (let i = 0; i < playerNames.length; i++) {
-        console.log(playerNames[i])
-        people[i] = {name: playerNames[i]};
-    }
-
-    const combobox = createCombobox({ label: "Actions", selected: people[2] });
+    const combobox = createCombobox({ label: "Actions", selected: playerNames[0] });
 
     function onSelect(e: Event) {
         console.log("select", (e as CustomEvent).detail);
     }
 
-    $: filtered = people.filter((person) =>
-        person.name
+    $: filtered = playerNames.filter((person) =>
+        person
             .toLowerCase()
             .replace(/\s+/g, "")
             .includes($combobox.filter.toLowerCase().replace(/\s+/g, ""))
@@ -53,7 +55,7 @@
                     use:combobox.input
                     on:select={onSelect}
                     class="input w-full input-bordered input-primary input-lg text-lg text-white max-w-xs"
-                    value={$combobox.selected.name}
+                    value={$combobox.selected}
                 />
             </div>
             <Transition
@@ -77,7 +79,7 @@
                             use:combobox.item={{ value }}
                         >
                             <span class="block truncate {selected ? 'font-large' : 'font-normal'}"
-                                >{value.name}</span
+                                >{value}</span
                             >
                         </li>
                     {:else}

@@ -44,9 +44,9 @@ export async function getResetTime(): Promise<ResetTimeResponse> {
         .then(json => json as ResetTimeResponse)
 }
 
-export async function fetchPlayerNames(): Promise<PlayersResponse> {
+export async function fetchPlayerNames(region:number): Promise<PlayersResponse> {
     return fetch(
-        "http://127.0.0.1:8000/v1/players?region_id=1",
+        `http://127.0.0.1:8000/v1/players?region_id=${region}`, 
         {
             method: "GET",
             headers: {

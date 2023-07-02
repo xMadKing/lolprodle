@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte";
-    import { get_reset_time } from "./api";
     import { toasts } from "./stores";
+    import { getResetTime } from "./api";
     import { Duration, Toast, ToastStatus } from "./types";
 
     const SECOND_MILLIS = 1000;
