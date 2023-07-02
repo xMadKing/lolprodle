@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
-    import { get_reset_time } from "./api";
+    import { getResetTime } from "./api";
 
     const SECOND_MILLIS = 1000;
     const MINUTE_MILLIS = SECOND_MILLIS * 60;
@@ -23,7 +23,7 @@
     onDestroy(() => clearInterval(ticker));
 
     function updateResetTime() {
-        get_reset_time()
+        getResetTime()
             .then((res) => (resetTime = res.reset_time_unix_millis))
             .catch((err) => console.log(err));
     }

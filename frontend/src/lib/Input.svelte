@@ -1,16 +1,28 @@
 <script lang="ts">
     import { createCombobox } from "svelte-headlessui";
     import Transition from "svelte-transition";
-
+    import { fetchPlayerNames } from "./api";
+    
     // dummy data, change to players later
-    const people = [
-        { name: "Faker" },
-        { name: "Perkz" },
-        { name: "Caps" },
-        { name: "TheShy" },
-        { name: "Upset" },
-        { name: "BrokenBlade" },
-    ];
+    let people = [ { name: "Faker" } ];
+    let playerNames: Array<string> = ['value']; 
+
+    setInterval(() => {
+        
+    })
+
+    updatePlayerNames();
+
+    function updatePlayerNames(){
+        fetchPlayerNames()
+            .then((res) => playerNames = res)
+            .catch((err) => console.log(err))
+    }
+
+    for (let i = 0; i < playerNames.length; i++) {
+        console.log(playerNames[i])
+        people[i] = {name: playerNames[i]};
+    }
 
     const combobox = createCombobox({ label: "Actions", selected: people[2] });
 
