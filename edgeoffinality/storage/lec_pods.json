@@ -1,43 +1,14 @@
 [{
-    "daystamp_millis": 1688083200000,
+    "daystamp_millis": 1688256000000,
     "player": {
-        "country": "South Korea",
+        "country": "Denmark",
         "fav_champs": [
-            "Pyke"
+            "Xayah",
+            "Jhin"
         ],
-        "id": "JeongHoon",
-        "name": "Lee Jeong-hoon",
-        "role": "Support",
+        "id": "Kobbe",
+        "name": "Kasper Kobberup",
+        "role": "Bot",
         "team": "Astralis"
-    }
-},{
-    "daystamp_millis": 1688083200000,
-    "player": {
-        "country": "Czech Republic",
-        "fav_champs": [
-            "Azir",
-            "Taliyah",
-            "Syndra",
-            "LeBlanc"
-        ],
-        "id": "Humanoid",
-        "name": "Marek Br\u00e1zda",
-        "role": "Mid",
-        "team": "Fnatic"
-    }
-},{
-    "daystamp_millis": 1688169600000,
-    "player": {
-        "country": "Spain",
-        "fav_champs": [
-            "Lee Sin",
-            "Kayn",
-            "Gragas",
-            "Ekko"
-        ],
-        "id": "Razork",
-        "name": "Iv\u00e1n Mart\u00edn D\u00edaz",
-        "role": "Jungle",
-        "team": "Fnatic"
     }
 }]

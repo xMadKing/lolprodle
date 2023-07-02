@@ -1,41 +1,13 @@
 [{
-    "daystamp_millis": 1688083200000,
-    "player": {
-        "country": "South Korea",
-        "fav_champs": [
-            "Akali",
-            "Irelia"
-        ],
-        "id": "Clozer",
-        "name": "Lee Ju-hyeon",
-        "role": "Mid",
-        "team": "Liiv SANDBOX"
-    }
-},{
-    "daystamp_millis": 1688083200000,
+    "daystamp_millis": 1688256000000,
     "player": {
         "country": "South Korea",
         "fav_champs": [
             "None"
         ],
-        "id": "FIESTA",
-        "name": "An Hyeon-seo",
+        "id": "kyeahoo",
+        "name": "Kang Ye-hoo",
         "role": "Mid",
-        "team": "Nongshim RedForce"
-    }
-},{
-    "daystamp_millis": 1688169600000,
-    "player": {
-        "country": "South Korea",
-        "fav_champs": [
-            "Katarina",
-            "Kassadin",
-            "Syndra",
-            "LeBlanc"
-        ],
-        "id": "ShowMaker",
-        "name": "Heo Su",
-        "role": "Mid",
-        "team": "Dplus KIA"
+        "team": "DRX"
     }
 }]
