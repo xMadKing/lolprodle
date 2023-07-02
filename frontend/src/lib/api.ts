@@ -30,7 +30,7 @@ export interface PreviousPlayerResponse {
     player: Player;
 }
 
-export function setup_reset_time_fetching() {
+export function fetch_reset_time_fetching() {
     setInterval(async () => {
         await fetch(
             "http://127.0.0.1:8000/v1/reset_time",
@@ -57,9 +57,28 @@ export function setup_reset_time_fetching() {
     }, 5000);
 }
 
-
-export function setup() {
-    setInterval(() => {
-        // fetch_data();
-    }, 5000);
+export function fetch_player_names(){
+    console.log('test')
+    fetch(
+        "http://127.0.0.1:8000/v1/players?region_id=1",
+        {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            mode: "cors",
+        }
+    )
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(_err => {
+        toasts.update(t => {
+            t.push(new Toast(
+                ToastStatus.Error,
+                "Something happened while getting the player names",
+                Date.now() + 2000
+            ));
+            return t;
+        });
+    });
 }
