@@ -9,7 +9,7 @@
     // array of tuple (toast, timeLeft)
     // note this array has an implicit max size of TOAST_DISPLAY_LIMIT
     // note that any value in this array might be undefined
-    let displayToasts = new Array<[Toast, number]>(TOAST_DISPLAY_LIMIT);
+    let displayToasts = new Array<[Toast, number] | undefined>(TOAST_DISPLAY_LIMIT);
 
     onMount(async () => {
         setInterval(() => {
@@ -20,10 +20,13 @@
                 let tup = displayToasts[i];
                 if (tup !== undefined) {
                     tup[1] -= UPDATE_INTERVAL_MILLIS;
+                    if (tup[1] <= 0) {
+                        displayToasts[i] = undefined;
+                    }
                 }
 
                 // replace toast with new one
-                if (tup === undefined || tup[1] <= 0) {
+                if (tup === undefined) {
                     let toast = $toasts.shift(); // always display oldest toast first
                     if (toast !== undefined) {
                         displayToasts[i] = [toast, toast.durationMillis];
