@@ -89,7 +89,7 @@ pub async fn players(region_id: i32) -> (Status, Json<PlayersResponse>) {
                 region_players
                     .players
                     .iter()
-                    .map(|player| player.name.clone())
+                    .map(|player| player.id.clone())
                     .collect(),
             )),
         );

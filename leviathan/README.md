@@ -47,7 +47,9 @@ JSON payload:
 
 ### GET: /players?region_id=number
 
-Get all player names for a region. The frontend uses this for name auto completion.
+Get all player IDs for a region. The frontend uses this for name auto completion.
+
+Note that a player ID is the player's in-game name.
 
 #### Returns
 
