@@ -1,37 +1,13 @@
 [{
-    "daystamp_millis": 1688083200000,
+    "daystamp_millis": 1688256000000,
     "player": {
         "country": "China",
         "fav_champs": [
             "None"
         ],
-        "id": "Meiko",
-        "name": "Tian Ye",
-        "role": "Support",
-        "team": "EDward Gaming"
-    }
-},{
-    "daystamp_millis": 1688083200000,
-    "player": {
-        "country": "China",
-        "fav_champs": [
-            "None"
-        ],
-        "id": "QiuQiu",
-        "name": "Zhang Ming",
-        "role": "Support",
-        "team": "FunPlus Phoenix"
-    }
-},{
-    "daystamp_millis": 1688169600000,
-    "player": {
-        "country": "China",
-        "fav_champs": [
-            "None"
-        ],
-        "id": "Cryin",
-        "name": "Yuan Cheng-Wei",
-        "role": "Mid",
-        "team": "Invictus Gaming"
+        "id": "Leyan",
+        "name": "Lu Jue",
+        "role": "Jungle",
+        "team": "Rare Atom"
     }
 }]

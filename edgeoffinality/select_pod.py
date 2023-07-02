@@ -71,4 +71,7 @@ def select_pod(region):
     
     return "success"
 
-calc_time()
+select_pod('lec')
+select_pod('lcs')
+select_pod('lck')
+select_pod('lpl')

@@ -1,40 +1,15 @@
 [{
-    "daystamp_millis": 1688169600000,
-    "player": {
-        "country": "United States",
-        "fav_champs": [
-            "Pyke"
-        ],
-        "id": "Busio",
-        "name": "Alan Cwalina",
-        "role": "Support",
-        "team": "100 Thieves"
-    }
-},{
     "daystamp_millis": 1688256000000,
     "player": {
-        "country": "United States",
+        "country": "France",
         "fav_champs": [
-            "None"
+            "Yasuo",
+            "Zed",
+            "Aurelion Sol"
         ],
-        "id": "Array",
-        "name": "Jackson Moldenhauer",
-        "role": "Bot",
+        "id": "huhi",
+        "name": "Choi Jae-hyun",
+        "role": "Support",
         "team": "Golden Guardians"
-    }
-},{
-    "daystamp_millis": 1688169600000,
-    "player": {
-        "country": "Canada",
-        "fav_champs": [
-            "Lee Sin",
-            "Vayne",
-            "Twisted Fate",
-            "Ezreal"
-        ],
-        "id": "WildTurtle",
-        "name": "Jason Tran",
-        "role": "Bot",
-        "team": "TSM"
     }
 }]
