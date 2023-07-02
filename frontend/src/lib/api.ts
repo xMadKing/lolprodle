@@ -73,7 +73,7 @@ export async function postCheckGuess(region_id: number, player_id: string): Prom
         .then(json => json as ResultResponse<CheckGuessResponse>);
 }
 
-// This request should never error
+// This request should not return an error (at least, if the requests goes through to the server)
 export async function getResetTime(): Promise<ResultResponse<ResetTimeResponse>> {
     return fetch(
         "http://127.0.0.1:8000/v1/reset_time",
