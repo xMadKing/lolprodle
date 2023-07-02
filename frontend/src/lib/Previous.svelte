@@ -5,7 +5,7 @@
     import { selectedRegion } from "./stores";
 
     let requester: NodeJS.Timer;
-	let name = 'name';
+    let name = "";
 
     onMount(() => {
         // request time from api (every 5 mins)
@@ -18,7 +18,7 @@
     function updateYstrPlayer() {
         fetchYstrPlayer($selectedRegion)
             .then((res) => {
-				name = res.player.id; 
+                name = res.player.id;
             })
             .catch((err) => console.log(err));
     }
@@ -29,7 +29,11 @@
         <figure><img src={background} alt="LeagueImg" sizes="100" /></figure>
         <div class="card-body items-center">
             <h2 class="card-title">Yesterday's player was:</h2>
-            <b><p>{name}</p></b>
+            {#if name == ''}
+                <span class="loading loading-infinity loading-lg" />
+			{:else}
+				<b><p>{name}</p></b>
+			{/if}
         </div>
     </div>
 </div>
