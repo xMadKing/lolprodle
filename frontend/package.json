@@ -39,6 +39,9 @@
 	"dependencies": {
 		"@types/js-cookie": "^3.0.3",
 		"js-cookie": "^3.0.5",
-		"svelte-transition": "^0.0.10"
+		"svelte-particles": "^2.10.1",
+		"svelte-transition": "^0.0.10",
+		"tsparticles": "^2.10.1",
+		"tsparticles-engine": "^2.10.1"
 	}
 }

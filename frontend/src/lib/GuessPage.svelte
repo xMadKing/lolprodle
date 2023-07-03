@@ -15,10 +15,16 @@
     } from "./cookies";
     import { getCurrentDaystampMillis } from "./api";
     import { verifyGuess } from "./guess/guess";
+    import CorrectGuessAnimation from "./CorrectGuessAnimation.svelte";
 
     export let region: Region;
 
     selectedRegion.set(region);
+
+    // need to update the store right way, as otherwise, if the user navigates using the region
+    // selector menu, the previous value for correctGuess (that is, the value for that previous
+    // region) will still be in the store
+    correctGuess.set(undefined);
 
     onMount(async () => {
         // load cookies for current daystamp
@@ -43,13 +49,10 @@
                 // guessing)
                 removeCorrectGuessCookie(region, currentDaystamp);
                 correctGuessCookie = undefined;
+            } else {
+                correctGuess.set(correctGuessCookie);
             }
-
         }
-        // need to update the store regardless of what the verified result is, as otherwise, if
-        // the user navigates using the region selector menu, the previous value for
-        // correctGuess (that is, the value for that previous region) will still be in the store
-        correctGuess.set(correctGuessCookie);
     });
 </script>
 
@@ -67,3 +70,7 @@
 <div class="py-8">
     <ResetTimer />
 </div>
+
+{#if $correctGuess !== undefined}
+    <CorrectGuessAnimation />
+{/if}
