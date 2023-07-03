@@ -2,15 +2,15 @@
     import { onMount, onDestroy } from "svelte";
     import { createCombobox } from "svelte-headlessui";
     import Transition from "svelte-transition";
-    import { currentGuessedNames, selectedRegion, toasts } from "./stores";
+    import { correctGuess, currentGuessedNames, selectedRegion, toasts } from "./stores";
     import { makeGuess } from "./guess/guess";
     import { ErrorType, getCurrentDaystampMillis, getPlayerNames } from "./api";
     import { DataFetchState, Duration, Toast, ToastStatus } from "./types";
     import { saveGuessedNamesCookie } from "./cookies";
+    import HowToButton from "./HowToButton.svelte";
 
     let dataState = DataFetchState.Loading;
     let playerNames: Array<string> = [];
-    let inputDisabled = false;
 
     // interval related variables
     let requester: NodeJS.Timer;
@@ -95,25 +95,29 @@
     });
 </script>
 
-<div class="flex w-80 flex-row items-center justify-center">
+<div class="flex flex-col justify-center items-center">
     {#if dataState === DataFetchState.Loading}
         <div class="flex bg-base-100 justify-center p-3 border-base-100 rounded-full">
             <span class="loading loading-spinner loading-lg" />
         </div>
     {:else if dataState === DataFetchState.Fetched}
-        <div class="form-control w-full max-w-xs">
+        <div
+            class="form-control flex flex-row items-center justify-center bg-base-100
+            border-base-100 rounded-lg"
+        >
             <div>
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Enter name..."
-                        use:combobox.input
-                        on:select={onSelect}
-                        class="input w-full input-lg text-lg text-white max-w-xs"
-                        value={$combobox.selected !== undefined ? $combobox.selected : ""}
-                        disabled={inputDisabled}
-                    />
-                </div>
+                <input
+                    type="text"
+                    placeholder={$correctGuess !== undefined ? "You guessed it!" : "Enter name..."}
+                    use:combobox.input
+                    on:select={onSelect}
+                    class="input input-lg input-bordered text-lg text-white"
+                    value={$combobox.selected !== undefined ? $combobox.selected : ""}
+                    disabled={$correctGuess !== undefined}
+                />
+
+                <HowToButton />
+
                 <Transition
                     show={$combobox.expanded}
                     leave="transition ease-in duration-100"
@@ -122,8 +126,11 @@
                     on:after-leave={() => combobox.reset()}
                 >
                     <ul
+                        id="input-select-list"
                         use:combobox.items
-                        class="absolute z-10 mt-1 max-h-60 w-80 overflow-auto rounded-md bg-base-200 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 max-h-60 w-80 overflow-y-scroll rounded-md
+                        bg-base-200 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5
+                        focus:outline-none sm:text-sm"
                     >
                         {#each filtered as value}
                             {@const active = $combobox.active === value}
@@ -151,4 +158,39 @@
     {:else}
         <p class="text-error">Error while loading players :(</p>
     {/if}
+
+    {#if $correctGuess !== undefined}
+        <p
+            class="text-success font-bold text-center bg-base-100 p-2 m-3 border-neutral rounded-lg w-3/5"
+        >
+            NICE! You correctly You guessed the player of the day! Why not try out a new region
+            above?
+        </p>
+    {/if}
 </div>
+
+<style lang="postcss">
+    /* vars: --b2 is base-200 color, --n is neutral color */
+
+    #input-select-list {
+        /* Firefox */
+        scrollbar-width: thin;
+
+        /* Edge */
+        -ms-overflow-style: none;
+    }
+
+    /* Chrome, Edge, Safari, Opera */
+    #input-select-list::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    #input-select-list::-webkit-scrollbar-track {
+        background: hsl(var(--b2));
+    }
+
+    /* the handle  */
+    #input-select-list::-webkit-scrollbar-thumb {
+        background: hsl(var(--n));
+    }
+</style>

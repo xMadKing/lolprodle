@@ -2,30 +2,54 @@
     import Previous from "./Previous.svelte";
     import Input from "./Input.svelte";
     import RegionSelector from "./RegionSelector.svelte";
-    import HowToButton from "./HowToButton.svelte";
     import GuessBox from "./guess/GuessBox.svelte";
     import ResetTimer from "./ResetTimer.svelte";
     import type { Region } from "./types";
-    import { currentGuessedNames, currentGuesses, selectedRegion } from "./stores";
+    import { correctGuess, currentGuessedNames, currentGuesses, selectedRegion } from "./stores";
     import { onMount } from "svelte";
-    import { loadGuessedNamesCookie, loadGuessesCookie } from "./cookies";
+    import {
+        loadCorrectGuessCookie,
+        loadGuessedNamesCookie,
+        loadGuessesCookie,
+        removeCorrectGuessCookie,
+    } from "./cookies";
     import { getCurrentDaystampMillis } from "./api";
+    import { verifyGuess } from "./guess/guess";
 
     export let region: Region;
 
     selectedRegion.set(region);
 
-    onMount(() => {
-        //todo: maybe move this into the appropriate components
+    onMount(async () => {
+        // load cookies for current daystamp
+        // todo: maybe move this into the appropriate components
+
         let currentDaystamp = getCurrentDaystampMillis();
 
-        // load guesses
         let guessesCookie = loadGuessesCookie(region, currentDaystamp);
         currentGuesses.set(guessesCookie !== undefined ? guessesCookie.guesses : []);
 
-        // load guessed names
         let guessedNamesCookie = loadGuessedNamesCookie(region, currentDaystamp);
         currentGuessedNames.set(guessedNamesCookie !== undefined ? guessedNamesCookie : []);
+
+        let correctGuessCookie = loadCorrectGuessCookie(region, currentDaystamp);
+        if (correctGuessCookie !== undefined) {
+            // verify that correct guess is indeed the actual correct guess (just-in-case measure if
+            // the server [for some reason] changes the player of the day for the current daystamp)
+            let verified = await verifyGuess(region, correctGuessCookie);
+            if (verified !== undefined && !verified) {
+                // we don't want to keep the cookie around if it is incorrect (prevents us from
+                // doing this verification process again next time if the user does not end up
+                // guessing)
+                removeCorrectGuessCookie(region, currentDaystamp);
+                correctGuessCookie = undefined;
+            }
+
+        }
+        // need to update the store regardless of what the verified result is, as otherwise, if
+        // the user navigates using the region selector menu, the previous value for
+        // correctGuess (that is, the value for that previous region) will still be in the store
+        correctGuess.set(correctGuessCookie);
     });
 </script>
 
@@ -33,11 +57,12 @@
     <RegionSelector />
 </div>
 <Previous />
-<div class="flex items-center justify-center pl-6 py-8">
+<div class="flex items-center justify-center mt-10">
     <Input />
-    <HowToButton />
 </div>
-<GuessBox />
+<div class="mt-10">
+    <GuessBox />
+</div>
 
 <div class="py-8">
     <ResetTimer />

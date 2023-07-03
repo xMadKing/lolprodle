@@ -22,13 +22,15 @@ export const currentDaystamp = readable(currentSetDaystamp, (set) => {
         clearInterval(interval);
     }
 });
-// All the names guessed by the user
-export const currentGuessedNames: Writable<Array<string>> = writable([]);
 
 // Contains the currently selected region
 export const selectedRegion = writable(Region.Lcs);
 // Contains the guesses for the current region
 export const currentGuesses: Writable<Array<PlayerGuess>> = writable([]);
+// All the names guessed by the user
+export const currentGuessedNames: Writable<Array<string>> = writable([]);
+// The correct answer guessed by the user user for the current region
+export const correctGuess: Writable<string | undefined> = writable(undefined);
 // Whether to show the settings modal
 export const showSettings = writable(false);
 // Toasts waiting to be displayed
