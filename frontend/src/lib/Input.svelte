@@ -2,13 +2,17 @@
     import { onMount, onDestroy } from "svelte";
     import { createCombobox } from "svelte-headlessui";
     import Transition from "svelte-transition";
-    import { selectedRegion, toasts } from "./stores";
+    import { currentGuessedNames, selectedRegion, toasts } from "./stores";
     import { makeGuess } from "./guess/guess";
-    import { ErrorType, getPlayerNames } from "./api";
+    import { ErrorType, getCurrentDaystampMillis, getPlayerNames } from "./api";
     import { DataFetchState, Duration, Toast, ToastStatus } from "./types";
+    import { saveGuessedNamesCookie } from "./cookies";
 
     let dataState = DataFetchState.Loading;
-    let playerNames: Array<string> = ["Player Name"];
+    let playerNames: Array<string> = [];
+    let inputDisabled = false;
+
+    // interval related variables
     let requester: NodeJS.Timer;
 
     onMount(() => {
@@ -42,13 +46,23 @@
 
     const combobox = createCombobox({ label: "Actions", selected: playerNames[0] });
 
-    function onSelect(e: Event) {
+    async function onSelect(e: Event) {
         let detail = (e as CustomEvent).detail;
-        console.log("select", detail);
+
         if (detail !== undefined && detail.selected !== undefined) {
-            let selected = detail.selected; // player id
+            let selectedName = detail.selected; // player id
+            // The combobox *should* prevent names already chosen from being picked again, but there
+            // is a bug where if the user presses <enter> again, they can guess the same name one
+            // more time. Hence, we add this check.
+            //
+            // This check should exist anyways as a just-in-case measure, even if the above bug
+            // was not a thing.
+            if ($currentGuessedNames.includes(selectedName)) {
+                return;
+            }
+
             // temp
-            let err = makeGuess($selectedRegion, selected);
+            let err = await makeGuess($selectedRegion, selectedName);
             if (err !== undefined) {
                 $toasts.push(
                     new Toast(
@@ -59,39 +73,45 @@
                         Duration.secs(3)
                     )
                 );
+                return;
             }
+
+            $currentGuessedNames.push(selectedName);
+            let daystamp = getCurrentDaystampMillis();
+            saveGuessedNamesCookie($selectedRegion, daystamp, $currentGuessedNames);
         }
     }
 
-    $: filtered = playerNames.filter((person) =>
-        person
+    $: filtered = playerNames.filter((person) => {
+        // only keep names that haven't been guessed yet
+        if ($currentGuessedNames.find((name) => person === name) !== undefined) {
+            return false;
+        }
+
+        return person
             .toLowerCase()
             .replace(/\s+/g, "")
-            .includes($combobox.filter.toLowerCase().replace(/\s+/g, ""))
-    );
+            .includes($combobox.filter.toLowerCase().replace(/\s+/g, ""));
+    });
 </script>
 
-<div class="flex w-80 flex-col">
+<div class="flex w-80 flex-row items-center justify-center">
     {#if dataState === DataFetchState.Loading}
-        <div class="flex bg-base-100 justify-center p-3">
-        <span class="loading loading-spinner loading-lg" />
+        <div class="flex bg-base-100 justify-center p-3 border-base-100 rounded-full">
+            <span class="loading loading-spinner loading-lg" />
         </div>
     {:else if dataState === DataFetchState.Fetched}
-        <label class="label">
-            <span class="label-text uppercase font-bold bg-base-100 p-2 rounded-lg">
-                Enter player name
-            </span>
-        </label>
         <div class="form-control w-full max-w-xs">
             <div>
                 <div>
                     <input
                         type="text"
-                        placeholder="Player name..."
+                        placeholder="Enter name..."
                         use:combobox.input
                         on:select={onSelect}
-                        class="input w-full input-bordered input-primary input-lg text-lg text-white max-w-xs"
-                        value={$combobox.selected}
+                        class="input w-full input-lg text-lg text-white max-w-xs"
+                        value={$combobox.selected !== undefined ? $combobox.selected : ""}
+                        disabled={inputDisabled}
                     />
                 </div>
                 <Transition

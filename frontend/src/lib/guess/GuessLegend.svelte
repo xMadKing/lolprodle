@@ -19,7 +19,7 @@
         tabindex="0"
         class="card compact dropdown-content z-[1] shadow bg-base-200 rounded-box w-64"
     >
-        <div class="card-body text-left font-normal border-2 border-primary rounded-box">
+        <div class="card-body text-left font-normal border-2 border-secondary rounded-box">
             <h2 class="card-title">Card Legend</h2>
             <p>
                 As you guess, different cards for each category will appear with a different color.

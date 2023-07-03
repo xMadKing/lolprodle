@@ -3,11 +3,11 @@ import { saveGuessesCookie } from "$lib/cookies";
 import { currentGuesses } from "$lib/stores";
 import type { Region } from "$lib/types";
 
-// Returns nothing or the error type and message.
-export function makeGuess(region: Region, player_id: string): void | [ErrorType, string] {
-    postCheckGuess(region, player_id).then(res => {
+// Returns nothing (undefined) or the error type and message.
+export async function makeGuess(region: Region, player_id: string): Promise<undefined | [ErrorType | null, string | null]> {
+    return postCheckGuess(region, player_id).then(res => {
         if (res === undefined) {
-            return;
+            return [ErrorType.Internal, ""];
         }
         if (!res.success) {
             console.log("[GUESS] Error from check guess endpoint");
@@ -16,7 +16,7 @@ export function makeGuess(region: Region, player_id: string): void | [ErrorType,
 
         if (res.data === null) {
             console.log("[GUESS] No guess data available when data is expected");
-            return;
+            return [ErrorType.Internal, ""];
         }
 
         // we know res.data is for sure a value at this point
@@ -31,6 +31,8 @@ export function makeGuess(region: Region, player_id: string): void | [ErrorType,
             saveGuessesCookie(region, current_daystamp, guesses);
 
             return guesses;
-        })
+        });
+
+        return undefined;
     });
 }

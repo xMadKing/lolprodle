@@ -22,6 +22,9 @@ export const currentDaystamp = readable(currentSetDaystamp, (set) => {
         clearInterval(interval);
     }
 });
+// All the names guessed by the user
+export const currentGuessedNames: Writable<Array<string>> = writable([]);
+
 // Contains the currently selected region
 export const selectedRegion = writable(Region.Lcs);
 // Contains the guesses for the current region
