@@ -7,7 +7,10 @@
     import ToastHandler from "$lib/ToastHandler.svelte";
 </script>
 
-<div class="bg-no-repeat bg-cover" style="background-image: url({background});">
+<div
+    class="bg-no-repeat bg-cover"
+    style="background-image: url({background}); background-attachment: fixed;"
+>
     <Navbar />
     <Settings />
 
