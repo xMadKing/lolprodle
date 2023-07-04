@@ -10,7 +10,7 @@ pub mod cors;
 pub mod data;
 pub mod guess;
 pub mod lolprodle;
-pub mod root_router;
+pub mod v1;
 
 lazy_static! {
     static ref DATA_SERVICE: Arc<LolprodleDataService> = Arc::new(LolprodleDataService::new());
@@ -36,11 +36,11 @@ async fn main() {
         .mount(
             "/v1/",
             routes![
-                root_router::index,
-                root_router::check_guess,
-                root_router::reset_time,
-                root_router::players,
-                root_router::previous_player
+                v1::router::index,
+                v1::router::check_guess,
+                v1::router::reset_time,
+                v1::router::players,
+                v1::router::previous_player
             ],
         )
         .attach(cors::Cors)
