@@ -1,0 +1,27 @@
+[{
+    "daystamp_millis": 1688342400000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "Hena",
+        "name": "Park Jeung-hwan",
+        "role": "Bot",
+        "team": "OKSavingsBank BRION"
+    }
+},{
+    "daystamp_millis": 1688774400000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Singed",
+            "Elise",
+            "Shen"
+        ],
+        "id": "Lehends",
+        "name": "Son Si-woo",
+        "role": "Support",
+        "team": "KT Rolster"
+    }
+}]

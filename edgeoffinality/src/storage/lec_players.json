@@ -96,6 +96,22 @@
     "team": "Fnatic"
 },
 {
+    "country": "Sweden",
+    "fav_champs": [
+        "Tristana",
+        "Kennen",
+        "Vayne",
+        "Sivir",
+        "Jhin",
+        "Jinx",
+        "Ezreal"
+    ],
+    "id": "Rekkles",
+    "name": "Carl\u00a0Martin\u00a0Erik Larsson",
+    "role": "Support",
+    "team": "Fnatic"
+},
+{
     "country": "Spain",
     "fav_champs": [
         "Rakan",
@@ -224,19 +240,6 @@
     ],
     "id": "Bo",
     "name": "Zhou Yang-Bo",
-    "role": "Jungle",
-    "team": "Team Vitality"
-},
-{
-    "country": "Poland",
-    "fav_champs": [
-        "Viego",
-        "Yone",
-        "Kayn",
-        "Talon"
-    ],
-    "id": "Daglas",
-    "name": "Kacper Dagiel",
     "role": "Jungle",
     "team": "Team Vitality"
 },
