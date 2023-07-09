@@ -193,6 +193,16 @@
 {
     "country": "South Korea",
     "fav_champs": [
+        "Viego"
+    ],
+    "id": "Grizzly",
+    "name": "Jo Seung-hoon",
+    "role": "Jungle",
+    "team": "Hanwha Life Esports"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
         "None"
     ],
     "id": "Kingen",
@@ -354,16 +364,6 @@
 {
     "country": "South Korea",
     "fav_champs": [
-        "None"
-    ],
-    "id": "Jiwoo",
-    "name": "Jung Ji-woo",
-    "role": "Bot",
-    "team": "Nongshim RedForce"
-},
-{
-    "country": "South Korea",
-    "fav_champs": [
         "Cassiopeia"
     ],
     "id": "Quad",
@@ -491,6 +491,16 @@
     "id": "Oner",
     "name": "Mun Hyeon-jun",
     "role": "Jungle",
+    "team": "T1"
+},
+{
+    "country": "South Korea",
+    "fav_champs": [
+        "None"
+    ],
+    "id": "Poby",
+    "name": "Yoon Sung-won",
+    "role": "Mid",
     "team": "T1"
 },
 {

@@ -1,0 +1,3 @@
+#START CRON JOB
+30 23 /bin/python3 /home/madking/lolprodle/edgeoffinality/src/main.py
+#END CRON JOB

@@ -1,7 +1,10 @@
 from mwrogue.esports_client import EsportsClient
 from player import Player
 import get_teams as get_teams
+import os
 
+
+CTX_dir = os.environ.get('LOLPRODLE_CTX_DIR')
 
 def generate_players(teams, region):
 
@@ -24,7 +27,7 @@ def generate_players(teams, region):
                 response.append(Player(i['ID'], i['Name'], i['Role'], i['Team'], i['Country'], str(
                     i['FavChamps']).split(',')).toJSON())
 
-    with open('storage/{}_players.json'.format(region), 'w') as output:
+    with open('{0}/{1}_players.json'.format(CTX_dir, region), 'w') as output:
         output.write('[')
         for i in range(len(response)):
             output.write(response[i])
@@ -34,8 +37,3 @@ def generate_players(teams, region):
 
     return "success"
 
-
-generate_players(get_teams.get_lec_teams(), 'lec')
-generate_players(get_teams.get_lck_teams(), 'lck')
-generate_players(get_teams.get_lcs_teams(), 'lcs')
-generate_players(get_teams.get_lpl_teams(), 'lpl')

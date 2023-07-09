@@ -1,0 +1,28 @@
+[{
+    "daystamp_millis": 1688342400000,
+    "player": {
+        "country": "South Korea",
+        "fav_champs": [
+            "Kassadin",
+            "Zed",
+            "LeBlanc",
+            "Lulu"
+        ],
+        "id": "Scout",
+        "name": "Lee Ye-chan",
+        "role": "Mid",
+        "team": "LNG Esports"
+    }
+},{
+    "daystamp_millis": 1688774400000,
+    "player": {
+        "country": "China",
+        "fav_champs": [
+            "None"
+        ],
+        "id": "Harder",
+        "name": "Zhou Shi-Hao",
+        "role": "Mid",
+        "team": "Anyone's Legend"
+    }
+}]
