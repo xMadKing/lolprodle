@@ -4,6 +4,7 @@
 
 FROM rust:1.70.0-alpine AS build
 
+RUN apk add --no-cache musl-dev
 WORKDIR /leviathan_build/
 COPY . .
 RUN cargo build --release
@@ -11,7 +12,7 @@ RUN cargo build --release
 #-------------------
 #     deploy
 #-------------------
-FROM rust:1.70.0-alpine
+FROM alpine:latest
 
 ENV LOLPRODLE_CTX_DIR="${LOLPRODLE_CTX_DIR}"
 
