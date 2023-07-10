@@ -1,3 +1,8 @@
+<script>
+
+    import { DISCORD_URL } from "./consts";
+
+</script>
 <footer class="footer footer-center p-4 bg-base-100 text-base-content">
     <div>
         <p>Copyright &copy; 2023 lolprodle.com</p>
@@ -13,7 +18,7 @@
         <br />
         <p>
             This website uses cookies to enhance user experience. Find out more in our
-            <a class="link" href="/cookies">Cookie Policy</a>.
+            <a class="link" href="/cookies">Cookies Policy</a>.
         </p>
     </div>
     <div>
@@ -26,7 +31,7 @@
                     }
                 </style>
             </defs>
-            <a href="/">
+            <a href="{DISCORD_URL}" target="_blank">
                 <g id="图层_2" data-name="图层 2">
                     <g id="Discord_Logos" data-name="Discord Logos">
                         <g
