@@ -1,13 +1,12 @@
 <script>
-
     import { DISCORD_URL } from "$lib/consts";
-
 </script>
+
 <div class="flex contents-center justify-center py-20">
     <div class="card w-4/5 bg-base-300 shadow-xl">
         <div class="card-body">
             <h1 class="text-xl font-bold text-center">lolprodle Cookies Policy</h1>
-            <p>Last Updated: June 30, 2023</p>
+            <p>Last Updated: July 10, 2023</p>
             <p>
                 We do not store sensitive personal information, such as mailing addresses, account
                 passwords, etc. in the Cookies We use.
@@ -105,12 +104,7 @@
             <h2 class="font-bold">Contact Us</h2>
             <p>
                 If you have any questions about this Cookies Policy, You can contact us via
-                <a
-                    href="{DISCORD_URL}"
-                    rel="external nofollow noopener"
-                    target="_blank"
-                    class="link"
-                >
+                <a href={DISCORD_URL} rel="external nofollow noopener" target="_blank" class="link">
                     Discord.
                 </a>
             </p>
