@@ -21,10 +21,11 @@
 
     selectedRegion.set(region);
 
-    // need to update the store right way, as otherwise, if the user navigates using the region
-    // selector menu, the previous value for correctGuess (that is, the value for that previous
+    // need to update the stores right way, as otherwise, if the user navigates using the region
+    // selector menu, the previous value for the stores (that is, the value for that previous
     // region) will still be in the store
     correctGuess.set(undefined);
+    currentGuesses.set([]);
 
     onMount(async () => {
         // load cookies for current daystamp
@@ -35,7 +36,7 @@
         // removed; these cookies tend to get too large -- need to figure out a better solution in
         // the future (spreading it across multiple cookies maybe)
         // let guessesCookie = loadGuessesCookie(region, currentDaystamp);
-        // currentGuesses.set(guessesCookie !== undefined ? guessesCookie.guesses : []);
+        // currentGuesses.set([]);
 
         let guessedNamesCookie = loadGuessedNamesCookie(region, currentDaystamp);
         guessedNamesCookie = guessedNamesCookie !== undefined ? guessedNamesCookie : [];
