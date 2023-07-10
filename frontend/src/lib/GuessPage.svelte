@@ -14,7 +14,7 @@
         removeCorrectGuessCookie,
     } from "./cookies";
     import { getCurrentDaystampMillis } from "./api";
-    import { verifyGuess } from "./guess/guess";
+    import { loadAllGuesses, verifyGuess } from "./guess/guess";
     import CorrectGuessAnimation from "./CorrectGuessAnimation.svelte";
 
     export let region: Region;
@@ -32,11 +32,15 @@
 
         let currentDaystamp = getCurrentDaystampMillis();
 
-        let guessesCookie = loadGuessesCookie(region, currentDaystamp);
-        currentGuesses.set(guessesCookie !== undefined ? guessesCookie.guesses : []);
+        // removed; these cookies tend to get too large -- need to figure out a better solution in
+        // the future (spreading it across multiple cookies maybe)
+        // let guessesCookie = loadGuessesCookie(region, currentDaystamp);
+        // currentGuesses.set(guessesCookie !== undefined ? guessesCookie.guesses : []);
 
         let guessedNamesCookie = loadGuessedNamesCookie(region, currentDaystamp);
-        currentGuessedNames.set(guessedNamesCookie !== undefined ? guessedNamesCookie : []);
+        guessedNamesCookie = guessedNamesCookie !== undefined ? guessedNamesCookie : [];
+        loadAllGuesses(region, guessedNamesCookie);
+        currentGuessedNames.set(guessedNamesCookie);
 
         let correctGuessCookie = loadCorrectGuessCookie(region, currentDaystamp);
         if (correctGuessCookie !== undefined) {

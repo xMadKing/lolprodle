@@ -7,6 +7,10 @@
     import ToastHandler from "$lib/ToastHandler.svelte";
 </script>
 
+<svelte:head>
+    <title>lolprodle - LoL Pro Wordle</title>
+</svelte:head>
+
 <div
     class="bg-no-repeat bg-cover"
     style="background-image: url({background}); background-attachment: fixed;"

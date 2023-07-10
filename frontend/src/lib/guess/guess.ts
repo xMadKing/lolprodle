@@ -26,9 +26,10 @@ export async function makeGuess(region: Region, playerId: string): Promise<undef
         currentGuesses.update(guesses => {
             guesses.push(data.guess);
 
-            let currentDaystamp = getCurrentDaystampMillis();
-            console.log(currentDaystamp);
-            saveGuessesCookie(region, currentDaystamp, guesses);
+            // removed for now (cookie gets too big, need better solution in the future)
+            // let currentDaystamp = getCurrentDaystampMillis();
+            // console.log(currentDaystamp);
+            // saveGuessesCookie(region, currentDaystamp, guesses);
 
             return guesses;
         });
@@ -66,4 +67,36 @@ function checkCorrectAndUpdateStoreAndCookie(region: Region, playerId: string, g
     correctGuess.set(playerId);
     let currentDaystamp = getCurrentDaystampMillis();
     saveCorrectGuessCookie(region, currentDaystamp, playerId);
+}
+
+// Loads all guesses from a string of guesses. Each guess hits the API to get information about the
+// guess.
+export function loadAllGuesses(region: Region, guesses: string[]) {
+    // we loop through the guesses in reverse so that we insert data to the start of the
+    // currentGuesses list, allowing us to keep the (approximate) order the user guessed in. the
+    // order is approximate since the requests are made asynchronously.
+    for (let i = guesses.length - 1; i >= 0; i--) {
+        let guess = guesses[i];
+        postCheckGuess(region, guess).then(res => {
+            if (res === undefined) {
+                console.log("[GUESS LOADER] Undefined response");
+                return;
+            }
+            if (!res.success) {
+                console.log(`[GUESS LOADER] Error from check guess endpoint: ${res.error_type}: ${res.error_message}`);
+                return;
+            }
+
+            if (res.data === null) {
+                console.log("[GUESS LOADER] No guess data available when data is expected");
+                return;
+            }
+
+            let data = res.data as unknown as CheckGuessResponse;
+            currentGuesses.update(g => {
+                g.unshift(data.guess);
+                return g;
+            });
+        });
+    }
 }
