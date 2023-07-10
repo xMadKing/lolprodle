@@ -1,4 +1,5 @@
 import type { PlayerGuess } from "./types";
+import { PUBLIC_API_URL } from "$env/static/public";
 
 export interface Player {
     id: string;
@@ -59,7 +60,7 @@ export function getCurrentDaystampMillis(): number {
 export async function postCheckGuess(region_id: number, player_id: string): Promise<ResultResponse<CheckGuessResponse>> {
     let req: CheckGuessRequest = { region_id, player_id };
     return fetch(
-        "http://127.0.0.1:8000/v1/check_guess",
+        `${PUBLIC_API_URL}/v1/check_guess`,
         {
             method: "POST",
             headers: {
@@ -76,7 +77,7 @@ export async function postCheckGuess(region_id: number, player_id: string): Prom
 // This request should not return an error (at least, if the requests goes through to the server)
 export async function getResetTime(): Promise<ResultResponse<ResetTimeResponse>> {
     return fetch(
-        "http://127.0.0.1:8000/v1/reset_time",
+        `${PUBLIC_API_URL}/v1/reset_time`,
         {
             method: "GET",
             headers: {
@@ -91,7 +92,7 @@ export async function getResetTime(): Promise<ResultResponse<ResetTimeResponse>>
 
 export async function getPlayerNames(region: number): Promise<ResultResponse<PlayersResponse>> {
     return fetch(
-        `http://127.0.0.1:8000/v1/players?region_id=${region}`,
+        `${PUBLIC_API_URL}/v1/players?region_id=${region}`,
         {
             method: "GET",
             headers: {
@@ -106,7 +107,7 @@ export async function getPlayerNames(region: number): Promise<ResultResponse<Pla
 
 export async function getPreviousPlayer(region: number): Promise<ResultResponse<PreviousPlayerResponse>> {
     return fetch(
-        `http://127.0.0.1:8000/v1/previous_player?region_id=${region}`,
+        `${PUBLIC_API_URL}/v1/previous_player?region_id=${region}`,
         {
             method: "GET",
             headers: {
