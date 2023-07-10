@@ -20,8 +20,8 @@ if [ ! -d "$CTX_DIR" ]; then
     mkdir "$CTX_DIR"
 fi
 
-LOLPRODLE_CTX_DIR_ENV_VAR="LOLPRODLE_CTX_DIR"
-if [ -z "$LOLPRODLE_CTX_DIR_ENV_VAR" ]; then
-    echo "$LOLPRODLE_CTX_DIR_ENV_VAR does not exist; permanently setting $LOLPRODLE_CTX_DIR_ENV_VAR env var in /etc/environment"
-    echo "export $LOLPRODLE_CTX_DIR_ENV_VAR=\"$CTX_DIR\"">>/etc/environment
+if [ -z "$LOLPRODLE_CTX_DIR" ]; then
+    echo "LOLPRODLE_CTX_DIR does not exist; permanently setting LOLPRODLE_CTX_DIR env var in /etc/profile.d/lolprodle.sh"
+    echo "export LOLPRODLE_CTX_DIR=\"$CTX_DIR\"">/etc/profile.d/lolprodle.sh # we can completely override this file (since we own it)
+    . /etc/profile.d/lolprodle.sh # source that file
 fi

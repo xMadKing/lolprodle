@@ -2,7 +2,6 @@
 # this file is intended to be run every time the leviathan server needs to be run
 
 SCRIPT_DIR="$(dirname $0)" # directory where this file is
-VOLUME_NAME="lolprodle_ctx"
 
 # change into the directory where this file is (makes it easier to reference files in this
 # directory)
@@ -20,12 +19,12 @@ fi
 # fi
 
 echo "building image"
-docker build -t leviathan:latest .
+docker build -t leviathan:latest $SCRIPT_DIR
 
 echo "running image"
 docker run \
     --name leviathan \
-    -v $(LOLPRODLE_CTX_DIR):/lolprodle \
+    -v ${LOLPRODLE_CTX_DIR}:/lolprodle \
     -e LOLPRODLE_CTX_DIR=/lolprodle \
     -p 8000:8000 \
     -d \

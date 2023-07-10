@@ -1,3 +1,4 @@
+# python stuff
 __pycache__/
 
 # rust stuff
@@ -12,3 +13,6 @@ __pycache__/
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+# deploy stuff
+leviathan.tar
