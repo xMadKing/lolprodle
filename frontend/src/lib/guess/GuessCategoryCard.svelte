@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { GUESS_CATEGORY_DATA, type PlayerGuessCategory } from "$lib/types";
+    import { GUESS_CATEGORY_DATA } from "$lib/consts";
+    import type { PlayerGuessCategory } from "$lib/types";
 
     export let guessCategory: PlayerGuessCategory;
 

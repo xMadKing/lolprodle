@@ -16,6 +16,7 @@
     import { getCurrentDaystampMillis } from "./api";
     import { loadAllGuesses, verifyGuess } from "./guess/guess";
     import CorrectGuessAnimation from "./CorrectGuessAnimation.svelte";
+    import { REGION_DATA } from "./consts";
 
     export let region: Region;
 
@@ -60,6 +61,10 @@
         }
     });
 </script>
+
+<svelte:head>
+    <link rel="icon" type="image/svg" href="{REGION_DATA.get(region)?.icon}" />
+</svelte:head>
 
 <div class="py-8">
     <RegionSelector />
