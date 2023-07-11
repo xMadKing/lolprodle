@@ -1,6 +1,8 @@
 FROM python:3-alpine
 
 # to prevent the PID1 zombie reaping problem
+# see https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/
+# see https://github.com/krallin/tini
 RUN apk add --no-cache tini
 
 WORKDIR /scripts
