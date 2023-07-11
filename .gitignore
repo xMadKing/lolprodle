@@ -2,7 +2,7 @@
 .vscode/
 
 # python stuff
-__pycache__/
+**/*/__pycache__/
 
 # rust stuff
 
@@ -19,3 +19,4 @@ __pycache__/
 
 # deploy stuff
 leviathan.tar
+scripts.tar
