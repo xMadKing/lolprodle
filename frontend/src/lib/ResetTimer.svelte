@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte";
-    import { getResetTime, type ResetTimeResponse, type ResultResponse } from "./api";
+    import { getResetTime } from "./api";
     import { DataFetchState } from "./types";
 
     const SECOND_MILLIS = 1000;
