@@ -1,21 +1,8 @@
-def get_lec_teams():
-    lec_teams = [
-        "G2 Esports",
-        "Fnatic",
-        "Team BDS",
-        "Team Heretics",
-        "Team Vitality",
-        "Astralis",
-        "Excel",
-        "KOI (Spanish Team)",
-        "MAD Lions",
-        "SK Gaming"
-    ]
-    return lec_teams
+import os
 
-
-def get_lcs_teams():
-    lcs_teams = [
+REGIONS = ["lcs", "lec", "lck", "lpl"]
+REGION_TEAMS = {
+    "lcs": [
         "100 Thieves",
         "Cloud9",
         "Dignitas",
@@ -26,12 +13,20 @@ def get_lcs_teams():
         "NRG",
         "Team Liquid",
         "TSM"
-    ]
-    return lcs_teams
-
-
-def get_lck_teams():
-    lck_teams = [
+    ],
+    "lec": [
+        "G2 Esports",
+        "Fnatic",
+        "Team BDS",
+        "Team Heretics",
+        "Team Vitality",
+        "Astralis",
+        "Excel",
+        "KOI (Spanish Team)",
+        "MAD Lions",
+        "SK Gaming"
+    ],
+    "lck": [
         "Dplus KIA",
         "DRX",
         "Gen.G",
@@ -42,12 +37,8 @@ def get_lck_teams():
         "Nongshim RedForce",
         "OKSavingsBank BRION",
         "T1"
-    ]
-    return lck_teams
-
-
-def get_lpl_teams():
-    lpl_teams = [
+    ],
+    "lpl": [
         "Anyone's Legend",
         "Bilibili Gaming",
         "EDward Gaming",
@@ -66,4 +57,21 @@ def get_lpl_teams():
         "Ultra Prime",
         "Weibo Gaming"
     ]
-    return lpl_teams
+}
+
+_LOLPRODLE_CTX_DIR_ENV_VAR = "LOLPRODLE_CTX_DIR"
+
+CTX_DIR = None
+
+def load_consts():
+    globals()["CTX_DIR"] = os.environ.get(_LOLPRODLE_CTX_DIR_ENV_VAR)
+    if CTX_DIR is None:
+        raise Exception(f"Could not find {_LOLPRODLE_CTX_DIR_ENV_VAR} env var")
+
+
+def get_players_file(region: str) -> str:
+    return "{0}/{1}_players.json".format(CTX_DIR, region)
+
+
+def get_pods_file(region: str) -> str:
+    return "{0}/{1}_pods.json".format(CTX_DIR, region)

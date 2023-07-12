@@ -1,75 +1,88 @@
+from typing import Any, Dict, List
+
+import consts
+from dataclasses import dataclass
 import random
 import json
 import time
-import os
 
-CTX_dir = os.environ.get('LOLPRODLE_CTX_DIR')
+from player import Player
 
-#check if file exists
-def check_file(path):
-    return os.path.exists(path)
 
-#calc UTC time like mr oopma loompa wants
-def calc_time():
+# player of the day
+@dataclass
+class Pod:
+    daystamp_millis: int
+    player: Player
+
+    def __init__(self, daystamp_millis: int, player: Player):
+        self.daystamp_millis = daystamp_millis
+        self.player = player
+
+    def toJSON(self) -> str:
+        return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = self.__dict__
+        if isinstance(self.player, Player):
+            d["player"] = self.player.__dict__
+
+        return d
+
+
+# calc UTC time
+def get_current_daystamp() -> int:
     day_time_millis = 86400000
     t_utc = int(time.time() * 1000)
     current_daystamp = t_utc - (t_utc % day_time_millis)
     
     return current_daystamp
 
-#get number of players in each region
-def get_len_players(region):
-    if check_file("{0}/{1}_players.json".format(CTX_dir ,region)):
-        with open("{0}/{1}_players.json".format(CTX_dir ,region), "r") as input:
-            data = json.load(input)
-            return len(data)
-    else:
-        return "File does not exist"
 
-#check if its time to reset the _pod file
-def check_data(region):
-    if check_file("{0}/{1}_pods.json".format(CTX_dir ,region)):
-        with open("{0}/{1}_pods.json".format(CTX_dir ,region), "r") as input:
-            data = json.load(input)
-            if len(data) >= get_len_players(CTX_dir ,region):
-                return False
-            else:
-                return True
-    else: 
-        return False
+# check if its time to reset the _pod file
+def pods_require_reset(region_players: List[Player], region_pods: List[Pod]) -> bool:
+    return len(region_pods) >= len(region_players)
+
+
+def select_pod(region: str):
+    """Selects the player of the day.
+
+    This function will write data out to the associated player of the day (pod) file for the region.
+    The pod file may be reset if the number of players in it is greater than or equal to the number
+    of players available for the region.
+
+    Raises:
+        FileNotFoundError: if the pod file could not be found
+    """
+    # load region players
+    players: List[Player] = []
+    with open(consts.get_players_file(region), "r") as file:
+        content = "\n".join(file.readlines())
+        players_json_array = json.loads(content)
+        players = [Player(**player_dict) for player_dict in players_json_array]
+
+    # load region pods
+    pods: List[Pod] = []
+    try:
+        with open(consts.get_pods_file(region), "r") as file:
+            content = "\n".join(file.readlines())
+            pods_json_array = json.loads(content)
+            pods = [Pod(**pod_dict) for pod_dict in pods_json_array]
+    except FileNotFoundError:
+        # new region pods file needs to be created in this case
+        pass
+        
+
+    # select random player
+    pod_index = random.randint(0, len(players) - 1)
+    pod = Pod(get_current_daystamp(), players[pod_index])
+
+    if pods_require_reset(players, pods):
+        pods.clear()
+
+    pods.append(pod)
     
-#player of the day class
-class Pod:
-    def __init__(self, player):
-        self.daystamp_millis = calc_time()
-        self.player = player
-
-    def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__, 
-            sort_keys=True, indent=4)
-
-#selecting the player of the day
-def select_pod(region):
-    players = []
-    with open("{0}/{1}_players.json".format(CTX_dir ,region), "r") as input:
-        players = json.load(input)
-
-    pod_index = random.randint(0, len(players)-1)
-    pod = Pod(players[pod_index])
-
-    data = []
-    if check_data(region):
-        with open("{0}/{1}_pods.json".format(CTX_dir ,region), "r") as output:
-            data = output.read()
-            data = data[:len(data)-1]
-        data = data + "," + str(pod.toJSON()) + "]"
-        with open("{0}/{1}_pods.json".format(CTX_dir ,region), "w") as output:
-            output.write(data)
-    else:
-        with open("{0}/{1}_pods.json".format(CTX_dir ,region), "w") as output:
-            output.write("[")
-            output.write(pod.toJSON())
-            output.write("]")
-    
-    return "success"
-
+    with open(consts.get_pods_file(region), "w") as file:
+        pods_dicts = [pod.to_dict() for pod in pods]
+        json_str = json.dumps(pods_dicts)
+        file.write(json_str)
