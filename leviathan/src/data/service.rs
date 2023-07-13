@@ -1,5 +1,6 @@
 use std::{collections::HashMap, sync::Arc, time::Duration};
 
+use log::info;
 use strum::IntoEnumIterator;
 use tokio::{sync::RwLock, time};
 
@@ -111,8 +112,11 @@ pub fn start(service: Arc<LolprodleDataService>) {
         let mut interval = time::interval(Duration::from_secs(5 * 60)); // 5 mins
         loop {
             interval.tick().await;
+            info!("Loading updated players");
             service.load_region_players().await;
+            info!("Loading updated pods");
             service.load_region_pods().await;
+            info!("Done!");
         }
     });
 }
