@@ -118,7 +118,6 @@ pub fn start(service: Arc<LolprodleDataService>) {
             info!("Loading updated pods...");
             service.load_region_pods().await;
             info!("Loaded updated pods");
-            info!("Done!");
         }
     });
 }
