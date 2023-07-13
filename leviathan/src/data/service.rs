@@ -112,10 +112,12 @@ pub fn start(service: Arc<LolprodleDataService>) {
         let mut interval = time::interval(Duration::from_secs(5 * 60)); // 5 mins
         loop {
             interval.tick().await;
-            info!("Loading updated players");
+            info!("Loading updated players...");
             service.load_region_players().await;
-            info!("Loading updated pods");
+            info!("Loaded updated players");
+            info!("Loading updated pods...");
             service.load_region_pods().await;
+            info!("Loaded updated pods");
             info!("Done!");
         }
     });
