@@ -31,12 +31,11 @@ class Pod:
 
 
 # calc UTC time
-def get_current_daystamp() -> int:
-    day_time_millis = 86400000
+def get_next_daystamp() -> int:
     t_utc = int(time.time() * 1000)
-    current_daystamp = t_utc - (t_utc % day_time_millis)
+    current_daystamp = t_utc - (t_utc % consts.DAY_MILLIS)
     
-    return current_daystamp
+    return current_daystamp + consts.DAY_MILLIS
 
 
 # check if its time to reset the _pod file
@@ -75,7 +74,7 @@ def select_pod(region: str):
 
     # select random player
     pod_index = random.randint(0, len(players) - 1)
-    pod = Pod(get_current_daystamp(), players[pod_index])
+    pod = Pod(get_next_daystamp(), players[pod_index])
 
     if pods_require_reset(players, pods):
         pods.clear()
