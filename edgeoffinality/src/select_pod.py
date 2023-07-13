@@ -73,6 +73,7 @@ def select_pod(region: str):
         
 
     # select random player
+    # we want the next day's timestamp since these scripts run at 11:30 PM UTC
     pod_index = random.randint(0, len(players) - 1)
     pod = Pod(get_next_daystamp(), players[pod_index])
 
