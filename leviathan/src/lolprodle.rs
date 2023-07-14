@@ -1,6 +1,7 @@
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
 use strum::{EnumIter, IntoEnumIterator};
+use utoipa::ToSchema;
 
 #[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, EnumIter)]
 pub enum Region {
@@ -34,7 +35,7 @@ impl From<i32> for Region {
     }
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize, ToSchema)]
 pub enum GuessCategory {
     Id = 0,
     Role = 1,
@@ -49,14 +50,14 @@ impl GuessCategory {
     }
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize, ToSchema)]
 pub struct PlayerGuessCategory {
     pub category_id: i32,
     pub correct: bool,
     pub guess: String,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct PlayerGuess {
     pub categories: Vec<PlayerGuessCategory>,
 }

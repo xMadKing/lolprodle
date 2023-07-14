@@ -10,6 +10,12 @@ use crate::{
 
 use super::{CheckGuessRequest, CheckGuessResponse, ErrorType, ResultResponse, ResetTimeResponse, PlayersResponse, PreviousPlayerResponse};
 
+#[utoipa::path(
+    context_path = "/v1",
+    responses(
+        (status = 200, description = "Simple API description")
+    )
+)]
 #[get("/")]
 pub async fn index() -> Value {
     serde_json::json!({
@@ -17,6 +23,13 @@ pub async fn index() -> Value {
     })
 }
 
+#[utoipa::path(
+    context_path = "/v1",
+    request_body = CheckGuessRequest,
+    responses(
+        (status = 200, description = "Check guess result", body = ResultResponse<CheckGuessResponse>)
+    )
+)]
 #[post("/check_guess", data = "<request>")]
 pub async fn check_guess(
     request: Json<CheckGuessRequest>,
@@ -45,6 +58,12 @@ pub async fn check_guess(
     }
 }
 
+#[utoipa::path(
+    context_path = "/v1",
+    responses(
+        (status = 200, description = "The reset time", body = ResultResponse<ResetTimeResponse>)
+    )
+)]
 #[get("/reset_time")]
 pub async fn reset_time() -> Json<ResultResponse<ResetTimeResponse>> {
     let next_daystamp = lolprodle::get_current_daystamp_millis() + lolprodle::DAY_MILLIS;
@@ -60,6 +79,15 @@ pub async fn reset_time() -> Json<ResultResponse<ResetTimeResponse>> {
     })
 }
 
+#[utoipa::path(
+    context_path = "/v1",
+    params(
+        ("region_id", description = "The region ID")
+    ),
+    responses(
+        (status = 200, description = "The players for a region", body = ResultResponse<PlayersResponse>)
+    )
+)]
 #[get("/players?<region_id>")]
 pub async fn players(region_id: i32) -> Json<ResultResponse<PlayersResponse>> {
     let rg = Region::from(region_id);
@@ -86,6 +114,15 @@ pub async fn players(region_id: i32) -> Json<ResultResponse<PlayersResponse>> {
     })
 }
 
+#[utoipa::path(
+    context_path = "/v1",
+    params(
+        ("region_id", description = "The region ID")
+    ),
+    responses(
+        (status = 200, description = "The previous player for a region", body = ResultResponse<PreviousPlayerResponse>)
+    )
+)]
 #[get("/previous_player?<region_id>")]
 pub async fn previous_player(region_id: i32) -> Json<ResultResponse<PreviousPlayerResponse>> {
     let rg = Region::from(region_id);
