@@ -6,6 +6,10 @@ description = "lolprodle API server"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+# adds the /swagger-ui endpoint to view API information
+swagger = []
+
 [dependencies]
 chrono = "0.4.26"
 env_logger = "0.10.0"

@@ -35,7 +35,7 @@ async fn main() {
     service::start(DATA_SERVICE.clone());
     info!("Started loprodle services");
 
-    let _ = rocket::build()
+    let mut r = rocket::build()
         .mount("/", routes![cors::all_options])
         .mount(
             "/v1/",
@@ -47,10 +47,16 @@ async fn main() {
                 v1::router::previous_player
             ],
         )
-        .mount("/", SwaggerUi::new("/swagger-ui/<_..>").url("/api-docs/openapi.json", V1Doc::openapi()))
-        .attach(cors::Cors)
-        .launch()
-        .await;
+        .attach(cors::Cors);
+
+    if cfg!(feature = "swagger") {
+        r = r.mount(
+            "/",
+            SwaggerUi::new("/swagger-ui/<_..>").url("/api-docs/openapi.json", V1Doc::openapi()),
+        );
+    }
+
+    let _ = r.launch().await;
 }
 
 #[cfg(test)]
