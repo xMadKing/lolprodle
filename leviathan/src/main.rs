@@ -47,7 +47,6 @@ async fn main() {
                 v1::router::previous_player
             ],
         )
-        // temp
         .mount("/", SwaggerUi::new("/swagger-ui/<_..>").url("/api-docs/openapi.json", V1Doc::openapi()))
         .attach(cors::Cors)
         .launch()

@@ -1,7 +1,7 @@
-use serde::{Serialize, Deserialize};
-use utoipa::{ToSchema, OpenApi};
+use serde::{Deserialize, Serialize};
+use utoipa::{OpenApi, ToSchema};
 
-use crate::{lolprodle::PlayerGuess, data::Player};
+use crate::{data::Player, lolprodle::PlayerGuess};
 
 pub mod router;
 
@@ -21,11 +21,12 @@ pub mod router;
             crate::lolprodle::PlayerGuessCategory,
             crate::lolprodle::PlayerGuess,
             ErrorType,
-            ResultResponse<CheckGuessRequest>,
-            ResultResponse<CheckGuessResponse>,
-            ResultResponse<ResetTimeResponse>,
-            ResultResponse<PlayersResponse>,
-            ResultResponse<PreviousPlayerResponse>,
+            ErrorResponse,
+            CheckGuessRequest,
+            CheckGuessResponse,
+            ResetTimeResponse,
+            PlayersResponse,
+            PreviousPlayerResponse,
         )
     )
 )]
@@ -40,12 +41,10 @@ pub enum ErrorType {
     NoPod,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
-pub struct ResultResponse<T> {
-    pub success: bool,
-    pub error_type: Option<ErrorType>,
-    pub error_message: Option<String>,
-    pub data: Option<T>,
+#[derive(Clone, Debug, Serialize, Deserialize, ToSchema)]
+pub struct ErrorResponse {
+    pub err_type: ErrorType,
+    pub msg: Option<String>,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]

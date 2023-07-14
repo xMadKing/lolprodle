@@ -1,5 +1,5 @@
 use chrono::Utc;
-use rocket::serde::json::Json;
+use rocket::{http::Status, response::status, serde::json::Json};
 use serde_json::Value;
 
 use crate::{
@@ -8,7 +8,10 @@ use crate::{
     DATA_SERVICE,
 };
 
-use super::{CheckGuessRequest, CheckGuessResponse, ErrorType, ResultResponse, ResetTimeResponse, PlayersResponse, PreviousPlayerResponse};
+use super::{
+    CheckGuessRequest, CheckGuessResponse, ErrorResponse, ErrorType, PlayersResponse,
+    PreviousPlayerResponse, ResetTimeResponse,
+};
 
 #[utoipa::path(
     context_path = "/v1",
@@ -27,33 +30,33 @@ pub async fn index() -> Value {
     context_path = "/v1",
     request_body = CheckGuessRequest,
     responses(
-        (status = 200, description = "Check guess result", body = ResultResponse<CheckGuessResponse>)
+        (status = 200, description = "Check guess result", body = CheckGuessResponse),
+        (status = 500, description = "Error", body = ErrorResponse)
     )
 )]
 #[post("/check_guess", data = "<request>")]
 pub async fn check_guess(
     request: Json<CheckGuessRequest>,
-) -> Json<ResultResponse<CheckGuessResponse>> {
+) -> Result<Json<CheckGuessResponse>, status::Custom<Json<ErrorResponse>>> {
     match guess::check_guess(Region::from(request.region_id), &request.player_id).await {
-        Ok(player_guess) => Json(ResultResponse {
-            success: true,
-            data: Some(CheckGuessResponse {
-                guess: player_guess,
-            }),
-            ..Default::default()
-        }),
+        Ok(player_guess) => Ok(Json(CheckGuessResponse {
+            guess: player_guess,
+        })),
 
         Err(state) => {
             warn!("Error state for /check_guess: {}", state);
-            Json(ResultResponse {
-                success: false,
-                error_type: Some(match state {
-                    GuessState::InvalidName => ErrorType::InvalidPlayerId,
-                    GuessState::NoCurrentPod => ErrorType::NoPod,
-                    _ => ErrorType::Internal,
+            Err(status::Custom(
+                // might want to differentiate between client and server error in the future
+                Status::InternalServerError,
+                Json(ErrorResponse {
+                    err_type: match state {
+                        GuessState::InvalidName => ErrorType::InvalidPlayerId,
+                        GuessState::NoCurrentPod => ErrorType::NoPod,
+                        _ => ErrorType::Internal,
+                    },
+                    msg: None,
                 }),
-                ..Default::default()
-            })
+            ))
         }
     }
 }
@@ -61,70 +64,65 @@ pub async fn check_guess(
 #[utoipa::path(
     context_path = "/v1",
     responses(
-        (status = 200, description = "The reset time", body = ResultResponse<ResetTimeResponse>)
+        (status = 200, description = "The reset time", body = ResetTimeResponse)
     )
 )]
 #[get("/reset_time")]
-pub async fn reset_time() -> Json<ResultResponse<ResetTimeResponse>> {
+pub async fn reset_time() -> Json<ResetTimeResponse> {
     let next_daystamp = lolprodle::get_current_daystamp_millis() + lolprodle::DAY_MILLIS;
     let remaining_time = next_daystamp - Utc::now().timestamp_millis();
 
-    Json(ResultResponse {
-        success: true,
-        data: Some(ResetTimeResponse {
-            reset_time_unix_millis: next_daystamp,
-            remaining_time_millis: remaining_time,
-        }),
-        ..Default::default()
+    Json(ResetTimeResponse {
+        reset_time_unix_millis: next_daystamp,
+        remaining_time_millis: remaining_time,
     })
 }
 
 #[utoipa::path(
     context_path = "/v1",
-    params(
-        ("region_id", description = "The region ID")
-    ),
     responses(
-        (status = 200, description = "The players for a region", body = ResultResponse<PlayersResponse>)
+        (status = 200, description = "The players for a region", body = PlayersResponse),
+        (status = 500, description = "Error", body = ErrorResponse)
     )
 )]
 #[get("/players?<region_id>")]
-pub async fn players(region_id: i32) -> Json<ResultResponse<PlayersResponse>> {
+pub async fn players(
+    region_id: i32,
+) -> Result<Json<PlayersResponse>, status::Custom<Json<ErrorResponse>>> {
     let rg = Region::from(region_id);
 
     if let Some(arc) = DATA_SERVICE.get_region_players(&rg).await {
         let region_players = arc.read().await;
-        return Json(ResultResponse {
-            success: true,
-            data: Some(PlayersResponse(
-                region_players
-                    .players
-                    .iter()
-                    .map(|player| player.id.clone())
-                    .collect(),
-            )),
-            ..Default::default()
-        });
+        info!("players size = {}", region_players.players.len());
+        return Ok(Json(PlayersResponse(
+            region_players
+                .players
+                .iter()
+                .map(|player| player.id.clone())
+                .collect(),
+        )));
     }
 
-    Json(ResultResponse {
-        success: false,
-        error_type: Some(ErrorType::NoRegionPlayersAvailable),
-        ..Default::default()
-    })
+    Err(status::Custom(
+        Status::InternalServerError,
+        Json(ErrorResponse {
+            err_type: ErrorType::NoRegionPlayersAvailable,
+            msg: None,
+        }),
+    ))
 }
 
 #[utoipa::path(
     context_path = "/v1",
-    params(
-        ("region_id", description = "The region ID")
-    ),
     responses(
-        (status = 200, description = "The previous player for a region", body = ResultResponse<PreviousPlayerResponse>)
+        (status = 200, description = "The previous player for a region", body = PreviousPlayerResponse),
+        (status = 500, description = "Error", body = ErrorResponse)
     )
 )]
 #[get("/previous_player?<region_id>")]
-pub async fn previous_player(region_id: i32) -> Json<ResultResponse<PreviousPlayerResponse>> {
+pub async fn previous_player(
+    region_id: i32,
+) -> Result<Json<PreviousPlayerResponse>, status::Custom<Json<ErrorResponse>>> {
     let rg = Region::from(region_id);
     let previous_daystamp = lolprodle::get_current_daystamp_millis() - lolprodle::DAY_MILLIS;
 
@@ -135,22 +133,22 @@ pub async fn previous_player(region_id: i32) -> Json<ResultResponse<PreviousPlay
             .map(|pod| pod.player.clone());
 
         return match prev_player {
-            Some(player) => Json(ResultResponse {
-                success: true,
-                data: Some(PreviousPlayerResponse { player }),
-                ..Default::default()
-            }),
-            None => Json(ResultResponse {
-                success: false,
-                error_type: Some(ErrorType::NoPod),
-                ..Default::default()
-            }),
+            Some(player) => Ok(Json(PreviousPlayerResponse { player })),
+            None => Err(status::Custom(
+                Status::InternalServerError,
+                Json(ErrorResponse {
+                    err_type: ErrorType::NoPod,
+                    msg: None,
+                }),
+            )),
         };
     }
 
-    Json(ResultResponse {
-        success: false,
-        error_type: Some(ErrorType::NoRegionPodsAvailable),
-        ..Default::default()
-    })
+    Err(status::Custom(
+        Status::InternalServerError,
+        Json(ErrorResponse {
+            err_type: ErrorType::NoRegionPodsAvailable,
+            msg: None,
+        }),
+    ))
 }
