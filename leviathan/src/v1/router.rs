@@ -40,7 +40,7 @@ pub async fn index() -> Value {
 pub async fn check_guess(
     request: Json<CheckGuessRequest>,
 ) -> Result<Json<CheckGuessResponse>, status::Custom<Json<ErrorResponse>>> {
-    match guess::check_guess(Region::from(request.region_id), &request.player_id).await {
+    match guess::check_guess(request.region, &request.player_id).await {
         Ok(player_guess) => Ok(Json(CheckGuessResponse {
             guess: player_guess,
         })),

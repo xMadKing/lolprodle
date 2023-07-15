@@ -1,23 +1,32 @@
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
-use strum::{EnumIter, IntoEnumIterator, EnumString};
+use strum::{EnumIter, EnumString};
 use utoipa::ToSchema;
 
-#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, EnumIter, EnumString, ToSchema)]
+#[derive(
+    Clone,
+    Copy,
+    Debug,
+    Default,
+    PartialEq,
+    Eq,
+    Hash,
+    Serialize,
+    Deserialize,
+    EnumIter,
+    EnumString,
+    ToSchema,
+)]
 #[strum(ascii_case_insensitive)]
 pub enum Region {
     #[default]
-    Lcs = 0,
-    Lec = 1,
-    Lck = 2,
-    Lpl = 3,
+    Lcs,
+    Lec,
+    Lck,
+    Lpl,
 }
 
 impl Region {
-    pub fn id(&self) -> i32 {
-        *self as i32
-    }
-
     pub fn name(&self) -> &'static str {
         match *self {
             Self::Lcs => "LCS",
@@ -28,42 +37,29 @@ impl Region {
     }
 }
 
-impl From<i32> for Region {
-    fn from(value: i32) -> Self {
-        Region::iter()
-            .find(|region| region.id() == value)
-            .unwrap_or(Self::default())
-    }
-}
-
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize, ToSchema)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize, EnumString, ToSchema)]
+#[strum(ascii_case_insensitive)]
 pub enum GuessCategory {
-    Id = 0,
-    Role = 1,
-    Country = 2,
-    FavoriteChamps = 3,
-    Team = 4,
-}
-
-impl GuessCategory {
-    pub fn id(&self) -> i32 {
-        *self as i32
-    }
+    Id,
+    Role,
+    Country,
+    FavoriteChamps,
+    Team,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize, ToSchema)]
-pub struct PlayerGuessCategory {
-    pub category_id: i32,
+pub struct GuessCategoryResult {
+    pub category: GuessCategory,
     pub correct: bool,
     pub guess: String,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
-pub struct PlayerGuess {
-    pub categories: Vec<PlayerGuessCategory>,
+pub struct Guess {
+    pub categories: Vec<GuessCategoryResult>,
 }
 
-impl PlayerGuess {
+impl Guess {
     /// A guess is correct if all categories are correct.
     pub fn is_correct(&self) -> bool {
         self.categories.iter().all(|category| category.correct)

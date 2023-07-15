@@ -4,16 +4,16 @@ use log::info;
 use strum::IntoEnumIterator;
 use tokio::{sync::RwLock, time};
 
-use crate::lolprodle;
+use crate::lolprodle::{self, Region};
 
 use super::{get_context_dir, LolprodleContextDir, LolprodleDataLoader, RegionPlayers, RegionPods};
 
 pub struct LolprodleDataService {
     ctx_dir: Arc<RwLock<LolprodleContextDir>>,
-    // region id => RegionPlayers
-    region_players: RwLock<HashMap<i32, Arc<RwLock<RegionPlayers>>>>,
-    // region id => RegionPods
-    region_pods: RwLock<HashMap<i32, Arc<RwLock<RegionPods>>>>,
+    // region => RegionPlayers
+    region_players: RwLock<HashMap<Region, Arc<RwLock<RegionPlayers>>>>,
+    // region => RegionPods
+    region_pods: RwLock<HashMap<Region, Arc<RwLock<RegionPods>>>>,
 }
 
 impl LolprodleDataService {
@@ -37,7 +37,7 @@ impl LolprodleDataService {
     ) -> Option<Arc<RwLock<RegionPlayers>>> {
         let all_players = self.region_players.read().await;
         all_players
-            .get(&region.id())
+            .get(&region)
             .and_then(|val| Some(val.clone()))
     }
 
@@ -46,7 +46,7 @@ impl LolprodleDataService {
         region: &lolprodle::Region,
     ) -> Option<Arc<RwLock<RegionPods>>> {
         let all_pods = self.region_pods.read().await;
-        all_pods.get(&region.id()).and_then(|val| Some(val.clone()))
+        all_pods.get(&region).and_then(|val| Some(val.clone()))
     }
 
     async fn load_region_players(&self) {
@@ -58,7 +58,7 @@ impl LolprodleDataService {
                 LolprodleDataLoader::get_region_players(&ctx_dir, &region).unwrap();
             let all_region_players = self.region_players.write().await;
 
-            if let Some(arc) = all_region_players.get(&region.id()) {
+            if let Some(arc) = all_region_players.get(&region) {
                 let mut current_region_players = arc.write().await;
                 *current_region_players = region_players;
             }
@@ -73,7 +73,7 @@ impl LolprodleDataService {
             let region_pods = LolprodleDataLoader::get_region_pods(&ctx_dir, &region).unwrap();
             let all_region_pods = self.region_pods.write().await;
 
-            if let Some(arc) = all_region_pods.get(&region.id()) {
+            if let Some(arc) = all_region_pods.get(&region) {
                 let mut current_region_pods = arc.write().await;
                 *current_region_pods = region_pods;
             }
@@ -96,10 +96,10 @@ impl LolprodleDataService {
     }
 
     /// Creates a map and adds all initial entries for every region.
-    fn create_init_map<T: Default>() -> RwLock<HashMap<i32, Arc<RwLock<T>>>> {
+    fn create_init_map<T: Default>() -> RwLock<HashMap<Region, Arc<RwLock<T>>>> {
         let mut map = HashMap::new();
         lolprodle::Region::iter().for_each(|region| {
-            map.insert(region.id(), Arc::new(RwLock::new(T::default())));
+            map.insert(region, Arc::new(RwLock::new(T::default())));
         });
 
         RwLock::new(map)

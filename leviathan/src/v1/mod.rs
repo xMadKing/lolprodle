@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use utoipa::{OpenApi, ToSchema};
 
-use crate::{data::Player, lolprodle::PlayerGuess};
+use crate::{data::Player, lolprodle::{Guess, Region}};
 
 pub mod router;
 
@@ -19,8 +19,8 @@ pub mod router;
             crate::data::Player,
             crate::lolprodle::Region,
             crate::lolprodle::GuessCategory,
-            crate::lolprodle::PlayerGuessCategory,
-            crate::lolprodle::PlayerGuess,
+            crate::lolprodle::GuessCategoryResult,
+            crate::lolprodle::Guess,
             ErrorType,
             ErrorResponse,
             CheckGuessRequest,
@@ -51,13 +51,13 @@ pub struct ErrorResponse {
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct CheckGuessRequest {
-    pub region_id: i32,
+    pub region: Region,
     pub player_id: String,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct CheckGuessResponse {
-    pub guess: PlayerGuess,
+    pub guess: Guess,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
