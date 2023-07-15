@@ -17,6 +17,7 @@ use super::{
 
 #[utoipa::path(
     context_path = "/v1",
+    tag = "guess",
     responses(
         (status = 200, description = "Simple API description")
     )
@@ -30,11 +31,12 @@ pub async fn index() -> Value {
 
 #[utoipa::path(
     context_path = "/v1",
+    tag = "guess", // tag modifies which module this endpoint will be part of
     request_body = CheckGuessRequest,
     responses(
         (status = 200, description = "Check guess result", body = CheckGuessResponse),
         (status = 500, description = "Error", body = ErrorResponse)
-    )
+    ),
 )]
 #[post("/check_guess", data = "<request>")]
 pub async fn check_guess(
@@ -65,6 +67,7 @@ pub async fn check_guess(
 
 #[utoipa::path(
     context_path = "/v1",
+    tag = "guess",
     responses(
         (status = 200, description = "The reset time", body = ResetTimeResponse)
     )
@@ -82,6 +85,7 @@ pub async fn reset_time() -> Json<ResetTimeResponse> {
 
 #[utoipa::path(
     context_path = "/v1",
+    tag = "guess",
     params(
         ("region" = String, Query, description = "The region name. Refer to the Region schema.")
     ),
@@ -127,6 +131,7 @@ pub async fn players(
 
 #[utoipa::path(
     context_path = "/v1",
+    tag = "guess",
     params(
         ("region" = String, Query, description = "The region name. Refer to the Region schema.")
     ),

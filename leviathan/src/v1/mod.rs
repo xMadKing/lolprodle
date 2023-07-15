@@ -7,6 +7,10 @@ pub mod router;
 
 #[derive(OpenApi)]
 #[openapi(
+    servers(
+        (url = "http://127.0.0.1:8000/", description = "Local instance of leviathan"),
+        (url = "https://api.lolprodle.com/", description = "Production instance of leviathan")
+    ),
     paths(
         router::index,
         router::check_guess,
