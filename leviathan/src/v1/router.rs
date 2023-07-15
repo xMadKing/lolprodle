@@ -1,3 +1,5 @@
+use std::str::FromStr;
+
 use chrono::Utc;
 use rocket::{http::Status, response::status, serde::json::Json};
 use serde_json::Value;
@@ -80,16 +82,27 @@ pub async fn reset_time() -> Json<ResetTimeResponse> {
 
 #[utoipa::path(
     context_path = "/v1",
+    params(
+        ("region" = String, Query, description = "The region name. Refer to the Region schema.")
+    ),
     responses(
         (status = 200, description = "The players for a region", body = PlayersResponse),
         (status = 500, description = "Error", body = ErrorResponse)
     )
 )]
-#[get("/players?<region_id>")]
+#[get("/players?<region>")]
 pub async fn players(
-    region_id: i32,
+    region: String,
 ) -> Result<Json<PlayersResponse>, status::Custom<Json<ErrorResponse>>> {
-    let rg = Region::from(region_id);
+    let rg = Region::from_str(&region).map_err(|_| {
+        status::Custom(
+            Status::InternalServerError,
+            Json(ErrorResponse {
+                err_type: ErrorType::InvalidRegion,
+                msg: None,
+            }),
+        )
+    })?;
 
     if let Some(arc) = DATA_SERVICE.get_region_players(&rg).await {
         let region_players = arc.read().await;
@@ -114,16 +127,28 @@ pub async fn players(
 
 #[utoipa::path(
     context_path = "/v1",
+    params(
+        ("region" = String, Query, description = "The region name. Refer to the Region schema.")
+    ),
     responses(
         (status = 200, description = "The previous player for a region", body = PreviousPlayerResponse),
         (status = 500, description = "Error", body = ErrorResponse)
     )
 )]
-#[get("/previous_player?<region_id>")]
+#[get("/previous_player?<region>")]
 pub async fn previous_player(
-    region_id: i32,
+    region: String,
 ) -> Result<Json<PreviousPlayerResponse>, status::Custom<Json<ErrorResponse>>> {
-    let rg = Region::from(region_id);
+    let rg = Region::from_str(&region).map_err(|_| {
+        status::Custom(
+            Status::InternalServerError,
+            Json(ErrorResponse {
+                err_type: ErrorType::InvalidRegion,
+                msg: None,
+            }),
+        )
+    })?;
+
     let previous_daystamp = lolprodle::get_current_daystamp_millis() - lolprodle::DAY_MILLIS;
 
     if let Some(arc) = DATA_SERVICE.get_region_pods(&rg).await {

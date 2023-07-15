@@ -17,6 +17,7 @@ pub mod router;
     components(
         schemas(
             crate::data::Player,
+            crate::lolprodle::Region,
             crate::lolprodle::GuessCategory,
             crate::lolprodle::PlayerGuessCategory,
             crate::lolprodle::PlayerGuess,
@@ -38,6 +39,7 @@ pub enum ErrorType {
     NoRegionPlayersAvailable,
     NoRegionPodsAvailable,
     InvalidPlayerId,
+    InvalidRegion,
     NoPod,
 }
 

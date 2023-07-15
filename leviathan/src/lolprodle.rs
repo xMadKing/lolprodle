@@ -1,9 +1,10 @@
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
-use strum::{EnumIter, IntoEnumIterator};
+use strum::{EnumIter, IntoEnumIterator, EnumString};
 use utoipa::ToSchema;
 
-#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, EnumIter)]
+#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, EnumIter, EnumString, ToSchema)]
+#[strum(ascii_case_insensitive)]
 pub enum Region {
     #[default]
     Lcs = 0,
