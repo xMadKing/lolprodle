@@ -12,4 +12,5 @@ openapi-generator-cli generate \
     -g typescript \
     -o ../libs/leviathan-api \
     --additional-properties=npmName=leviathan-api \
-    --additional-properties=npmVersion=1.0.0
+    --additional-properties=npmVersion=1.0.0 \
+    --additional-properties=supportsES6=true

@@ -4,6 +4,9 @@ _storage/
 # vscode
 .vscode/
 
+# node stuff
+node_modules/
+
 # python stuff
 **/*/__pycache__/
 
