@@ -4,7 +4,7 @@
     import Transition from "svelte-transition";
     import { correctGuess, currentGuessedNames, selectedRegion, toasts } from "./stores";
     import { makeGuess } from "./guess/guess";
-    import { ErrorType, getCurrentDaystampMillis, getPlayerNames } from "./api";
+    import { getCurrentDaystampMillis } from "./api";
     import { DataFetchState, Duration, Toast, ToastStatus } from "./types";
     import { saveGuessedNamesCookie } from "./cookies";
     import HowToButton from "./HowToButton.svelte";

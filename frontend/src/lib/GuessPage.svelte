@@ -63,7 +63,7 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" type="image/svg" href="{REGION_DATA.get(region)?.icon}" />
+    <link rel="icon" type="image/svg" href={REGION_DATA.get(region)?.icon} />
 </svelte:head>
 
 <div class="py-8">
