@@ -1,30 +1,16 @@
-import { ErrorType, getCurrentDaystampMillis, postCheckGuess, type CheckGuessResponse } from "$lib/api";
-import { saveCorrectGuessCookie, saveGuessesCookie } from "$lib/cookies";
+import { getCurrentDaystampMillis, guessApi } from "$lib/api";
+import { saveCorrectGuessCookie, } from "$lib/cookies";
 import { correctGuess, currentGuesses } from "$lib/stores";
-import type { PlayerGuess, Region } from "$lib/types";
+import type { Guess, Region } from "leviathan-api";
 
 // Returns nothing (undefined) or the error type and message.
-export async function makeGuess(region: Region, playerId: string): Promise<undefined | [ErrorType | null, string | null]> {
-    return postCheckGuess(region, playerId).then(res => {
-        if (res === undefined) {
-            return [ErrorType.Internal, ""];
-        }
-        if (!res.success) {
-            console.log("[GUESS] Error from check guess endpoint");
-            return [res.error_type, res.error_message];
-        }
-
-        if (res.data === null) {
-            console.log("[GUESS] No guess data available when data is expected");
-            return [ErrorType.Internal, ""];
-        }
-
-        // we know res.data is for sure a value at this point
-        // (need to cast to unknown first otherwise TypeScript thinks it's a mistake/error)
-        let data = res.data as unknown as CheckGuessResponse;
-
+export async function makeGuess(region: Region, playerId: string): Promise<void> {
+    return guessApi.checkGuess({
+        region: region,
+        playerId: playerId
+    }).then(res => {
         currentGuesses.update(guesses => {
-            guesses.push(data.guess);
+            guesses.push(res.guess);
 
             // removed for now (cookie gets too big, need better solution in the future)
             // let currentDaystamp = getCurrentDaystampMillis();
@@ -34,32 +20,27 @@ export async function makeGuess(region: Region, playerId: string): Promise<undef
             return guesses;
         });
 
-        checkCorrectAndUpdateStoreAndCookie(region, playerId, data.guess);
+        checkCorrectAndUpdateStoreAndCookie(region, playerId, res.guess);
 
         return undefined;
-    });
+    }).catch(err => err);
 }
 
-export function isGuessEntirelyCorrect(guess: PlayerGuess): boolean {
+export function isGuessEntirelyCorrect(guess: Guess): boolean {
     return guess.categories.every(category => category.correct);
 }
 
 // Returns whether the provided player ID is the correct guess. Note that if the promise returns
 // undefined, this is indicative of some sort of error that occurred while making the check guess
 // request.
-export async function verifyGuess(region: Region, playerId: string): Promise<boolean | undefined> {
-    return postCheckGuess(region, playerId).then(res => {
-        if (!res.success || res.data === null) {
-            return undefined;
-        }
-
-        let data = res.data as unknown as CheckGuessResponse;
-        return isGuessEntirelyCorrect(data.guess);
+export async function verifyGuess(region: Region, playerId: string): Promise<boolean> {
+    return guessApi.checkGuess({ region, playerId }).then(res => {
+        return isGuessEntirelyCorrect(res.guess);
     })
 }
 
 // Will update the correct guess store if the provided guess is completely correct.
-function checkCorrectAndUpdateStoreAndCookie(region: Region, playerId: string, guess: PlayerGuess) {
+function checkCorrectAndUpdateStoreAndCookie(region: Region, playerId: string, guess: Guess) {
     if (!isGuessEntirelyCorrect(guess)) {
         return;
     }
@@ -77,24 +58,9 @@ export function loadAllGuesses(region: Region, guesses: string[]) {
     // order is approximate since the requests are made asynchronously.
     for (let i = guesses.length - 1; i >= 0; i--) {
         let guess = guesses[i];
-        postCheckGuess(region, guess).then(res => {
-            if (res === undefined) {
-                console.log("[GUESS LOADER] Undefined response");
-                return;
-            }
-            if (!res.success) {
-                console.log(`[GUESS LOADER] Error from check guess endpoint: ${res.error_type}: ${res.error_message}`);
-                return;
-            }
-
-            if (res.data === null) {
-                console.log("[GUESS LOADER] No guess data available when data is expected");
-                return;
-            }
-
-            let data = res.data as unknown as CheckGuessResponse;
+        guessApi.checkGuess({ region, playerId: guess }).then(res => {
             currentGuesses.update(g => {
-                g.unshift(data.guess);
+                g.unshift(res.guess);
                 return g;
             });
         });

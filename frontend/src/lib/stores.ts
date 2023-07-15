@@ -1,6 +1,7 @@
 import { readable, writable, type Writable } from "svelte/store";
-import { Region, type PlayerGuess, Toast } from "./types";
+import type { Toast } from "./types";
 import { getCurrentDaystampMillis } from "./api";
+import type { Guess, Region } from "leviathan-api";
 
 // The daystamp currently set in the currentDaystamp store
 let currentSetDaystamp = getCurrentDaystampMillis();
@@ -24,9 +25,9 @@ export const currentDaystamp = readable(currentSetDaystamp, (set) => {
 });
 
 // Contains the currently selected region
-export const selectedRegion = writable(Region.Lcs);
+export const selectedRegion = writable("Lcs" as Region);
 // Contains the guesses for the current region
-export const currentGuesses: Writable<Array<PlayerGuess>> = writable([]);
+export const currentGuesses: Writable<Array<Guess>> = writable([]);
 // All the names guessed by the user
 export const currentGuessedNames: Writable<Array<string>> = writable([]);
 // The correct answer guessed by the user user for the current region

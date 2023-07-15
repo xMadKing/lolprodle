@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { PlayerGuess } from "$lib/types";
+    import type { Guess } from "leviathan-api";
     import GuessCategoryCard from "./GuessCategoryCard.svelte";
 
-    export let guess: PlayerGuess;
+    export let guess: Guess;
 </script>
 
 <div
