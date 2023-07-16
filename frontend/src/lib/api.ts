@@ -1,10 +1,12 @@
 import { env } from "$env/dynamic/public";
-import { GuessApi, ServerConfiguration, createConfiguration } from "leviathan-api";
+import { Configuration, GuessApi } from "leviathan-api";
 
 const API_URL = env.PUBLIC_API_URL;
 
-const server = new ServerConfiguration(API_URL, {});
-export const guessApi = new GuessApi(createConfiguration({ baseServer: server }));
+const config = new Configuration({
+    basePath: API_URL,
+});
+export const guessApi = new GuessApi(config);
 
 //note: maybe in the future get it from the api server (just in case)
 export function getCurrentDaystampMillis(): number {
