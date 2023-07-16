@@ -4,7 +4,7 @@
     import Transition from "svelte-transition";
     import { correctGuess, currentGuessedNames, selectedRegion, toasts } from "./stores";
     import { makeGuess } from "./guess/guess";
-    import { ErrorType, getCurrentDaystampMillis, getPlayerNames } from "./api";
+    import { getCurrentDaystampMillis, guessApi } from "./api";
     import { DataFetchState, Duration, Toast, ToastStatus } from "./types";
     import { saveGuessedNamesCookie } from "./cookies";
     import HowToButton from "./HowToButton.svelte";
@@ -24,24 +24,22 @@
 
     function updatePlayerNames() {
         dataState = DataFetchState.Loading;
-        getPlayerNames($selectedRegion)
+        guessApi
+            .players({ region: $selectedRegion.toString() })
             .then((res) => {
-                if (!res.success) {
+                if (res.length === 0) {
                     dataState = DataFetchState.Error;
-                    console.log("[INPUT] Request failed");
+                    console.log("[INPUT] Player list data is empty");
                     return;
                 }
-                if (res.data === null) {
-                    dataState = DataFetchState.Error;
-                    console.log("[INPUT] Player list data is null");
-                }
 
-                // need to cast to unknown first so TypeScript doesn't complain that the intended
-                // cast is a mistake/error
-                playerNames = res.data as unknown as string[];
+                playerNames = res;
                 dataState = DataFetchState.Fetched;
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                dataState = DataFetchState.Error;
+            });
     }
 
     const combobox = createCombobox({ label: "Actions", selected: playerNames[0] });
@@ -62,23 +60,21 @@
             }
 
             // temp
-            let err = await makeGuess($selectedRegion, selectedName);
-            if (err !== undefined) {
+            try {
+                await makeGuess($selectedRegion, selectedName);
+
+                $currentGuessedNames.push(selectedName);
+                let daystamp = getCurrentDaystampMillis();
+                saveGuessedNamesCookie($selectedRegion, daystamp, $currentGuessedNames);
+            } catch (e) {
                 $toasts.push(
                     new Toast(
                         ToastStatus.Error,
-                        err[0] === ErrorType.InvalidPlayerId
-                            ? "Could not find submitted player"
-                            : "Error occurred while guessing :(",
+                        "Error occurred while guessing :(",
                         Duration.secs(3)
                     )
                 );
-                return;
             }
-
-            $currentGuessedNames.push(selectedName);
-            let daystamp = getCurrentDaystampMillis();
-            saveGuessedNamesCookie($selectedRegion, daystamp, $currentGuessedNames);
         }
     }
 

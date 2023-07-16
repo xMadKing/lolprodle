@@ -2,6 +2,10 @@ use std::sync::Arc;
 
 use data::service::{self, LolprodleDataService};
 use lazy_static::lazy_static;
+use utoipa::OpenApi;
+use utoipa_swagger_ui::SwaggerUi;
+
+use crate::v1::V1Doc;
 
 #[macro_use]
 extern crate rocket;
@@ -31,7 +35,7 @@ async fn main() {
     service::start(DATA_SERVICE.clone());
     info!("Started loprodle services");
 
-    let _ = rocket::build()
+    let mut r = rocket::build()
         .mount("/", routes![cors::all_options])
         .mount(
             "/v1/",
@@ -43,7 +47,31 @@ async fn main() {
                 v1::router::previous_player
             ],
         )
-        .attach(cors::Cors)
-        .launch()
-        .await;
+        .attach(cors::Cors);
+
+    if cfg!(feature = "swagger") {
+        r = r.mount(
+            "/",
+            SwaggerUi::new("/swagger-ui/<_..>").url("/api-docs/openapi.json", V1Doc::openapi()),
+        );
+    }
+
+    let _ = r.launch().await;
+}
+
+#[cfg(test)]
+mod tests {
+    use std::fs;
+
+    use testdir::testdir;
+    use utoipa::OpenApi;
+
+    use crate::v1::V1Doc;
+
+    #[test]
+    fn generate_openapi_spec() {
+        let dir = testdir!();
+        let file_path = dir.join("openapi.json");
+        fs::write(&file_path, V1Doc::openapi().to_pretty_json().unwrap()).unwrap();
+    }
 }

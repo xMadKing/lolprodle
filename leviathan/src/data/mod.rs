@@ -2,6 +2,7 @@ use std::{env, fs, io, path::PathBuf};
 
 use serde::{Deserialize, Serialize};
 use strum::Display;
+use utoipa::ToSchema;
 
 use crate::lolprodle;
 
@@ -66,7 +67,7 @@ pub fn get_context_dir() -> Result<LolprodleContextDir, Error> {
     Ok(LolprodleContextDir { files })
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct Player {
     pub id: String,
     pub name: String,
@@ -76,21 +77,21 @@ pub struct Player {
     pub fav_champs: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Debug, Default, ToSchema)]
 pub struct RegionPlayers {
     pub region: lolprodle::Region,
     pub players: Vec<Player>,
 }
 
 /// Player of (the) day (Pod)
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct Pod {
     pub daystamp_millis: i64,
     pub player: Player,
 }
 
 /// All player of the day (so far) for the region.
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Debug, Default, ToSchema)]
 pub struct RegionPods {
     pub region: lolprodle::Region,
     /// It is expected pods will be a vector with unique entries, both in timestamp and players

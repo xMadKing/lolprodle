@@ -2,70 +2,8 @@
 
 lolprodle API server - serves the backbone of lolprodle.com
 
-## Models
+## Models / API Endpoints
 
-- Region = `Lcs = 0` | `Lec = 1` | `Lck = 2` | `Lpl = 3`
-- GuessCategory = `Id = 0` | `Role = 1` | `Country = 2` | `FavoriteChamps = 3` | `Team = 4`
-- PlayerGuessCategory(category_id: i32, correct: bool, guess: String)
--- category_id derived from GuessCategory 
-- PlayerGuess([PlayerGuessCategory])
-
-## API Requests
-
-### POST: /check_guess
-
-Check the correctness of a guess
-
-#### Body 
-
-JSON payload: 
-```json
-{"region_id": 0, "player_id": "id"}
-```
-
-#### Returns
-
-JSON payload: 
-```json
-{"guess": "PlayerGuess obj -- see models"}
-```
-
-### GET: /reset_time
-
-Get the time for when new players are chosen for the next day, including how
-much longer there is until the reset. This value applies to all regions.
-
-#### Returns
-
-JSON payload: 
-```json
-{
-    "reset_time_unix_millis": 10000000,
-    "remaining_time_millis": 100000
-}
-```
-
-### GET: /players?region_id=number
-
-Get all player IDs for a region. The frontend uses this for name auto completion.
-
-Note that a player ID is the player's in-game name.
-
-#### Returns
-
-JSON payload: 
-```json
-["name1", "name2", "..."]
-```
-
-### GET: /previous_player?region_id=number
-
-Get the previous day's player.
-
-#### Returns
-
-JSON payload: 
-```json
-{"player": "Player obj -- see models"}
-```
-
+Up-to-date models and API endpoints can be viewed by running the server (`cargo run --features
+swagger` - ensure you set the LOLPRODLE_CTX_DIR environment variable) and visiting the
+`/swagger-ui/` endpoint (make sure you include the trailing slash ( **/** )!)

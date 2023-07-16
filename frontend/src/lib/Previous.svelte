@@ -1,10 +1,11 @@
 <script lang="ts">
     import background from "$lib/assets/pbackground.jpg";
     import { onMount, onDestroy } from "svelte";
-    import { getPreviousPlayer, type Player, type PreviousPlayerResponse } from "./api";
     import { currentDaystamp, selectedRegion } from "./stores";
     import type { Unsubscriber } from "svelte/motion";
-    import { DataFetchState, Region } from "./types";
+    import { DataFetchState } from "./types";
+    import type { Player, Region } from "leviathan-api";
+    import { guessApi } from "./api";
 
     let dataState = DataFetchState.Loading;
     let unsubscribe: Unsubscriber | null = null;
@@ -27,25 +28,16 @@
 
     function loadPreviousPlayer(region: Region) {
         dataState = DataFetchState.Loading;
-        getPreviousPlayer(region).then((res) => {
-            if (!res.success) {
+        guessApi
+            .previousPlayer({ region })
+            .then((res) => {
+                previousPlayer = res.player;
+                dataState = DataFetchState.Fetched;
+            })
+            .catch((e) => {
+                console.log(e);
                 dataState = DataFetchState.Error;
-                console.log("[PREVIOUS PLAYER] Request failed");
-                return;
-            }
-
-            if (res.data === null) {
-                dataState = DataFetchState.Error;
-                console.log("[PREVIOUS PLAYER] null data");
-                return;
-            }
-
-            // need to cast to unknown first so TypeScript doesn't complain that the intended cast
-            // is a mistake/error
-            let data = res.data as unknown as PreviousPlayerResponse;
-            previousPlayer = data.player;
-            dataState = DataFetchState.Fetched;
-        });
+            });
     }
 </script>
 

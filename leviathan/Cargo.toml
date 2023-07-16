@@ -1,9 +1,14 @@
 [package]
 name = "leviathan"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+description = "lolprodle API server"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+# adds the /swagger-ui endpoint to view API information
+swagger = []
 
 [dependencies]
 chrono = "0.4.26"
@@ -14,4 +19,7 @@ rocket = { version = "=0.5.0-rc.3", features = ["json"] }
 serde = { version = "1.0.164", features = ["derive"] }
 serde_json = "1.0.99"
 strum = { version = "0.25.0", features = ["derive"] }
+testdir = "0.8.0"
 tokio = { version = "1.29.0", features = ["macros", "rt-multi-thread", "sync", "time"] }
+utoipa = { version = "3.4.0", features = ["rocket_extras"] }
+utoipa-swagger-ui = { version = "3.1.4", features = ["rocket"] }

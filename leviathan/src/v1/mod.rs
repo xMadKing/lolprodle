@@ -1,48 +1,80 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
+use utoipa::{OpenApi, ToSchema};
 
-use crate::{lolprodle::PlayerGuess, data::Player};
+use crate::{data::Player, lolprodle::{Guess, Region}};
 
 pub mod router;
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(OpenApi)]
+#[openapi(
+    servers(
+        (url = "http://127.0.0.1:8000/", description = "Local instance of leviathan"),
+        (url = "https://api.lolprodle.com/", description = "Production instance of leviathan")
+    ),
+    paths(
+        router::index,
+        router::check_guess,
+        router::reset_time,
+        router::players,
+        router::previous_player
+    ),
+    components(
+        schemas(
+            crate::data::Player,
+            crate::lolprodle::Region,
+            crate::lolprodle::GuessCategory,
+            crate::lolprodle::GuessCategoryResult,
+            crate::lolprodle::Guess,
+            ErrorType,
+            ErrorResponse,
+            CheckGuessRequest,
+            CheckGuessResponse,
+            ResetTimeResponse,
+            PlayersResponse,
+            PreviousPlayerResponse,
+        )
+    )
+)]
+pub struct V1Doc;
+
+#[derive(Clone, Debug, Serialize, Deserialize, ToSchema)]
 pub enum ErrorType {
     Internal,
     NoRegionPlayersAvailable,
     NoRegionPodsAvailable,
     InvalidPlayerId,
+    InvalidRegion,
     NoPod,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
-pub struct ResultResponse<T> {
-    pub success: bool,
-    pub error_type: Option<ErrorType>,
-    pub error_message: Option<String>,
-    pub data: Option<T>,
+#[derive(Clone, Debug, Serialize, Deserialize, ToSchema)]
+pub struct ErrorResponse {
+    pub err_type: ErrorType,
+    pub msg: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct CheckGuessRequest {
-    pub region_id: i32,
+    pub region: Region,
     pub player_id: String,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct CheckGuessResponse {
-    pub guess: PlayerGuess,
+    pub guess: Guess,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct ResetTimeResponse {
     pub reset_time_unix_millis: i64,
     /// Time left until reset_time_unix_millis
     pub remaining_time_millis: i64,
 }
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct PlayersResponse(Vec<String>);
 
-#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, ToSchema)]
 pub struct PreviousPlayerResponse {
     pub player: Player,
 }

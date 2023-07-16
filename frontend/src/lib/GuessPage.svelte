@@ -4,7 +4,6 @@
     import RegionSelector from "./RegionSelector.svelte";
     import GuessBox from "./guess/GuessBox.svelte";
     import ResetTimer from "./ResetTimer.svelte";
-    import type { Region } from "./types";
     import { correctGuess, currentGuessedNames, currentGuesses, selectedRegion } from "./stores";
     import { onMount } from "svelte";
     import {
@@ -17,6 +16,7 @@
     import { loadAllGuesses, verifyGuess } from "./guess/guess";
     import CorrectGuessAnimation from "./CorrectGuessAnimation.svelte";
     import { REGION_DATA } from "./consts";
+    import type { Region } from "leviathan-api";
 
     export let region: Region;
 
@@ -63,7 +63,7 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" type="image/svg" href="{REGION_DATA.get(region)?.icon}" />
+    <link rel="icon" type="image/svg" href={REGION_DATA.get(region)?.icon} />
 </svelte:head>
 
 <div class="py-8">

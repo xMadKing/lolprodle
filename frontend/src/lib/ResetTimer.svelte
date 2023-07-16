@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onDestroy, onMount } from "svelte";
-    import { getResetTime } from "./api";
     import { DataFetchState } from "./types";
+    import { guessApi } from "./api";
 
     const SECOND_MILLIS = 1000;
     const MINUTE_MILLIS = SECOND_MILLIS * 60;
@@ -33,17 +33,17 @@
 
     function updateResetTime() {
         dataState = DataFetchState.Loading;
-        getResetTime().then((res) => {
-            if (!res.success || res.data === null) {
+        guessApi
+            .resetTime()
+            .then((res) => {
+                dataState = DataFetchState.Fetched;
+                resetTime = res.resetTimeUnixMillis;
+                // immediate update to prevent empty values in timer
+                updateUnixToTimeComponents(resetTime);
+            })
+            .catch((_) => {
                 dataState = DataFetchState.Error;
-                return;
-            }
-
-            dataState = DataFetchState.Fetched;
-            resetTime = res.data.reset_time_unix_millis;
-            // immediate update to prevent empty values in timer
-            updateUnixToTimeComponents(resetTime);
-        });
+            });
     }
 
     // unixMillis assumed to be in the future

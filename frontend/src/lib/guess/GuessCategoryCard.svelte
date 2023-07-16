@@ -1,8 +1,8 @@
 <script lang="ts">
     import { GUESS_CATEGORY_DATA } from "$lib/consts";
-    import type { PlayerGuessCategory } from "$lib/types";
+    import type { GuessCategoryResult } from "leviathan-api";
 
-    export let guessCategory: PlayerGuessCategory;
+    export let guessCategory: GuessCategoryResult;
 
     $: categoryClasses = guessCategory.correct ? 
         "bg-gradient-to-br from-green-500 to-green-700" :
@@ -16,7 +16,7 @@
 >
     <div class="w-36 card-body text-black break-words">
         <h2 class="font-bold uppercase">
-            {GUESS_CATEGORY_DATA.get(guessCategory.category_id)?.displayName}
+            {GUESS_CATEGORY_DATA.get(guessCategory.category)?.displayName}
         </h2>
         <p>{guessCategory.guess}</p>
     </div>

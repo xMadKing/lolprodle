@@ -2,7 +2,7 @@ use strum::Display;
 
 use crate::{
     data::Player,
-    lolprodle::{self, GuessCategory, PlayerGuess, PlayerGuessCategory, Region},
+    lolprodle::{self, GuessCategory, Guess, GuessCategoryResult, Region},
     DATA_SERVICE,
 };
 
@@ -14,7 +14,7 @@ pub enum GuessState {
     InvalidName,
 }
 
-pub async fn check_guess(region: Region, player_id: &str) -> Result<PlayerGuess, GuessState> {
+pub async fn check_guess(region: Region, player_id: &str) -> Result<Guess, GuessState> {
     if let Some(players_arc) = DATA_SERVICE.get_region_players(&region).await {
         let region_players = players_arc.read().await;
         if let Some(guessed_player) = region_players
@@ -44,34 +44,34 @@ pub async fn check_guess(region: Region, player_id: &str) -> Result<PlayerGuess,
 
 /// Compares players only taking into account categories required for guessing (as defined by
 /// crate::lolprodle::GuessCategory).
-pub fn compare_players(guess: &Player, real: &Player) -> PlayerGuess {
+pub fn compare_players(guess: &Player, real: &Player) -> Guess {
     let categories = vec![
-        PlayerGuessCategory {
-            category_id: GuessCategory::Id.id(),
+        GuessCategoryResult {
+            category: GuessCategory::Id,
             correct: guess.id == real.id,
             guess: guess.id.to_owned(),
         },
-        PlayerGuessCategory {
-            category_id: GuessCategory::Role.id(),
+        GuessCategoryResult {
+            category: GuessCategory::Role,
             correct: guess.role == real.role,
             guess: guess.role.to_owned(),
         },
-        PlayerGuessCategory {
-            category_id: GuessCategory::Country.id(),
+        GuessCategoryResult {
+            category: GuessCategory::Country,
             correct: guess.country == real.country,
             guess: guess.country.to_owned(),
         },
-        PlayerGuessCategory {
-            category_id: GuessCategory::FavoriteChamps.id(),
+        GuessCategoryResult {
+            category: GuessCategory::FavoriteChamps,
             correct: guess.fav_champs == real.fav_champs,
             guess: guess.fav_champs.join(", "),
         },
-        PlayerGuessCategory {
-            category_id: GuessCategory::Team.id(),
+        GuessCategoryResult {
+            category: GuessCategory::Team,
             correct: guess.team == real.team,
             guess: guess.team.to_owned(),
         },
     ];
 
-    PlayerGuess { categories }
+    Guess { categories }
 }

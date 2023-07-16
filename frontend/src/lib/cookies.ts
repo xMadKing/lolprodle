@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import type { PlayerGuess, Region } from "./types";
+import type { Guess, Region } from "leviathan-api";
 
 export const GUESSES_COOKIE_ID_PREFIX = "guesses_"
 export const GUESSED_NAMES_COOKIE_ID_PREFIX = "guessed_names_";
@@ -7,8 +7,8 @@ export const CORRECT_GUESS_COOKIE_ID_PREFIX = "correct_guess_";
 
 export interface GuessesCookie {
     daystamp: number; // in millis
-    regionId: number;
-    guesses: Array<PlayerGuess>;
+    region: Region;
+    guesses: Array<Guess>;
 }
 
 export type GuessedNamesCookie = Array<string>;
@@ -19,10 +19,10 @@ export function getGuessesCookieId(region: Region, daystamp_millis: number): str
     return `${GUESSES_COOKIE_ID_PREFIX}${region}_${daystamp_millis}`;
 }
 
-export function saveGuessesCookie(region: Region, daystampMillis: number, guesses: Array<PlayerGuess>) {
+export function saveGuessesCookie(region: Region, daystampMillis: number, guesses: Array<Guess>) {
     let cookie: GuessesCookie = {
         daystamp: daystampMillis,
-        regionId: region,
+        region: region,
         guesses: guesses,
     }
 
