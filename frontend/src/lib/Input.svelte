@@ -25,7 +25,7 @@
     function updatePlayerNames() {
         dataState = DataFetchState.Loading;
         guessApi
-            .players($selectedRegion.toString())
+            .players({ region: $selectedRegion.toString() })
             .then((res) => {
                 if (res.length === 0) {
                     dataState = DataFetchState.Error;

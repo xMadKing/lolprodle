@@ -6,8 +6,10 @@ import type { Guess, Region } from "leviathan-api";
 // Returns nothing (undefined) or the error type and message.
 export async function makeGuess(region: Region, playerId: string): Promise<void> {
     return guessApi.checkGuess({
-        region: region,
-        playerId: playerId
+        checkGuessRequest: {
+            region: region,
+            playerId: playerId
+        }
     }).then(res => {
         currentGuesses.update(guesses => {
             guesses.push(res.guess);
@@ -34,7 +36,11 @@ export function isGuessEntirelyCorrect(guess: Guess): boolean {
 // undefined, this is indicative of some sort of error that occurred while making the check guess
 // request.
 export async function verifyGuess(region: Region, playerId: string): Promise<boolean> {
-    return guessApi.checkGuess({ region, playerId }).then(res => {
+    return guessApi.checkGuess({
+        checkGuessRequest: {
+            region, playerId
+        }
+    }).then(res => {
         return isGuessEntirelyCorrect(res.guess);
     })
 }
@@ -58,7 +64,11 @@ export function loadAllGuesses(region: Region, guesses: string[]) {
     // order is approximate since the requests are made asynchronously.
     for (let i = guesses.length - 1; i >= 0; i--) {
         let guess = guesses[i];
-        guessApi.checkGuess({ region, playerId: guess }).then(res => {
+        guessApi.checkGuess({
+            checkGuessRequest: {
+                region, playerId: guess
+            }
+        }).then(res => {
             currentGuesses.update(g => {
                 g.unshift(res.guess);
                 return g;

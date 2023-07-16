@@ -29,7 +29,7 @@
     function loadPreviousPlayer(region: Region) {
         dataState = DataFetchState.Loading;
         guessApi
-            .previousPlayer(region)
+            .previousPlayer({ region })
             .then((res) => {
                 previousPlayer = res.player;
                 dataState = DataFetchState.Fetched;
