@@ -13,6 +13,4 @@ openapi-generator-cli generate \
     -o ../libs/leviathan-api \
     --additional-properties=npmName=leviathan-api \
     --additional-properties=npmVersion=1.0.0 \
-    --additional-properties=supportsES6=true \
-    --additional-properties=framework=fetch-api \
-    --additional-properties=platform=node
+    --additional-properties=supportsES6=true
